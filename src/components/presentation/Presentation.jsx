@@ -9,13 +9,13 @@ const Presentation = () => {
 		<header>
 			<div className="container header__container">
 				<div className="left__side">
-					<h5> Hello I'm</h5>
+					<h5> Hello👌, I'm</h5>
 					<div className="content__name">
 						<h1 className="margin_rigth_1">Jehovanie </h1>
 						<h1>RAMANDRIJOEL</h1>
 					</div>
 
-					<h5 className="text-light">FullStack Web Developpeur</h5>
+					<h5 className="text-light">FullStack Developpeur 🧑‍💻</h5>
 
 					<CTA />
 					<HeaderSocial />
