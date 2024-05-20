@@ -21,9 +21,6 @@ const Navbar = () => {
 				href="#experience"
 				onClick={() => setActiveNav("#experience")}
 				className={activeNav === "#experience" ? "active" : ""}>
-				<BiBook />
-			</a>
-			<a href="#stack" onClick={() => setActiveNav("#stack")} className={activeNav === "#stack" ? "active" : ""}>
 				<SiPolymerproject />
 			</a>
 			<a
