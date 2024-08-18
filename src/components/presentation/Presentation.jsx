@@ -16,7 +16,6 @@ const Presentation = () => {
 					</div>
 
 					<h5 className="text-light">FullStack Developpeur 🧑‍💻</h5>
-
 					<CTA />
 					<HeaderSocial />
 				</div>

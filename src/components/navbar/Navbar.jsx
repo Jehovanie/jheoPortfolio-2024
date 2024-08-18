@@ -24,9 +24,9 @@ const Navbar = () => {
 				<SiPolymerproject />
 			</a>
 			<a
-				href="#projet"
-				onClick={() => setActiveNav("#projet")}
-				className={activeNav === "#projet" ? "active" : ""}>
+				href="#project"
+				onClick={() => setActiveNav("#project")}
+				className={activeNav === "#project" ? "active" : ""}>
 				<GrProjects />
 			</a>
 			<a
