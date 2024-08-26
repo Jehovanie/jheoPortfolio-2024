@@ -121,6 +121,12 @@ img {
 
 /* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
 
+@media screen and (max-width: 480px) and (max-height: 670px) {
+	section {
+		margin-top: 2rem;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.about-me {
 		width: 65%;
@@ -128,8 +134,11 @@ img {
 	}
 
 	.about__cards {
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
+		gap: 10px;
+	}
+
+	.about__card {
+		padding: 0.5rem !important;
 	}
 
 	.about__content {
@@ -138,5 +147,9 @@ img {
 
 	.about__content p {
 		margin: 1.5rem 0;
+	}
+
+	.btn_lets_talk_about {
+		display: none !important;
 	}
 }

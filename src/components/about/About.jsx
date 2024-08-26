@@ -43,7 +43,7 @@ const About = () => {
 						I look forward to working with you to realize your most ambitious web projects.
 					</p>
 
-					<a href="#contact" className="btn btn-primary">
+					<a href="#contact" className="btn btn-primary btn_lets_talk_about">
 						Let's Talk
 					</a>
 				</div>

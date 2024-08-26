@@ -73,4 +73,9 @@
 	.project__item {
 		width: 90%;
 	}
+
+	img {
+		width: 100%;
+		height: 144px;
+	}
 }

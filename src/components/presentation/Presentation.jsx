@@ -1,4 +1,5 @@
-import DEV from "./../../assets/image/image-5.jpg";
+// import DEV from "./../../assets/image/image-5.jpg";
+import DEV from "./../../assets/image/j.png";
 import CTA from "./macro/cta/CTA";
 import HeaderSocial from "./macro/social/HeaderSocial";
 
@@ -27,7 +28,7 @@ const Presentation = () => {
 				</div>
 
 				<a href="#contact" className="scroll__down">
-					{">>>>>>"} Scroll Down {">>>>>"}{" "}
+					{">>>"} scrool down {">>>"}{" "}
 				</a>
 			</div>
 		</header>

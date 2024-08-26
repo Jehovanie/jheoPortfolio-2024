@@ -738,13 +738,14 @@ header {
 
 @media screen and (max-width: 480px) and (max-height: 670px) {
 	header {
-		height: 80vh;
+		height: 57vh;
 	}
 
 	.header__socials {
 		display: block;
-		margin-top: 6.5rem;
-		margin-left: 2.5rem;
+		margin-top: 1.5rem;
+		margin-left: 0.5rem;
+		width: 100%;
 	}
 
 	.left__side {
