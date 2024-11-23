@@ -1,6 +1,7 @@
 import About from "../components/about/About";
 import Contact from "../components/contact/Contact";
 import Experience from "../components/experience/Experience";
+import Footer from "../components/footer/Footer";
 
 import Navbar from "../components/navbar/Navbar";
 import Presentation from "../components/presentation/Presentation";
@@ -27,6 +28,9 @@ const Home = () => {
 				</div>
 				<div className="content_contact">
 					<Contact />
+				</div>
+				<div className="content_footer">
+					<Footer />
 				</div>
 			</div>
 		</div>
