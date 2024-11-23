@@ -1,9 +1,6 @@
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FaFacebook } from "react-icons/fa6";
-import { IoLogoSkype } from "react-icons/io5";
-import { BsDiscord } from "react-icons/bs";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const HeaderSocial = () => {
@@ -19,13 +16,7 @@ const HeaderSocial = () => {
 				<SiGmail />
 			</a>
 			<a href="https://dribbble.com">
-				<IoLogoSkype />
-			</a>
-			<a href="https://dribbble.com">
 				<IoLogoWhatsapp />
-			</a>
-			<a href="https://dribbble.com">
-				<BsDiscord />
 			</a>
 		</div>
 	);
