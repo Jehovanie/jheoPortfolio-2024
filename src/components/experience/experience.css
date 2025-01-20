@@ -82,6 +82,9 @@
 /* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
 
 @media screen and (max-width: 600px) {
+	#experience {
+		margin-bottom: 65px;
+	}
 	.experience__container {
 		gap: 1rem;
 	}
@@ -93,6 +96,6 @@
 	}
 
 	.experience__container {
-		height: 145vh !important;
+		height: 105vh !important;
 	}
 }

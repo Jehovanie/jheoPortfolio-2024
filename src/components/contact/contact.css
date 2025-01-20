@@ -61,7 +61,6 @@ textarea {
 		display: grid;
 		grid-template-columns: 30% 58%;
 		gap: 12%;
-		height: 90% !important;
 	}
 
 	.experience__frontend {
@@ -79,13 +78,15 @@ textarea {
 	.container.contact__container {
 		grid-template-columns: 1fr;
 		gap: 2rem;
-		height: 130vh !important;
 	}
 }
 
 /* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
 
 @media screen and (max-width: 600px) {
+	#contact {
+		height: 100vh;
+	}
 	.container.contact__container {
 		width: var(--container-width-sm);
 	}
