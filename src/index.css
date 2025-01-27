@@ -131,9 +131,19 @@ img {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.fix_nav {
+		display: none !important;
+	}
+}
+
 /* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
 
 @media screen and (max-width: 600px) {
+	.fix_nav {
+		display: none !important;
+	}
+
 	.container {
 		width: var(--container-width-sm);
 	}

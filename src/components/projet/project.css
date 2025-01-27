@@ -49,7 +49,16 @@
 
 /* ================== MEDIA QUERIES ( MEDIEUM DEVICES ) ==================== */
 
-@media screen and (max-width: 724px) {
+@media screen and (max-width: 768px) {
+	#project {
+		height: 126vh;
+		margin-bottom: 65px;
+	}
+
+	.project__item-image img {
+		height: 135px;
+	}
+
 	.project__container {
 		grid-template-columns: 1fr 1fr;
 		gap: 1.1rem;
@@ -60,7 +69,7 @@
 
 @media screen and (max-width: 600px) {
 	#project {
-		height: 163vh;
+		height: 175vh;
 		margin-bottom: 65px;
 	}
 
@@ -82,7 +91,7 @@
 
 @media screen and (max-width: 480px) {
 	#project {
-		height: 170vh;
+		height: 175vh;
 		margin-bottom: 65px;
 	}
 }

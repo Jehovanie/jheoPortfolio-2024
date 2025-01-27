@@ -63,10 +63,10 @@
 
 /* ================== MEDIA QUERIES ( MEDIEUM DEVICES ) ==================== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 720px){
 	#experience {
 		margin-bottom: 65px;
-		height: 144vh;
+		height: 148vh;
 	}
 
 	.experience__container {
@@ -89,7 +89,7 @@
 @media screen and (max-width: 600px) {
 	#experience {
 		margin-bottom: 65px;
-		height: 134vh;
+		height: 144vh;
 	}
 	.experience__container {
 		gap: 1rem;
@@ -109,6 +109,6 @@
 @media screen and (max-width: 480px) {
 	#experience {
 		margin-bottom: 65px;
-		height: 152vh;
+		height: 144vh;
 	}
 }
