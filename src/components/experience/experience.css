@@ -63,7 +63,12 @@
 
 /* ================== MEDIA QUERIES ( MEDIEUM DEVICES ) ==================== */
 
-@media screen and (max-width: 724px) {
+@media screen and (max-width: 768px) {
+	#experience {
+		margin-bottom: 65px;
+		height: 144vh;
+	}
+
 	.experience__container {
 		grid-template-columns: 1fr;
 	}
@@ -84,6 +89,7 @@
 @media screen and (max-width: 600px) {
 	#experience {
 		margin-bottom: 65px;
+		height: 134vh;
 	}
 	.experience__container {
 		gap: 1rem;
@@ -97,5 +103,12 @@
 
 	.experience__container {
 		height: 105vh !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#experience {
+		margin-bottom: 65px;
+		height: 152vh;
 	}
 }

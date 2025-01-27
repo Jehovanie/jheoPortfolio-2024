@@ -85,7 +85,24 @@ textarea {
 
 @media screen and (max-width: 600px) {
 	#contact {
-		height: 100vh;
+		height: 141vh;
+	}
+	.container.contact__container {
+		width: var(--container-width-sm);
+	}
+
+	.contact__options,
+	form {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	
+	#contact {
+		height: 141vh;
 	}
 	.container.contact__container {
 		width: var(--container-width-sm);

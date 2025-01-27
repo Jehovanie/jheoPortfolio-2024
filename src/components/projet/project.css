@@ -60,7 +60,7 @@
 
 @media screen and (max-width: 600px) {
 	#project {
-		height: 125vh;
+		height: 163vh;
 		margin-bottom: 65px;
 	}
 
@@ -77,5 +77,12 @@
 	img {
 		width: 100%;
 		height: 144px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#project {
+		height: 170vh;
+		margin-bottom: 65px;
 	}
 }
