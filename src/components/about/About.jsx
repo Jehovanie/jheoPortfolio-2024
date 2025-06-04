@@ -24,23 +24,24 @@ const About = () => {
 						<article className="about__card">
 							<FaAward className="about__icon" />
 							<h5> Experience </h5>
-							<small> 2+ Years Working </small>
+							<small> +3ans  </small>
 						</article>
 						<article className="about__card">
 							<FiUsers className="about__icon" />
 							<h5> Clients </h5>
-							<small>20+ (society/client) </small>
+							<small>Société,Entreprise </small>
 						</article>
 						<article className="about__card">
 							<VscFolderLibrary className="about__icon" />
-							<h5> Projects </h5>
-							<small> 10+ Completed </small>
+							<h5> Projets </h5>
+							<small> +5 Términer </small>
 						</article>
 					</div>
 					<p>
-						If you are looking for a creative and passionate web developer who can work in a team to create
-						tailor-made solutions, do not hesitate to contact me. I'm always looking for new challenges and
-						I look forward to working with you to realize your most ambitious web projects.
+						Si vous recherchez un développeur web créatif et passionné, capable de travailler en équipe pour
+						créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis toujours à la recherche de
+						nouveaux défis et j'ai hâte de collaborer avec vous pour réaliser vos projets web les plus
+						ambitieux.
 					</p>
 
 					<a href="#contact" className="btn btn-primary btn_lets_talk_about">

@@ -578,3 +578,40 @@ header {
 		display: none;
 	}
 }
+
+/* Smartphone portrait (par défaut, pas besoin de media query) */
+
+@media (min-width: 320px) {
+	/* Styles pour écran ≥ 480px */
+  }
+
+/* Smartphone paysage (≥ 480px) */
+@media (min-width: 480px) {
+	/* Styles pour écran ≥ 480px */
+  }
+  
+  /* Tablette portrait (≥ 600px) */
+  @media (min-width: 600px) {
+	/* Styles pour écran ≥ 600px */
+  }
+  
+  /* Tablette paysage / petits laptops (≥ 768px) */
+  @media (min-width: 768px) {
+	/* Styles pour écran ≥ 768px */
+  }
+  
+  /* Ordinateur portable (≥ 992px) */
+  @media (min-width: 992px) {
+	/* Styles pour écran ≥ 992px */
+  }
+  
+  /* Écran desktop standard (≥ 1200px) */
+  @media (min-width: 1200px) {
+	/* Styles pour écran ≥ 1200px */
+  }
+  
+  /* Écran très large (≥ 1400px) */
+  @media (min-width: 1400px) {
+	/* Styles pour écran ≥ 1400px */
+  }
+  
