@@ -7,8 +7,8 @@ import IMG3 from "./../../assets/image/e-bookShare.png";
 const Project = () => {
 	return (
 		<section id="project">
-			<h5> My Recent Work</h5>
-			<h2> Web Site </h2>
+			<h5>Mes travaux récents...</h5>
+			<h2>Expérience professionnelle</h2>
 
 			<div className="container project__container">
 				<article className="project__item">

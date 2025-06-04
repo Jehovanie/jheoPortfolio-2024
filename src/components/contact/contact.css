@@ -57,3 +57,16 @@ textarea {
   resize: none;
   color: var(--color-white);
 }
+
+.content_entete_forme {
+  width: 100%;
+}
+
+.entete_forme_title {
+  text-align: start;
+}
+
+.textwhite {
+  color: white !important;
+  font-weight: bold;
+}

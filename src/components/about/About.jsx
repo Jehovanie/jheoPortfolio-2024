@@ -9,8 +9,8 @@ import "./about.css";
 const About = () => {
 	return (
 		<section id="about">
-			<h5> Get to Know</h5>
-			<h2> About Me</h2>
+			<h5>Apprendre à connaître...</h5>
+			<h2>A propos de moi</h2>
 
 			<div className="container about__container">
 				<div className="about__me">
@@ -20,6 +20,12 @@ const About = () => {
 				</div>
 
 				<div className="about__content">
+					<p>
+						Développeur web et mobile full-stack, toujours en quête d'apprentissage et d'élargissement de mes compétences.
+						Enthousiaste et passionné par le monde du développement,
+						je suis un développeur qui s'immerge avec ferveur dans les défis et les opportunités offerts par le domaine de l'informatique.
+						Ma passion pour la programmation va bien au-delà des simples compétences techniques,c'est une véritable expression de ma créativité et de mon engagement en faveur de l'innovation...
+					</p>
 					<div className="about__cards">
 						<article className="about__card">
 							<FaAward className="about__icon" />

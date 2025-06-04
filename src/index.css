@@ -73,11 +73,6 @@ section > h5 {
 	color: var(--color-light);
 }
 
-section > h2 {
-	color: var(--color-primary);
-	margin-bottom: 3rem;
-}
-
 .text-light {
 	color: var(--color-light);
 }
@@ -142,10 +137,6 @@ img {
 
 	.container {
 		width: var(--container-width-sm);
-	}
-
-	section > h2 {
-		margin-bottom: 2rem;
 	}
 
 	.fix_nav {

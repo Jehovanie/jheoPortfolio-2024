@@ -3,6 +3,12 @@ header {
   overflow: hidden;
 }
 
+.cta_action {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+}
+
 .header__container {
   display: block;
   position: relative;

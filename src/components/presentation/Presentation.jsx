@@ -10,7 +10,7 @@ const Presentation = () => {
 		<header>
 			<div className="container header__container">
 				<div className="left__side">
-					<h5> Hi✌️, I'm</h5>
+					<h5> Bonjour🤗, Je suis</h5>
 					<div className="content__name">
 						<h1>Jehovanie </h1>
 						<h1>RAMANDRIJOEL</h1>
