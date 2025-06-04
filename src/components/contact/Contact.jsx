@@ -42,35 +42,42 @@ const Contact = () => {
 
 	return (
 		<section id="contact">
-			<h5>Get in Touch</h5>
-			<h2>Contact Me</h2>
+			<h5>Prendre contact ... </h5>
+			<h2>Me contacter</h2>
 
 			<div className="container contact__container">
 				<div className="contact__options">
 					<article className="contact__option">
-						<MdOutlineEmail className="contact__option-icon" />
-						<h4>Email</h4>
+						<div className="contact_option_icon_name">
+							<MdOutlineEmail className="contact__option-icon" />
+							<h4>Email</h4>
+						</div>
 						<h5>jehovanieram@gmail.com</h5>
 						<a href="mailto:jehovanieram@gmail.com" target="_blank" rel="noreferrer">
-							Send a message ...
+							Envoyer un message ...
 						</a>
 					</article>
 
 					<article className="contact__option">
-						<BsWhatsapp className="contact__option-icon" />
-						<h4>WhatsApp</h4>
+						<div className="contact_option_icon_name">
+							<BsWhatsapp className="contact__option-icon" />
+							<h4>WhatsApp</h4>
+						</div>
 						<h5>+261 34 38 612 46</h5>
 						<a href="https://api.whatsapp.com/send?phone=+261347947616" target="_blank" rel="noreferrer">
-							Send a message ...
+							Envoyer un message ...
 						</a>
 					</article>
 				</div>
 
 				<form ref={form} onSubmit={sendEmail}>
+					<div className="content_entete_forme">
+						<h3 className="entete_forme_title">Message direct</h3>
+					</div>
 					<input
 						type="text"
 						name="name"
-						placeholder="Your full name ..."
+						placeholder="Votre nom..."
 						required
 						value={name}
 						onChange={(e) => setName(e.target.value)}
@@ -78,7 +85,7 @@ const Contact = () => {
 					<input
 						type="email"
 						name="email"
-						placeholder="Your email ..."
+						placeholder="Votre email..."
 						required
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
@@ -87,12 +94,13 @@ const Contact = () => {
 						name="message"
 						cols="30"
 						rows="7"
-						placeholder="Your message ..."
+						placeholder="Votre message..."
 						required
 						value={message}
-						onChange={(e) => setMessage(e.target.value)}></textarea>
+						onChange={(e) => setMessage(e.target.value)}>
+					</textarea>
 					<button type="submit" className="btn btn-primary">
-						Send Message
+						Envoyer
 					</button>
 				</form>
 			</div>

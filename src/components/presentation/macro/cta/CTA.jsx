@@ -1,13 +1,18 @@
 import CV from "./../../../../assets/pdf/cv.pdf";
+import { GoDownload } from "react-icons/go";
+import { BsChat } from "react-icons/bs";
+
 
 const CTA = () => {
 	return (
 		<div className="cta">
-			<a href={CV} download className="btn">
-				Download my CV
+			<a href={CV} download className="btn cta_action">
+				<GoDownload />
+				Télechager mon CV
 			</a>
-			<a href="#contact" className="btn btn-primary">
-				Let's Talk
+			<a href="#contact" className="btn btn-primary cta_action">
+				<BsChat />
+				Discuter
 			</a>
 		</div>
 	);

@@ -1,183 +1,180 @@
 .about__container {
-	display: grid;
-	margin-top: 10%;
-	grid-template-columns: 35% 50%;
-	gap: 15%;
+  display: block;
+  padding-top: 15px;
 }
 
 .about__me {
-	width: 100%;
-	aspect-ratio: 1/1;
-	border-radius: 2rem;
-	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-	display: grid;
-	place-items: center;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.show_laptop {
+  display: none;
 }
 
 .about__me-image {
-	border-radius: 2rem;
-	width: 100%;
-	overflow: hidden;
-	transform: rotate(10deg);
-	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-	transition: 0.5s;
+  border-radius: 2rem;
+  width: 250px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+  transform: rotate(10deg);
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+  transition: 0.5s;
 }
 
+.about__me-image img {
+  height: 100%;
+  width: 100%;
+  width: auto;
+  /* ou width: 100% si tu veux qu'elle remplisse aussi en largeur */
+  object-fit: cover; /* ou contain selon le rendu désiré */
+  display: block;
+}
 
 .about__me-image:hover {
-	transform: rotate(0);
+  transform: rotate(0);
 }
 
 .about__cards {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .about__card {
-	background: var(--color-bg-variant);
-	border: 1px solid transparent;
-	border-radius: 1rem;
-	padding: 2rem;
-	text-align: center;
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 33%;
 }
 
 .about__card:hover {
-	background: transparent;
-	border-color: var(--color-primary-variant);
-	cursor: default;
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
 }
 
 .about__icon {
-	color: var(--color-primary);
-	font-size: 1.4rem;
-	margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .about__card h5 {
-	font-size: 0.95rem;
+  font-size: 0.95rem;
 }
 
 .about__card small {
-	font-size: 0.7rem;
-	color: var(--color-light);
+  font-size: 0.7rem;
+  color: var(--color-light);
 }
 
 .about__content p {
-	margin: 2rem 0 2.6rem;
-	color: var(--color-light);
+  margin: 2rem 0 2.6rem;
+  color: var(--color-light);
 }
 
 /* ================== MEDIA QUERIES ( LARGE DEVICES ) ==================== */
-
-@media screen and (max-width: 1024px) {
-	.about__container {
-		display: grid;
-		grid-template-columns: 35% 60%;
-		gap: 10%;
-	}
-
-	.about__me {
-		width: 120%;
-	}
-
-	.about__me-image {
-		width: 100%;
-		height: 100%;
-	}
-
-	.about__cards {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.3rem;
-	}
-
-	.about__card {
-		padding: 1.5rem;
-	}
+/* Tablette portrait (≥ 600px) */
+@media (min-width:600px) {
+  /* Styles pour écran ≥ 600px */
+  .about__container {
+    padding-top: 25px;
+  }
+  
+  .about__me-image {
+    width: 280px;
+    height: 250px;
+  }
 }
 
-@media screen and (max-width: 840px) {
-	#about {
-		height: 87vh;
-		margin-bottom: 65px;
-	}
-
-	.about__me {
-		width: 95%;
-	}
-
-	img {
-		height: 233px;
-	}
-
-	.about__card {
-		padding: 1rem;
-	}
+/* Tablette paysage / petits laptops (≥ 768px) */
+@media (min-width:768px) {
+  .show_tablette {
+    display: none;
+  }
+  
+  .show_laptop{
+    display: block;
+  }
+  
+  .content_about_image_laptop{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 80px;
+  }
+  
+  .about__content p {
+    margin: 0;
+  }
+  
+  .about__me {
+    margin: unset;
+    margin-bottom: 0;
+  }
+  
+  .about__me-image {
+    width: 275px;
+    height: 275px;
+  }
+  
+  .content_about_client_laptop{
+    display: flex;
+    align-items: self-start;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 45px;
+  }
+  
+  .content_text_desc_laptop{
+    width: 100%;
+  }
+  
+  .content_text_copy_writing_laptop{
+    width: 55%;
+  }
+  
+  .about__cards {
+    gap: 0.5rem;
+  }
 }
 
-/* ================== MEDIA QUERIES ( MEDIEUM DEVICES ) ==================== */
-
-@media screen and (max-width: 720px) {
-    #about {
-        height: 145vh;
-        margin-bottom: 65px;
-    }
-
-	.about__container {
-		grid-template-columns: 1fr;
-		gap: 0;
-	}
-
-	img {
-		height: 325px;
-	}
-
-	.about__me {
-		width: 50%;
-		margin: 2rem auto 4rem;
-	}
-
-	.about__content p {
-		margin: 1rem 0 1.5rem;
-	}
+/* Ordinateur portable (≥ 992px) */
+@media (min-width:992px) {
+  .about__content{
+    width: 100%;
+    margin: auto;;
+  }
 }
 
-/* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
+@media (min-width:1125px) {
+  .about__content{
+    width: 85%;
+    margin: auto;;
+  }
+}
 
-@media screen and (max-width: 600px) {
-	#about {
-		height: 115vh;
-		margin-bottom: 65px;
-	}
+/* Écran desktop standard (≥ 1200px) */
+@media (min-width:1200px) {
+  /* Styles pour écran ≥ 1200px */
+}
 
-	.about-me {
-		width: 65%;
-		margin: 0 auto 3rem;
-	}
+/* Écran très large (≥ 1400px) */
+@media (min-width:1400px) {
+  /* Styles pour écran ≥ 1400px */
+}
 
-	.about__cards {
-		gap: 10px;
-	}
 
-	.about__me-image img {
-		width: 100%;
-		height: 235px;
-	}
-
-	.about__card {
-		padding: 0.5rem !important;
-	}
-
-	.about__content {
-		text-align: center;
-	}
-
-	.about__content p {
-		margin: 1.5rem 0;
-	}
-
-	.btn_lets_talk_about {
-		display: none !important;
-	}
+@media (min-width: 1550px) {
+  .about__content {
+      width: 80%;
+      margin: auto;
+  }
 }
