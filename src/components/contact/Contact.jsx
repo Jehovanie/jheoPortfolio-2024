@@ -48,8 +48,10 @@ const Contact = () => {
 			<div className="container contact__container">
 				<div className="contact__options">
 					<article className="contact__option">
-						<MdOutlineEmail className="contact__option-icon" />
-						<h4>Email</h4>
+						<div className="contact_option_icon_name">
+							<MdOutlineEmail className="contact__option-icon" />
+							<h4>Email</h4>
+						</div>
 						<h5>jehovanieram@gmail.com</h5>
 						<a href="mailto:jehovanieram@gmail.com" target="_blank" rel="noreferrer">
 							Send a message ...
@@ -57,8 +59,10 @@ const Contact = () => {
 					</article>
 
 					<article className="contact__option">
-						<BsWhatsapp className="contact__option-icon" />
-						<h4>WhatsApp</h4>
+						<div className="contact_option_icon_name">
+							<BsWhatsapp className="contact__option-icon" />
+							<h4>WhatsApp</h4>
+						</div>
 						<h5>+261 34 38 612 46</h5>
 						<a href="https://api.whatsapp.com/send?phone=+261347947616" target="_blank" rel="noreferrer">
 							Send a message ...

@@ -1,183 +1,122 @@
 .about__container {
-	display: grid;
-	margin-top: 10%;
-	grid-template-columns: 35% 50%;
-	gap: 15%;
+  display: block;
 }
 
 .about__me {
-	width: 100%;
-	aspect-ratio: 1/1;
-	border-radius: 2rem;
-	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-	display: grid;
-	place-items: center;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 15px;
 }
 
 .about__me-image {
-	border-radius: 2rem;
-	width: 100%;
-	overflow: hidden;
-	transform: rotate(10deg);
-	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-	transition: 0.5s;
+  border-radius: 2rem;
+  width: 250px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+  transform: rotate(10deg);
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+  transition: 0.5s;
 }
 
+.about__me-image img {
+  height: 100%;
+  width: 100%;
+}
 
 .about__me-image:hover {
-	transform: rotate(0);
+  transform: rotate(0);
 }
 
 .about__cards {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .about__card {
-	background: var(--color-bg-variant);
-	border: 1px solid transparent;
-	border-radius: 1rem;
-	padding: 2rem;
-	text-align: center;
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 33%;
 }
 
 .about__card:hover {
-	background: transparent;
-	border-color: var(--color-primary-variant);
-	cursor: default;
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
 }
 
 .about__icon {
-	color: var(--color-primary);
-	font-size: 1.4rem;
-	margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .about__card h5 {
-	font-size: 0.95rem;
+  font-size: 0.95rem;
 }
 
 .about__card small {
-	font-size: 0.7rem;
-	color: var(--color-light);
+  font-size: 0.7rem;
+  color: var(--color-light);
 }
 
 .about__content p {
-	margin: 2rem 0 2.6rem;
-	color: var(--color-light);
+  margin: 2rem 0 2.6rem;
+  color: var(--color-light);
 }
 
 /* ================== MEDIA QUERIES ( LARGE DEVICES ) ==================== */
 
-@media screen and (max-width: 1024px) {
-	.about__container {
-		display: grid;
-		grid-template-columns: 35% 60%;
-		gap: 10%;
-	}
-
-	.about__me {
-		width: 120%;
-	}
-
-	.about__me-image {
-		width: 100%;
-		height: 100%;
-	}
-
-	.about__cards {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.3rem;
-	}
-
-	.about__card {
-		padding: 1.5rem;
-	}
+@media (min-width:320px) {
+  /* Styles pour écran ≥ 480px */
 }
 
-@media screen and (max-width: 840px) {
-	#about {
-		height: 87vh;
-		margin-bottom: 65px;
-	}
-
-	.about__me {
-		width: 95%;
-	}
-
-	img {
-		height: 233px;
-	}
-
-	.about__card {
-		padding: 1rem;
-	}
+/* Smartphone paysage (≥ 480px) */
+@media (min-width:480px) {
+  /* Styles pour écran ≥ 480px */
 }
 
-/* ================== MEDIA QUERIES ( MEDIEUM DEVICES ) ==================== */
-
-@media screen and (max-width: 720px) {
-    #about {
-        height: 145vh;
-        margin-bottom: 65px;
-    }
-
-	.about__container {
-		grid-template-columns: 1fr;
-		gap: 0;
-	}
-
-	img {
-		height: 325px;
-	}
-
-	.about__me {
-		width: 50%;
-		margin: 2rem auto 4rem;
-	}
-
-	.about__content p {
-		margin: 1rem 0 1.5rem;
-	}
+/* Tablette portrait (≥ 600px) */
+@media (min-width:600px) {
+  /* Styles pour écran ≥ 600px */
 }
 
-/* ================== MEDIA QUERIES ( SMALL DEVICES ) ==================== */
+/* Tablette paysage / petits laptops (≥ 768px) */
+@media (min-width:768px) {
+  /* Styles pour écran ≥ 768px */
+}
 
-@media screen and (max-width: 600px) {
-	#about {
-		height: 115vh;
-		margin-bottom: 65px;
-	}
+/* Ordinateur portable (≥ 992px) */
+@media (min-width:992px) {
+  /* Styles pour écran ≥ 992px */
+  .about__container {
+    display: grid;
+    margin-top: 10%;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+  }
+  
+  .about__me {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+    display: grid;
+    place-items: center;
+  }
+}
 
-	.about-me {
-		width: 65%;
-		margin: 0 auto 3rem;
-	}
+/* Écran desktop standard (≥ 1200px) */
+@media (min-width:1200px) {
+  /* Styles pour écran ≥ 1200px */
+}
 
-	.about__cards {
-		gap: 10px;
-	}
-
-	.about__me-image img {
-		width: 100%;
-		height: 235px;
-	}
-
-	.about__card {
-		padding: 0.5rem !important;
-	}
-
-	.about__content {
-		text-align: center;
-	}
-
-	.about__content p {
-		margin: 1.5rem 0;
-	}
-
-	.btn_lets_talk_about {
-		display: none !important;
-	}
+/* Écran très large (≥ 1400px) */
+@media (min-width:1400px) {
+  /* Styles pour écran ≥ 1400px */
 }

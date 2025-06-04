@@ -23,18 +23,18 @@ const About = () => {
 					<div className="about__cards">
 						<article className="about__card">
 							<FaAward className="about__icon" />
-							<h5> Experience </h5>
+							<h6> Experience </h6>
 							<small> +3ans  </small>
 						</article>
 						<article className="about__card">
 							<FiUsers className="about__icon" />
-							<h5> Clients </h5>
+							<h6> Clients </h6>
 							<small>Société,Entreprise </small>
 						</article>
 						<article className="about__card">
 							<VscFolderLibrary className="about__icon" />
-							<h5> Projets </h5>
-							<small> +5 Términer </small>
+							<h6> Projets </h6>
+							<small>+5 Finis</small>
 						</article>
 					</div>
 					<p>
@@ -43,10 +43,6 @@ const About = () => {
 						nouveaux défis et j'ai hâte de collaborer avec vous pour réaliser vos projets web les plus
 						ambitieux.
 					</p>
-
-					<a href="#contact" className="btn btn-primary btn_lets_talk_about">
-						Let's Talk
-					</a>
 				</div>
 			</div>
 		</section>

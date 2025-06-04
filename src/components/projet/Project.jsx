@@ -16,8 +16,8 @@ const Project = () => {
 						<img src={IMG1} alt="project image" />
 					</div>
 					<div>
-						<h3> TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement. </h3>
-						<p>
+						<h5 className="project_title"> TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement. </h5>
+						<p className="project_description">
 							TicketUp est une plateforme complète de gestion d'événements et de vente de tickets,
 							composée de trois modules interconnectés : Application mobile, Centre d'administration web
 							(Organisateurs & Admins) et API centrale (Backend sécurisé){" "}
@@ -40,8 +40,8 @@ const Project = () => {
 						<img src={IMG2} alt="project image" />
 					</div>
 					<div>
-						<h3> MySchool: Application de gestion scolaire complète. </h3>
-						<p>
+						<h5 className="project_title"> MySchool: Application de gestion scolaire complète. </h5>
+						<p className="project_description">
 							La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter la
 							communication, la gestion, et améliorer la façon de transmettre la connaissance.
 						</p>
@@ -61,8 +61,8 @@ const Project = () => {
 						<img src={IMG3} alt="project image" />
 					</div>
 					<div>
-						<h3>E-bookShare</h3>
-						<p>
+						<h5 className="project_title">E-bookShare</h5>
+						<p className="project_description">
 							e-BookShare est une application mobile et web conçue pour permettre aux passionnés de
 							lecture de partager, découvrir, emprunter ou proposer des livres numériques en toute
 							simplicité. Plus qu'une bibliothèque numérique, e-BookShare favorise la lecture sociale, la

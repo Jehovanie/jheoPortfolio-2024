@@ -12,22 +12,28 @@ const Presentation = () => {
 				<div className="left__side">
 					<h5> Hi✌️, I'm</h5>
 					<div className="content__name">
-						<h1 className="margin_rigth_1">Jehovanie </h1>
+						<h1>Jehovanie </h1>
 						<h1>RAMANDRIJOEL</h1>
 					</div>
 
 					<h5 className="text-light">FullStack Developpeur 🧑‍💻</h5>
-					<CTA />
-					<HeaderSocial />
+					<div className="content_cta_left_side">
+						<CTA />
+						<HeaderSocial />
+					</div>
 				</div>
 
 				<div className="right__side">
 					<div className="dev">
 						<img src={DEV} alt="Image 1" />
 					</div>
+					<div className="content_cta_right_side">
+						<CTA />
+						<HeaderSocial />
+					</div>
 				</div>
 
-				<a href="#contact" className="scroll__down">
+				<a href="#contact" className="scroll__down ">
 					{">>>"} scrool down {">>>"}{" "}
 				</a>
 			</div>
