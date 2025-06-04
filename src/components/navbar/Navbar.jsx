@@ -1,5 +1,4 @@
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
-import { BiBook } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { GrProjects } from "react-icons/gr";
 import { SiPolymerproject } from "react-icons/si";

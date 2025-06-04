@@ -65,9 +65,9 @@
 
 @media screen and (max-width: 720px){
 	#experience {
-		margin-bottom: 65px;
-		height: 148vh;
-	}
+        margin-bottom: 65px;
+        height: 170vh;
+    }
 
 	.experience__container {
 		grid-template-columns: 1fr;
