@@ -11,13 +11,10 @@ const Presentation = () => {
 			<div className="container header__container">
 				<div className="left__side">
 					<div>
-						<h5 className="text"> Bonjour🤗, Je suis</h5>
+						<h5 className="text"> Bonjour👋, Moi c'est Jehovanie, </h5>
 						<div className="content__name">
-							<h1>Jehovanie </h1>
-							<h1>RAMANDRIJOEL</h1>
+							<h2 className="text">Developpeur FullStack</h2>
 						</div>
-
-						<h5 className="text-light text">FullStack Developpeur 🧑‍💻</h5>
 						<div className="content_cta_left_side">
 							<CTA />
 							<HeaderSocial />

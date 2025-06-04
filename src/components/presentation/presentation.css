@@ -1,6 +1,7 @@
 header {
   padding-top: 1rem;
   overflow: hidden;
+
 }
 
 .cta_action {
@@ -102,8 +103,8 @@ header {
 .header__socials::after {
   display: none;
   content: "";
-  width: 1px;
-  height: 2rem;
+  width: 45px;
+  height: 1rem;
   margin-left: -0.5rem;
   background: var(--color-primary);
 }
