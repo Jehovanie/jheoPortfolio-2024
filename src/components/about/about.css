@@ -1,11 +1,16 @@
 .about__container {
   display: block;
+  padding-top: 15px;
 }
 
 .about__me {
   width: 100%;
   margin: auto;
   margin-bottom: 15px;
+}
+
+.show_laptop {
+  display: none;
 }
 
 .about__me-image {
@@ -22,6 +27,10 @@
 .about__me-image img {
   height: 100%;
   width: 100%;
+  width: auto;
+  /* ou width: 100% si tu veux qu'elle remplisse aussi en largeur */
+  object-fit: cover; /* ou contain selon le rendu désiré */
+  display: block;
 }
 
 .about__me-image:hover {
@@ -71,43 +80,84 @@
 }
 
 /* ================== MEDIA QUERIES ( LARGE DEVICES ) ==================== */
-
-@media (min-width:320px) {
-  /* Styles pour écran ≥ 480px */
-}
-
-/* Smartphone paysage (≥ 480px) */
-@media (min-width:480px) {
-  /* Styles pour écran ≥ 480px */
-}
-
 /* Tablette portrait (≥ 600px) */
 @media (min-width:600px) {
   /* Styles pour écran ≥ 600px */
+  .about__container {
+    padding-top: 25px;
+  }
+  
+  .about__me-image {
+    width: 280px;
+    height: 250px;
+  }
 }
 
 /* Tablette paysage / petits laptops (≥ 768px) */
 @media (min-width:768px) {
-  /* Styles pour écran ≥ 768px */
+  .show_tablette {
+    display: none;
+  }
+  
+  .show_laptop{
+    display: block;
+  }
+  
+  .content_about_image_laptop{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 80px;
+  }
+  
+  .about__content p {
+    margin: 0;
+  }
+  
+  .about__me {
+    margin: unset;
+    margin-bottom: 0;
+  }
+  
+  .about__me-image {
+    width: 275px;
+    height: 275px;
+  }
+  
+  .content_about_client_laptop{
+    display: flex;
+    align-items: self-start;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 45px;
+  }
+  
+  .content_text_desc_laptop{
+    width: 100%;
+  }
+  
+  .content_text_copy_writing_laptop{
+    width: 55%;
+  }
+  
+  .about__cards {
+    gap: 0.5rem;
+  }
 }
 
 /* Ordinateur portable (≥ 992px) */
 @media (min-width:992px) {
-  /* Styles pour écran ≥ 992px */
-  .about__container {
-    display: grid;
-    margin-top: 10%;
-    grid-template-columns: 35% 50%;
-    gap: 15%;
-  }
-  
-  .about__me {
+  .about__content{
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-    display: grid;
-    place-items: center;
+    margin: auto;;
+  }
+}
+
+@media (min-width:1125px) {
+  .about__content{
+    width: 85%;
+    margin: auto;;
   }
 }
 
@@ -119,4 +169,12 @@
 /* Écran très large (≥ 1400px) */
 @media (min-width:1400px) {
   /* Styles pour écran ≥ 1400px */
+}
+
+
+@media (min-width: 1550px) {
+  .about__content {
+      width: 80%;
+      margin: auto;
+  }
 }

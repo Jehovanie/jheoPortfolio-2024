@@ -1,4 +1,3 @@
-
 .project__container {
   display: flex;
   flex-direction: column;
@@ -28,6 +27,9 @@
 .project__item-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  /* ou contain selon le rendu désiré */
+  display: block;
 }
 
 .project__item h3 {
@@ -47,4 +49,69 @@
 
 .project_description {
   color: var(--color-light);
+}
+
+@media (min-width:600px) {
+  /* Styles pour écran ≥ 768px */
+  
+  .project__container {
+    padding-top: 25px;
+  }
+}
+
+/* Tablette paysage / petits laptops (≥ 768px) */
+@media (min-width:768px) {
+  /* Styles pour écran ≥ 768px */
+  .project__item {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+  }
+  
+  .project__item-image {
+    border-radius: 0.5rem 0 0  0.5rem;
+    overflow: hidden;
+    height: 100%;
+    width: 35%;
+    margin: 10px 0;
+  }
+  
+  .content_project_description {
+    width: 65%;
+  }
+}
+
+/* Ordinateur portable (≥ 992px) */
+@media (min-width:992px) {
+  /* Styles pour écran ≥ 992px */
+  /* Styles pour écran ≥ 768px */
+  .project__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .project__item-image {
+    border-radius: 1.5rem 1.5rem 0 0;
+    overflow: hidden;
+    width: 100%;
+    height: 165px;
+  }
+  
+  .project__item {
+    display: block;
+  }
+  
+  .content_project_description {
+    width: 100%;
+  }
+}
+
+/* Écran desktop standard (≥ 1200px) */
+@media (min-width:1200px) {
+  /* Styles pour écran ≥ 1200px */
+}
+
+/* Écran très large (≥ 1400px) */
+@media (min-width:1400px) {
+  /* Styles pour écran ≥ 1400px */
 }

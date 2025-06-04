@@ -26,7 +26,7 @@
   color: var(--color-primary);
 }
 
-.experience_entete{
+.experience_entete {
   text-align: center;
 }
 
@@ -65,4 +65,77 @@
 .content_image_tech:hover {
   background: var(--color-bg-variant);
   border: 1px solid  var(--color-bg-variant);
+}
+
+@media (min-width:600px) {
+  /* Styles pour écran ≥ 768px */
+  .experience__content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Tablette paysage / petits laptops (≥ 768px) */
+@media (min-width:768px) {
+  /* Styles pour écran ≥ 768px */
+  .experience__content {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* Ordinateur portable (≥ 992px) */
+@media (min-width:992px) {
+  /* Styles pour écran ≥ 992px */
+  #experience {
+    padding: 45px 0;
+  }
+}
+
+/* Écran desktop standard (≥ 1200px) */
+@media (min-width:1024px) {
+  .experience__content {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1124px) {
+  .experience__content {
+      width: 85%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .experience__content {
+      width: 80%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .experience__content {
+      width: 70%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1450px) {
+  .experience__content {
+      width: 65%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1550px) {
+  .experience__content {
+      width: 55%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1750px) {
+  .experience__content {
+      width: 50%;
+      margin: auto;
+  }
 }

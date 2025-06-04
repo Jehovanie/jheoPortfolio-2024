@@ -10,16 +10,18 @@ const Presentation = () => {
 		<header>
 			<div className="container header__container">
 				<div className="left__side">
-					<h5> Bonjour🤗, Je suis</h5>
-					<div className="content__name">
-						<h1>Jehovanie </h1>
-						<h1>RAMANDRIJOEL</h1>
-					</div>
+					<div>
+						<h5 className="text"> Bonjour🤗, Je suis</h5>
+						<div className="content__name">
+							<h1>Jehovanie </h1>
+							<h1>RAMANDRIJOEL</h1>
+						</div>
 
-					<h5 className="text-light">FullStack Developpeur 🧑‍💻</h5>
-					<div className="content_cta_left_side">
-						<CTA />
-						<HeaderSocial />
+						<h5 className="text-light text">FullStack Developpeur 🧑‍💻</h5>
+						<div className="content_cta_left_side">
+							<CTA />
+							<HeaderSocial />
+						</div>
 					</div>
 				</div>
 

@@ -1,4 +1,4 @@
-.container.contact__container {
+.contact__container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  width: 100%;
 }
 
 .contact__option {
@@ -66,7 +67,62 @@ textarea {
   text-align: start;
 }
 
-.textwhite {
-  color: white !important;
-  font-weight: bold;
+@media (min-width:600px) {
+  /* Styles pour écran ≥ 768px */
+  .contact__options {
+    flex-direction: row;
+  }
+  
+  .contact__option {
+    width: 50%;
+  }
+  
+  .contact__container {
+    padding-top: 25px;
+  }
+}
+
+/* Tablette paysage / petits laptops (≥ 768px) */
+@media (min-width:768px) {
+  /* Styles pour écran ≥ 768px */
+}
+
+/* Ordinateur portable (≥ 992px) */
+@media (min-width:992px) {
+  /* Styles pour écran ≥ 992px */
+  #contact {
+    padding: 45px 0;
+  }
+  
+  .contact__container {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .contact__options {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact__options {
+    width: 33%;
+  }
+  
+  form {
+    width: 66%;
+  }
+  
+  .contact__option {
+    width: 95%;
+  }
+}
+
+/* Écran desktop standard (≥ 1200px) */
+@media (min-width:1200px) {
+  /* Styles pour écran ≥ 1200px */
+}
+
+/* Écran très large (≥ 1400px) */
+@media (min-width:1400px) {
+  /* Styles pour écran ≥ 1400px */
 }

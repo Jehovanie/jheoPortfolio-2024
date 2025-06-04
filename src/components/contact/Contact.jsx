@@ -99,7 +99,7 @@ const Contact = () => {
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}>
 					</textarea>
-					<button type="submit" className="btn btn-primary textwhite">
+					<button type="submit" className="btn btn-primary">
 						Envoyer
 					</button>
 				</form>
