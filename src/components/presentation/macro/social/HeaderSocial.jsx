@@ -6,16 +6,16 @@ import { IoLogoWhatsapp } from "react-icons/io";
 const HeaderSocial = () => {
 	return (
 		<div className="header__socials">
-			<a href="https://linkedin.com">
+			<a href="https://linkedin.com/in/jehovanie-ramandrijoel-17063b201" target="_blank">
 				<BsLinkedin />
 			</a>
-			<a href="https://github.com">
+			<a href="https://github.com/Jehovanie" target="_blank">
 				<FaGithub />
 			</a>
-			<a href="https://dribbble.com">
+			<a href="mailto:jehovanieram@gmail.com">
 				<SiGmail />
 			</a>
-			<a href="https://dribbble.com">
+			<a href="https://wa.me/261343861246" target="_blank">
 				<IoLogoWhatsapp />
 			</a>
 		</div>
