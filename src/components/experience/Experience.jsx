@@ -1,6 +1,4 @@
-import { BsPatchCheckFill } from "react-icons/bs";
 import "./experience.css";
-
 
 import {
 	angular,
@@ -15,20 +13,24 @@ import {
 	php,
 	postgresql,
 	react,
+	reactNative,
 	symfony,
 	typescript,
+	docker
 } from "@/constant/svg";
 
 const techStack = [
 	{ name: "Symfony", icon: symfony },
 	{ name: "Laravel", icon: laravel },
 	{ name: "PHP", icon: php },
+	{ name: "Docker", icon: docker },
 	{ name: "Javascript", icon: javascript },
 	{ name: "MySql", icon: mysql },
 	{ name: "PostgreSql", icon: postgresql },
 	{ name: "MongoDB", icon: mongodb },
 	{ name: "Typescript", icon: typescript },
 	{ name: "React", icon: react },
+	{ name: "React Native", icon: reactNative },
 	{ name: "Angular", icon: angular },
 	{ name: "GraphQL", icon: graphql },
 	{ name: "Node", icon: nodejs },
