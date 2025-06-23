@@ -16,7 +16,9 @@ import {
 	reactNative,
 	symfony,
 	typescript,
-	docker
+	docker,
+	gitlab,
+	github
 } from "@/constant/svg";
 
 const techStack = [
@@ -36,6 +38,8 @@ const techStack = [
 	{ name: "Node", icon: nodejs },
 	{ name: "Nest JS", icon: nestjs },
 	{ name: "NextJs", icon: nextjs },
+	{ name: "GitLab CI/CD", icon: gitlab },
+	{ name: "GitHub Action", icon: github },
 ];
 
 const Experience = () => {
@@ -50,6 +54,7 @@ const Experience = () => {
 						{techStack.map((tech) => (
 							<div key={tech.name} className="content_image_tech">
 								<img src={tech.icon} alt={tech.name} className="image_tech" />
+								<span className="tooltip">{tech.name}</span>
 							</div>
 						))}
 					</div>

@@ -21,7 +21,31 @@ import linkedIn from "@/assets/svg/linkedin.svg";
 import whatsApp from "@/assets/svg/whatsApp.svg";
 import gmail from "@/assets/svg/gmail.svg";
 import github from "@/assets/svg/github.svg";
+import gitlab from "@/assets/svg/gitlab.svg";
 
-
-
-export { gmail, github, linkedIn, whatsApp, symfony, php, laravel, react, reactNative, angular, typescript, mysql, mongodb, nodejs, javascript, nestjs, graphql, redux, express, docker, nextjs, tailwind, postgresql };
+export {
+	gmail,
+	github,
+	linkedIn,
+	whatsApp,
+	symfony,
+	php,
+	laravel,
+	react,
+	reactNative,
+	angular,
+	typescript,
+	mysql,
+	mongodb,
+	nodejs,
+	javascript,
+	nestjs,
+	graphql,
+	redux,
+	express,
+	docker,
+	nextjs,
+	tailwind,
+	postgresql,
+	gitlab,
+};
