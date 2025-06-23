@@ -55,6 +55,7 @@
   width: 85px;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .image_tech {
@@ -66,6 +67,30 @@
 .content_image_tech:hover {
   background: var(--color-bg-variant);
   border: 1px solid  var(--color-bg-variant);
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.content_image_tech:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (min-width:450px) {
