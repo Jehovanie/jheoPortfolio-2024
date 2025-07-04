@@ -4,10 +4,6 @@
   gap: 1.5rem;
 }
 
-.experience__content {
-
-}
-
 .experience__frontend {
   border-radius: 2rem;
   transition: var(--transition);

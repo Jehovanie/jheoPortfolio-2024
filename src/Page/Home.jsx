@@ -6,6 +6,7 @@ import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import Presentation from "../components/presentation/Presentation";
 import Project from "../components/projet/Project";
+import Service from "../components/service/Service";
 
 const Home = () => {
 	return (
@@ -19,6 +20,9 @@ const Home = () => {
 				</div>
 				<div className="content_about">
 					<About />
+				</div>
+				<div className="content_service">
+					<Service />
 				</div>
 				<div className="content_experience">
 					<Experience />
