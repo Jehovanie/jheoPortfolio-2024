@@ -8,7 +8,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 const Ending = () => {
 	let year = new Date().getFullYear();
 	return (
-		<section className="ending_container">
+		<section id="contact" className="ending_container">
 			<h1 className="ending_title">Merci pour votre visite</h1>
 			<div className="content_load_cv">
 				<BtnCv />
@@ -17,17 +17,17 @@ const Ending = () => {
 				<p className="title_joining">on vous souhaite de me joindre sur ...</p>
 				<div className="content_social_ending">
 					<article className="contact__option_ending">
-						<div className="contact_option_icon_name">
+						<a className="contact_option_icon_name" href="mailto:jehovanieram@gmail.com">
 							<MdOutlineEmail className="contact__option-icon" />
 							<h4>Email</h4>
-						</div>
+						</a>
 					</article>
 
 					<article className="contact__option_ending">
-						<div className="contact_option_icon_name">
+						<a className="contact_option_icon_name" href="https://wa.me/261343861246" target="_blank">
 							<BsWhatsapp className="contact__option-icon" />
 							<h4>WhatsApp</h4>
-						</div>
+						</a>
 					</article>
 
 					<article className="contact__option_ending">
@@ -37,10 +37,13 @@ const Ending = () => {
 						</div>
 					</article>
 					<article className="contact__option_ending">
-						<div className="contact_option_icon_name">
+						<a
+							className="contact_option_icon_name"
+							href="https://linkedin.com/in/jehovanie-ramandrijoel-17063b201"
+							target="_blank">
 							<FaLinkedinIn className="contact__option-icon" />
 							<h4>LinkedIn</h4>
-						</div>
+						</a>
 					</article>
 				</div>
 			</div>

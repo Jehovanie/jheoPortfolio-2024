@@ -145,3 +145,21 @@
         height: 372px;
     }
 }
+
+@media (min-width: 1450px) {
+    .card_container {
+        height: 355px;
+    }
+}
+
+@media (min-width: 1650px) {
+    .card_container {
+        height: 325px;
+    }
+}
+
+@media (min-width: 1750px) {
+    .card_container {
+        height: 340px;
+    }
+}
