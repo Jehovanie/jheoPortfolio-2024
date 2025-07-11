@@ -1,5 +1,5 @@
 import { FaLinkedinIn } from "react-icons/fa6";
-import "./Footer.css";
+import "./footer.css";
 import { MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
@@ -56,7 +56,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<hr className="ligne_separation" />
+			<hr className="ligne_separation"/>
 
 			<div className="footer-bottom">
 				©
