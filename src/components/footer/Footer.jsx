@@ -56,7 +56,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<hr className="ligne_separation" />
+			<hr className="ligne_separation"/>
 
 			<div className="footer-bottom">
 				©
