@@ -17,11 +17,14 @@ const Project = () => {
 					</div>
 					<div className="content_project_description">
 						<div>
-							<h5 className="project_title"> TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement. </h5>
+							<h5 className="project_title">
+								{" "}
+								TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement.{" "}
+							</h5>
 							<p className="project_description">
 								TicketUp est une plateforme complète de gestion d'événements et de vente de tickets,
-								composée de trois modules interconnectés : Application mobile, Centre d'administration web
-								(Organisateurs & Admins) et API centrale (Backend sécurisé){" "}
+								composée de trois modules interconnectés : Application mobile, Centre d'administration
+								web (Organisateurs & Admins) et API centrale (Backend sécurisé){" "}
 							</p>
 						</div>
 						<div className="project__item-cta">
@@ -45,8 +48,8 @@ const Project = () => {
 						<div>
 							<h5 className="project_title"> MySchool: Application de gestion scolaire complète. </h5>
 							<p className="project_description">
-								La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter la
-								communication, la gestion, et améliorer la façon de transmettre la connaissance.
+								La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter
+								la communication, la gestion, et améliorer la façon de transmettre la connaissance.
 							</p>
 						</div>
 
@@ -66,17 +69,21 @@ const Project = () => {
 					</div>
 					<div className="content_project_description">
 						<div>
-							<h5 className="project_title">E-bookShare</h5>
+							<h5 className="project_title">
+								E-bookShare: Un moyen de partage mon e-book préferer à tous le monde.
+							</h5>
 							<p className="project_description">
-								e-BookShare est une application mobile et web conçue pour permettre aux passionnés de
-								lecture de partager, découvrir, emprunter ou proposer des livres numériques en toute
-								simplicité. Plus qu'une bibliothèque numérique, e-BookShare favorise la lecture sociale, la
-								découverte participative et l'entraide entre lecteurs.
+								e-BookShare est une application web et mobile qui facilite le partage, la découverte et
+								l’emprunt de livres numériques, en encourageant la lecture sociale et l’entraide entre
+								passionnés.
 							</p>
 						</div>
 
 						<div className="project__item-cta">
-							<a href=" https://github.com/Jehovanie/E-bookShare-Front.git" className="btn" target="_blank">
+							<a
+								href=" https://github.com/Jehovanie/E-bookShare-Front.git"
+								className="btn"
+								target="_blank">
 								Github
 							</a>
 							{/* <a href="https://linkedin.com" className="btn btn-primary" target="_blank" rel="noreferrer">

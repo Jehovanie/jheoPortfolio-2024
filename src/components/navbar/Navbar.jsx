@@ -2,6 +2,8 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { GrProjects } from "react-icons/gr";
 import { SiPolymerproject } from "react-icons/si";
+import { VscWorkspaceTrusted } from "react-icons/vsc";
+
 
 import "./navbar.css";
 import { useState } from "react";
@@ -15,6 +17,9 @@ const Navbar = () => {
 			</a>
 			<a href="#about" onClick={() => setActiveNav("#about")} className={activeNav === "#about" ? "active" : ""}>
 				<AiOutlineUser />
+			</a>
+			<a href="#service" onClick={() => setActiveNav("#service")} className={activeNav === "#service" ? "active" : ""}>
+				<VscWorkspaceTrusted />
 			</a>
 			<a
 				href="#experience"

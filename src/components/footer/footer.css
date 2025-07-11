@@ -1,16 +1,86 @@
-.footer {
-  padding: 1.5rem;
-  background: var(--color-bg-variant);
-  color: white;
-  font-weight: 500;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 0.2rem;
-}
-
 .signature_name,
 .signature_year {
   font-size: 0.8rem;
   font-family: "Quicksand", "font-1", serif;
+}
+
+
+.footer {
+  padding: 40px 20px;
+  padding-bottom: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+.ligne_separation{
+  border-bottom: 1px solid #444;
+  margin:0;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 3px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: end;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+  }
 }

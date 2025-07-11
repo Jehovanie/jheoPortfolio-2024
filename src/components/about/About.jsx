@@ -28,10 +28,12 @@ const About = () => {
 						</div>
 						<div className="content_text_desc_laptop">
 							<p>
-								Développeur web et mobile full-stack, toujours en quête d'apprentissage et d'élargissement de mes compétences.
-								Enthousiaste et passionné par le monde du développement,
-								je suis un développeur qui s'immerge avec ferveur dans les défis et les opportunités offerts par le domaine de l'informatique.
-								Ma passion pour la programmation va bien au-delà des simples compétences techniques,c'est une véritable expression de ma créativité et de mon engagement en faveur de l'innovation...
+								Développeur web et mobile full-stack, toujours en quête d'apprentissage et
+								d'élargissement de mes compétences. Enthousiaste et passionné par le monde du
+								développement, je suis un développeur qui s'immerge avec ferveur dans les défis et les
+								opportunités offerts par le domaine de l'informatique. Ma passion pour la programmation
+								va bien au-delà des simples compétences techniques,c'est une véritable expression de ma
+								créativité et de mon engagement en faveur de l'innovation...
 							</p>
 						</div>
 					</div>
@@ -40,12 +42,12 @@ const About = () => {
 							<article className="about__card">
 								<FaAward className="about__icon" />
 								<h6> Experience </h6>
-								<small> +3ans  </small>
+								<small> +3ans </small>
 							</article>
 							<article className="about__card">
 								<FiUsers className="about__icon" />
 								<h6> Clients </h6>
-								<small>Société,Entreprise </small>
+								<small>Société,ESN </small>
 							</article>
 							<article className="about__card">
 								<VscFolderLibrary className="about__icon" />
@@ -55,10 +57,10 @@ const About = () => {
 						</div>
 						<div className="content_text_copy_writing_laptop">
 							<p>
-								Si vous recherchez un développeur web créatif et passionné, capable de travailler en équipe pour
-								créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis toujours à la recherche de
-								nouveaux défis et j'ai hâte de collaborer avec vous pour réaliser vos projets web les plus
-								ambitieux.
+								Si vous recherchez un développeur web créatif et passionné, capable de travailler en
+								équipe pour créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis
+								toujours à la recherche de nouveaux défis et j'ai hâte de collaborer avec vous pour
+								réaliser vos projets web les plus ambitieux.
 							</p>
 						</div>
 					</div>
