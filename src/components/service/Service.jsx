@@ -9,8 +9,8 @@ import "./service.css";
 const Service = () => {
     return (
         <section id="service">
-            <h5> What can i do? </h5>
-            <h2 className="margin-botton"> My Service </h2>
+            <h5>Qu'est ce je peux faire...? </h5>
+            <h2 className="margin-botton">Mon savoir faire</h2>
 
             <div className="container service_container">
                 <div className="card_container">

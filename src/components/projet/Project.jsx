@@ -66,7 +66,7 @@ const Project = () => {
 					</div>
 					<div className="content_project_description">
 						<div>
-							<h5 className="project_title">E-bookShare</h5>
+							<h5 className="project_title">E-bookShare: Un moyen de partage mon e-book préferer à tous le monde.</h5>
 							<p className="project_description">
 								e-BookShare est une application mobile et web conçue pour permettre aux passionnés de
 								lecture de partager, découvrir, emprunter ou proposer des livres numériques en toute
