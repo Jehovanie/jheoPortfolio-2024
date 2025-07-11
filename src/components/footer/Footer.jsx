@@ -1,5 +1,5 @@
 import { FaLinkedinIn } from "react-icons/fa6";
-import "./Footer.css";
+import "./footer.css";
 import { MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
