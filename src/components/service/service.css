@@ -11,7 +11,7 @@
 	border-radius: 2rem;
 	border: 1px solid transparent;
 	transition: var(--transition);
-	height: 350px;
+	height: 495px;
 }
 
 .service_container > div:hover {
@@ -41,6 +41,10 @@
 	align-items: center;
 	border-radius: 50%;
 	background-color: var(--color-bg);
+}
+
+.card_body h3 {
+	margin-bottom: unset !important;
 }
 
 .service_container > div:hover .content_icon {
@@ -84,7 +88,7 @@
 
 	.card_container {
 		padding: 1.5rem 1.5rem;
-		height: 400px;
+		height: 325px;
 	}
 
 	.card_icon {
@@ -104,14 +108,20 @@
 	}
 
 	.card_container {
-		height: 355px;
+		height: 315px;
 	}
 }
 
 @media (min-width: 500px) {
 	.card_container {
 		padding: 2rem;
-		height: 340px;
+		height: 325px;
+	}
+}
+
+@media (min-width: 700px) {
+	.card_container {
+		height: 280px;
 	}
 }
 
@@ -121,7 +131,7 @@
 	}
 
 	.card_container {
-		height: 430px;
+		height: 345px;
 	}
 }
 
@@ -136,30 +146,36 @@
 	}
 
 	.card_container {
-		height: 395px;
+		height: 355px;
 	}
 }
 
 @media (min-width: 1320px) {
-    .card_container {
-        height: 372px;
-    }
+	.card_container {
+		height: 335px;
+	}
 }
 
 @media (min-width: 1450px) {
+	.card_container {
+		height: 340px;
+	}
+}
+
+@media (min-width: 1500px) {
     .card_container {
-        height: 355px;
+        height: 315px;
     }
 }
 
 @media (min-width: 1650px) {
-    .card_container {
-        height: 325px;
-    }
+	.card_container {
+        height: 310px;
+	}
 }
 
 @media (min-width: 1750px) {
-    .card_container {
-        height: 340px;
-    }
+	.card_container {
+        height: 305px;
+	}
 }

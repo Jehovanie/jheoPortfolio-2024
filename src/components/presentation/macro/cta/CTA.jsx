@@ -1,4 +1,4 @@
-import CV from "./../../../../assets/pdf/cv.pdf";
+import CV from "./../../../../assets/pdf/CV-Jehovanie-RAMANDRIJOEL.pdf";
 import { GoDownload } from "react-icons/go";
 import { BsChat } from "react-icons/bs";
 

@@ -60,7 +60,7 @@ const Service = () => {
                     </div>
                     <div className="card_body">
                         <h3>Déploiement et maintenance</h3>
-                        <p>Contrôle qualité, maintenance applicative et amélioration des performances.</p>
+                        <p>Contrôle qualité, maintenance et amélioration des performances.</p>
                         <p>Conception et mise en place d’une infrastructure complète pour l’intégration et le déploiement continus (CI/CD).</p>
                     </div>
                 </div>

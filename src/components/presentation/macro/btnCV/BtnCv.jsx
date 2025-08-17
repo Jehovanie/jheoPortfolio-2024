@@ -1,9 +1,8 @@
-import CV from "./../../../../assets/pdf/cv.pdf";
+import CV from "./../../../../assets/pdf/CV-Jehovanie-RAMANDRIJOEL.pdf";
 import { GoDownload } from "react-icons/go";
 
-
 const BtnCv = () => {
-    return (
+	return (
 		<a href={CV} download className="btn cta_action cta_ending_action">
 			<GoDownload />
 			Télechager mon CV

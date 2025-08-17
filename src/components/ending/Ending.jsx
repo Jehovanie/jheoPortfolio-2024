@@ -22,20 +22,19 @@ const Ending = () => {
 							<h4>Email</h4>
 						</a>
 					</article>
-
 					<article className="contact__option_ending">
 						<a className="contact_option_icon_name" href="https://wa.me/261343861246" target="_blank">
 							<BsWhatsapp className="contact__option-icon" />
 							<h4>WhatsApp</h4>
 						</a>
 					</article>
-
 					<article className="contact__option_ending">
-						<div className="contact_option_icon_name">
+						<a className="contact_option_icon_name" href="https://github.com/Jehovanie" target="_blank">
 							<FaDiscord className="contact__option-icon" />
 							<h4>Discord</h4>
-						</div>
+						</a>
 					</article>
+					
 					<article className="contact__option_ending">
 						<a
 							className="contact_option_icon_name"
