@@ -1,5 +1,4 @@
 import About from "../components/about/About";
-import Contact from "../components/contact/Contact";
 import Ending from "../components/ending/Ending";
 import Experience from "../components/experience/Experience";
 import Footer from "../components/footer/Footer";
