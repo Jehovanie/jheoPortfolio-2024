@@ -8,7 +8,7 @@ import "./service.css";
 
 const Service = () => {
     return (
-        <section id="service">
+        <section id="service" className="section_content_service">
             <h5>Qu'est ce je peux faire...? </h5>
             <h2 className="margin-botton">Mon savoir faire</h2>
 

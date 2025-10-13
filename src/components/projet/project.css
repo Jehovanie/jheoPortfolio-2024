@@ -129,20 +129,32 @@
 	}
 }
 
+@media (min-width: 1360px) {
+    .project_description {
+        height: 205px;
+    }
+}
+
 /* Écran très large (≥ 1400px) */
 @media (min-width: 1400px) {
-	/* Styles pour écran ≥ 1400px */
+    .project_description {
+        height: 200px;
+    }
 }
 
 @media (min-width: 1460px) {
-	.project_description {
-		height: 215px;
-	}
-
 	.project_title {
 		height: 55px;
 	}
 }
+
+/* Écran très large (≥ 1400px) */
+@media (min-width: 1500px) {
+    .project_description {
+        height: 175px;
+    }
+}
+
 
 
 @media (min-width: 1750px) {
@@ -152,5 +164,11 @@
 
 	.project_title {
 		height: 55px;
+	}
+}
+
+@media (min-width: 2150px) {
+	.project_description {
+		height: 120px;
 	}
 }

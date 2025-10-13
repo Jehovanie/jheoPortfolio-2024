@@ -40,7 +40,7 @@ const techStack = [
 
 const Experience = () => {
 	return (
-		<section id="experience">
+		<section id="experience" className="experience_content_service">
 			<h5>Les compétences que j'ai ...</h5>
 			<h2>Mes compétences et technologies</h2>
 
