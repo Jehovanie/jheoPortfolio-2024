@@ -8,7 +8,7 @@ import "./about.css";
 
 const About = () => {
 	return (
-		<section id="about">
+		<section id="about" className="section">
 			<h5>Apprendre à connaître...</h5>
 			<h2>A propos de moi</h2>
 
@@ -38,22 +38,24 @@ const About = () => {
 						</div>
 					</div>
 					<div className="content_about_client_laptop">
-						<div className="about__cards">
-							<article className="about__card">
-								<FaAward className="about__icon" />
-								<h6> Experience </h6>
-								<small> +3ans </small>
-							</article>
-							<article className="about__card">
-								<FiUsers className="about__icon" />
-								<h6> Clients </h6>
-								<small>Société,ESN </small>
-							</article>
-							<article className="about__card">
-								<VscFolderLibrary className="about__icon" />
-								<h6> Projets </h6>
-								<small>+5 Finis</small>
-							</article>
+						<div className="content_about_cards">
+							<div className="about__cards">
+								<article className="about__card">
+									<FaAward className="about__icon" />
+									<h6> Experience </h6>
+									<small> +3ans </small>
+								</article>
+								<article className="about__card">
+									<FiUsers className="about__icon" />
+									<h6> Clients </h6>
+									<small>Société,ESN </small>
+								</article>
+								<article className="about__card">
+									<VscFolderLibrary className="about__icon" />
+									<h6> Projets </h6>
+									<small>+5 Finis</small>
+								</article>
+							</div>
 						</div>
 						<div className="content_text_copy_writing_laptop">
 							<p>

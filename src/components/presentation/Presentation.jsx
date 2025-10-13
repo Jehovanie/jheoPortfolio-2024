@@ -7,13 +7,16 @@ import "./presentation.css";
 
 const Presentation = () => {
 	return (
-		<header>
+		<header id="home">
 			<div className="container header__container">
 				<div className="left__side">
 					<div>
 						<h5 className="text"> Bonjour👋, Moi c'est Jehovanie, </h5>
 						<div className="content__name">
 							<h2 className="text">Developpeur FullStack</h2>
+							<p>
+								Diplômé en Mathématiques et Informatique | Expertise en PHP, JavaScript & TypeScript
+							</p>
 						</div>
 						<div className="content_cta_left_side">
 							<CTA />

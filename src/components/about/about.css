@@ -1,180 +1,166 @@
 .about__container {
-  display: block;
-  padding-top: 15px;
+	display: block;
+	padding-top: 15px;
 }
 
 .about__me {
-  width: 100%;
-  margin: auto;
-  margin-bottom: 15px;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 15px;
 }
 
 .show_laptop {
-  display: none;
+	display: none;
 }
 
 .about__me-image {
-  border-radius: 2rem;
-  width: 250px;
-  height: 200px;
-  margin: auto;
-  overflow: hidden;
-  transform: rotate(10deg);
-  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-  transition: 0.5s;
+	border-radius: 2rem;
+	width: 250px;
+	height: 200px;
+	margin: auto;
+	overflow: hidden;
+	transform: rotate(10deg);
+	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+	transition: 0.5s;
 }
 
 .about__me-image img {
-  height: 100%;
-  width: 100%;
-  width: auto;
-  /* ou width: 100% si tu veux qu'elle remplisse aussi en largeur */
-  object-fit: cover; /* ou contain selon le rendu désiré */
-  display: block;
+	height: 100%;
+	width: 100%;
+	width: auto;
+	/* ou width: 100% si tu veux qu'elle remplisse aussi en largeur */
+	object-fit: cover; /* ou contain selon le rendu désiré */
+	display: block;
 }
 
 .about__me-image:hover {
-  transform: rotate(0);
+	transform: rotate(0);
+}
+
+.content_about_cards {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
 .about__cards {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	align-items: center;
 }
 
 .about__card {
-  background: var(--color-bg-variant);
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: 1rem;
-  text-align: center;
-  width: 33%;
+	background: var(--color-bg-variant);
+	border: 1px solid transparent;
+	border-radius: 1rem;
+	padding: 1rem;
+	text-align: center;
+	width:7rem;
 }
 
 .about__card:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
-  cursor: default;
+	background: transparent;
+	border-color: var(--color-primary-variant);
+	cursor: default;
 }
 
 .about__icon {
-  color: var(--color-primary);
-  font-size: 1rem;
-  margin-bottom: 1rem;
+	color: var(--color-primary);
+	font-size: 1rem;
+	margin-bottom: 1rem;
 }
 
 .about__card h5 {
-  font-size: 0.95rem;
+	font-size: 0.95rem;
 }
 
 .about__card small {
-  font-size: 0.7rem;
-  color: var(--color-light);
+	font-size: 0.7rem;
+	color: var(--color-light);
 }
 
 .about__content p {
-  margin: 2rem 0 2.6rem;
-  color: var(--color-light);
+	margin: 2rem 0 2.6rem;
+	color: var(--color-light);
 }
 
 /* ================== MEDIA QUERIES ( LARGE DEVICES ) ==================== */
 /* Tablette portrait (≥ 600px) */
-@media (min-width:600px) {
-  /* Styles pour écran ≥ 600px */
-  .about__container {
-    padding-top: 25px;
-  }
-  
-  .about__me-image {
-    width: 280px;
-    height: 250px;
-  }
+@media (min-width: 600px) {
+	/* Styles pour écran ≥ 600px */
+	.about__container {
+		padding-top: 25px;
+	}
+
+	.about__me-image {
+		width: 280px;
+		height: 250px;
+	}
 }
 
 /* Tablette paysage / petits laptops (≥ 768px) */
-@media (min-width:768px) {
-  .show_tablette {
-    display: none;
-  }
-  
-  .show_laptop{
-    display: block;
-  }
-  
-  .content_about_image_laptop{
-    display: flex;
-    align-items: center;
-    gap:10px;
-    margin-bottom: 80px;
-  }
-  
-  .about__content p {
-    margin: 0;
-  }
-  
-  .about__me {
-    margin: unset;
-    margin-bottom: 0;
-  }
-  
-  .about__me-image {
-    width: 275px;
-    height: 275px;
-  }
-  
-  .content_about_client_laptop{
-    display: flex;
-    align-items: self-start;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 45px;
-  }
-  
-  .content_text_desc_laptop{
-    width: 100%;
-  }
-  
-  .content_text_copy_writing_laptop{
-    width: 55%;
-  }
-  
-  .about__cards {
-    gap: 0.5rem;
-  }
+@media (min-width: 768px) {
+	.show_tablette {
+		display: none;
+	}
+
+	.show_laptop {
+		display: block;
+	}
+
+	.content_about_image_laptop {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 80px;
+	}
+
+	.content_about_cards {
+		width: 50%;
+	}
+
+	.about__content p {
+		margin: 0;
+	}
+
+	.about__me {
+		margin: unset;
+		margin-bottom: 0;
+	}
+
+	.about__me-image {
+		width: 275px;
+		height: 275px;
+	}
+
+	.content_about_client_laptop {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		gap: 10px;
+		margin-bottom: 45px;
+	}
+
+	.content_text_desc_laptop {
+		width: 100%;
+	}
+
+	.content_text_copy_writing_laptop {
+		width: 55%;
+	}
+
+	.about__cards {
+		gap: 0.5rem;
+	}
 }
 
 /* Ordinateur portable (≥ 992px) */
-@media (min-width:992px) {
-  .about__content{
-    width: 100%;
-    margin: auto;;
-  }
-}
-
-@media (min-width:1125px) {
-  .about__content{
-    width: 85%;
-    margin: auto;;
-  }
-}
-
-/* Écran desktop standard (≥ 1200px) */
-@media (min-width:1200px) {
-  /* Styles pour écran ≥ 1200px */
-}
-
-/* Écran très large (≥ 1400px) */
-@media (min-width:1400px) {
-  /* Styles pour écran ≥ 1400px */
-}
-
-
-@media (min-width: 1550px) {
-  .about__content {
-      width: 80%;
-      margin: auto;
-  }
+@media (min-width: 992px) {
+	.about__content {
+		width: 100%;
+		margin: auto;
+	}
 }

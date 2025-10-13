@@ -1,3 +1,7 @@
+.contact_content_service{
+	padding-top: 8rem
+}
+
 .contact__container {
   display: flex;
   flex-direction: column;

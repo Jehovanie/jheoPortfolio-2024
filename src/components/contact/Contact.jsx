@@ -41,7 +41,7 @@ const Contact = () => {
 	};
 
 	return (
-		<section id="contact">
+		<section id="contact" className="contact_content_service">
 			<h5>Prendre contact ... </h5>
 			<h2>Me contacter</h2>
 
@@ -97,8 +97,7 @@ const Contact = () => {
 						placeholder="Votre message..."
 						required
 						value={message}
-						onChange={(e) => setMessage(e.target.value)}>
-					</textarea>
+						onChange={(e) => setMessage(e.target.value)}></textarea>
 					<button type="submit" className="btn btn-primary">
 						Envoyer
 					</button>

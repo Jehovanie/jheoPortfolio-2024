@@ -3,6 +3,7 @@
 	background: var(--color-bg-variant);
 	color: white;
 	font-weight: 300;
+	padding-top : 5rem;
 }
 
 .ending_title {
