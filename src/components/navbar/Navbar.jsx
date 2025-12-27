@@ -73,7 +73,7 @@ const Navbar = () => {
 				</div>
 				<div className="content_nav_link_web nav_content_link">
 					<a href="#home" onClick={() => setActiveNav("#")} className={activeNav === "#home" ? "active" : ""}>
-						Acceuil
+						Accueil
 					</a>
 					<a
 						href="#about"
