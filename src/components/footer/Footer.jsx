@@ -60,10 +60,10 @@ const Footer = () => {
 
 			<div className="footer-bottom">
 				©
-				<span id="year" class="signature_year">
-					Novembre 2024,
+				<span id="year" className="signature_year">
+					2026,
 				</span>
-				<span class="signature_name"> Jehovanie RAMANDRIJOEL</span>
+				<span className="signature_name"> Jehovanie RAMANDRIJOEL</span>
 			</div>
 		</footer>
 	);
