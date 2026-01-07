@@ -10,7 +10,7 @@ import Service from "../components/service/Service";
 
 const Home = () => {
 	return (
-		<div class="home_page">
+		<div className="home_page">
 			<div className="content_fix_nav">
 				<Navbar />
 			</div>
