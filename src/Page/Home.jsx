@@ -2,7 +2,7 @@ import About from "../components/about/About";
 import Ending from "../components/ending/Ending";
 import Experience from "../components/experience/Experience";
 import Footer from "../components/footer/Footer";
-
+import Messenger from "../components/messenger/Messenger";
 import Navbar from "../components/navbar/Navbar";
 import Presentation from "../components/presentation/Presentation";
 import Project from "../components/projet/Project";
@@ -38,6 +38,7 @@ const Home = () => {
 					<Footer />
 				</div>
 			</div>
+			<Messenger />
 		</div>
 	);
 };

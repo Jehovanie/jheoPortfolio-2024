@@ -1,4 +1,5 @@
 import "./project.css";
+import PropTypes from "prop-types";
 
 import IMG1 from "./../../assets/image/ticketUp.png";
 import IMG2 from "./../../assets/image/mySchool.png";
@@ -6,6 +7,7 @@ import IMG3 from "./../../assets/image/e-bookShare.png";
 
 const projects = [
 	{
+		id: 1,
 		image: IMG1,
 		title: "TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement.",
 		description: `TicketUp est une plateforme complète de gestion d'événements et de vente de tickets,
@@ -15,6 +17,7 @@ const projects = [
 		live_demo: "",
 	},
 	{
+		id: 2,
 		image: IMG2,
 		title: "MySchool: Application de gestion scolaire complète.",
 		description: `La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter
@@ -23,6 +26,7 @@ const projects = [
 		live_demo: "",
 	},
 	{
+		id: 3,
 		image: IMG3,
 		title: "E-bookShare: Un moyen de partage mon e-book préferer à tous le monde.",
 		description: `e-BookShare est une application web et mobile qui facilite le partage, la découverte et
@@ -63,6 +67,14 @@ const ProjectCard = ({ image, title, description, github, live_demo }) => {
 	);
 };
 
+ProjectCard.propTypes = {
+	image: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	github: PropTypes.string.isRequired,
+	live_demo: PropTypes.string,
+};
+
 const Project = () => {
 	return (
 		<section id="project" className="experience_content_service">
@@ -70,9 +82,12 @@ const Project = () => {
 			<h2>Expérience professionnelle</h2>
 
 			<div className="container project__container">
-				{ projects.map(item => (<ProjectCard
-				  {...item}
-				/>))}
+				{projects.map(item => (
+					<ProjectCard
+						key={item.id}
+						{...item}
+					/>
+				))}
 			</div>
 		</section>
 	);
