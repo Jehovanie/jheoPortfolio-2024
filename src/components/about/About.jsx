@@ -1,16 +1,19 @@
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
+import { useTranslation } from "react-i18next";
 
 import ME from "./../../assets/image/developpeur.png";
 
 import "./about.css";
 
 const About = () => {
+	const { t } = useTranslation();
+	
 	return (
 		<section id="about" className="section">
-			<h5>Apprendre à connaître...</h5>
-			<h2>A propos de moi</h2>
+			<h5>{t('about.subtitle')}</h5>
+			<h2>{t('about.title')}</h2>
 
 			<div className="container about__container">
 				<div className="about__me show_tablette">
@@ -28,12 +31,7 @@ const About = () => {
 						</div>
 						<div className="content_text_desc_laptop">
 							<p>
-								Développeur web et mobile full-stack, toujours en quête d'apprentissage et
-								d'élargissement de mes compétences. Enthousiaste et passionné par le monde du
-								développement, je suis un développeur qui s'immerge avec ferveur dans les défis et les
-								opportunités offerts par le domaine de l'informatique. Ma passion pour la programmation
-								va bien au-delà des simples compétences techniques,c'est une véritable expression de ma
-								créativité et de mon engagement en faveur de l'innovation...
+								{t('about.description')}
 							</p>
 						</div>
 					</div>
@@ -42,27 +40,24 @@ const About = () => {
 							<div className="about__cards">
 								<article className="about__card">
 									<FaAward className="about__icon" />
-									<h6> Experience </h6>
-									<small> +4ans </small>
+									<h6>{t('about.experience')}</h6>
+									<small>{t('about.experienceYears')}</small>
 								</article>
 								<article className="about__card">
 									<FiUsers className="about__icon" />
-									<h6> Clients </h6>
-									<small>Société,ESN </small>
+									<h6>{t('about.clients')}</h6>
+									<small>{t('about.clientsCount')}</small>
 								</article>
 								<article className="about__card">
 									<VscFolderLibrary className="about__icon" />
-									<h6> Projets </h6>
-									<small>+5 Finis</small>
+									<h6>{t('about.projects')}</h6>
+									<small>{t('about.projectsCount')}</small>
 								</article>
 							</div>
 						</div>
 						<div className="content_text_copy_writing_laptop">
 							<p>
-								Si vous recherchez un développeur web créatif et passionné, capable de travailler en
-								équipe pour créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis
-								toujours à la recherche de nouveaux défis et j'ai hâte de collaborer avec vous pour
-								réaliser vos projets web les plus ambitieux.
+								{t('about.textSelling')}
 							</p>
 						</div>
 					</div>

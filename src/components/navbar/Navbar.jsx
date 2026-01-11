@@ -3,9 +3,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
 import { RiMenu3Fill } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 import "./navbar.css";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const IconMenuMobile = ({ isOpen, toggleMenu }) => {
 	return isOpen ? (
@@ -15,10 +17,22 @@ const IconMenuMobile = ({ isOpen, toggleMenu }) => {
 	);
 };
 
+IconMenuMobile.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	toggleMenu: PropTypes.func.isRequired,
+};
+
 const Navbar = () => {
+	const { t, i18n } = useTranslation();
 	const [activeNav, setActiveNav] = useState("#");
 	const [isShowListMenu, setIsShowListMenu] = useState(false);
-	const [lang, setLang] = useState("FR");
+	const [lang, setLang] = useState(i18n.language || "fr");
+
+	const changeLanguage = (language) => {
+		i18n.changeLanguage(language);
+		localStorage.setItem("language", language);
+		setLang(language);
+	};
 
 	// Liste des sections correspondant aux liens
 	const sections = ["home", "about", "service", "experience", "project", "contact"]; // "" correspond à la section "#"
@@ -73,53 +87,53 @@ const Navbar = () => {
 				</div>
 				<div className="content_nav_link_web nav_content_link">
 					<a href="#home" onClick={() => setActiveNav("#")} className={activeNav === "#home" ? "active" : ""}>
-						Accueil
+						{t('navbar.home')}
 					</a>
 					<a
 						href="#about"
 						onClick={() => setActiveNav("#about")}
 						className={activeNav === "#about" ? "active" : ""}>
-						A propos
+						{t('navbar.about')}
 					</a>
 					<a
 						href="#service"
 						onClick={() => setActiveNav("#service")}
 						className={activeNav === "#service" ? "active" : ""}>
-						Services
+						{t('navbar.service')}
 					</a>
 					<a
 						href="#experience"
 						onClick={() => setActiveNav("#experience")}
 						className={activeNav === "#experience" ? "active" : ""}>
-						Compétences
+						{t('navbar.experience')}
 					</a>
 					<a
 						href="#project"
 						onClick={() => setActiveNav("#project")}
 						className={activeNav === "#project" ? "active" : ""}>
-						Expérience
+						{t('navbar.project')}
 					</a>
 					<a
 						href="#contact"
 						onClick={() => setActiveNav("#contact")}
 						className={activeNav === "#contact" ? "active" : ""}>
-						Contact
+						{t('navbar.contact')}
 					</a>
 				</div>
 				<div className="content_drop_lang_and_menu">
 					<div className="dropdown">
 						<button className="dropbtn">
 							<GrLanguage />
-							<span className="language">Français</span>
-							<IoIosArrowDown />
-						</button>
-						<div class="dropdown-content">
-							<div className="lang" onClick={() => setLang("FR")}>
-								<IoCheckmarkSharp className={lang == "FR" ? "" : "lang_not_active"} />
-								Français
-							</div>
-							<div className="lang not_active" onClick={() => setLang("AN")}>
-								<IoCheckmarkSharp className={lang == "AN" ? "" : "lang_not_active"} />
+						<span className="language">{lang === "fr" ? "Français" : "English"}</span>
+						<IoIosArrowDown />
+					</button>
+					<div className="dropdown-content">
+						<div className="lang" onClick={() => changeLanguage("fr")}>
+							<IoCheckmarkSharp className={lang === "fr" ? "" : "lang_not_active"} />
+							Français
+						</div>
+						<div className="lang" onClick={() => changeLanguage("en")}>
+							<IoCheckmarkSharp className={lang === "en" ? "" : "lang_not_active"} />
 								English
 							</div>
 						</div>
@@ -134,42 +148,42 @@ const Navbar = () => {
 				style={{ display: isShowListMenu ? "block" : "none" }}>
 				<div className="container">
 					<a href="#" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ""}>
-						Acceuil
-					</a>
-					<a
-						href="#about"
-						onClick={() => setActiveNav("#about")}
-						className={activeNav === "#about" ? "active" : ""}>
-						A propos
-					</a>
-					<a
-						href="#service"
-						onClick={() => setActiveNav("#service")}
-						className={activeNav === "#service" ? "active" : ""}>
-						Services
-					</a>
-					<a
-						href="#experience"
-						onClick={() => setActiveNav("#experience")}
-						className={activeNav === "#experience" ? "active" : ""}>
-						Compétences
-					</a>
-					<a
-						href="#project"
-						onClick={() => setActiveNav("#project")}
-						className={activeNav === "#project" ? "active" : ""}>
-						Expérience
-					</a>
-					<a
-						href="#contact"
-						onClick={() => setActiveNav("#contact")}
-						className={activeNav === "#contact" ? "active" : ""}>
-						Contact
-					</a>
-				</div>
+					{t('navbar.home')}
+				</a>
+				<a
+					href="#about"
+					onClick={() => setActiveNav("#about")}
+					className={activeNav === "#about" ? "active" : ""}>
+					{t('navbar.about')}
+				</a>
+				<a
+					href="#service"
+					onClick={() => setActiveNav("#service")}
+					className={activeNav === "#service" ? "active" : ""}>
+					{t('navbar.service')}
+				</a>
+				<a
+					href="#experience"
+					onClick={() => setActiveNav("#experience")}
+					className={activeNav === "#experience" ? "active" : ""}>
+					{t('navbar.experience')}
+				</a>
+				<a
+					href="#project"
+					onClick={() => setActiveNav("#project")}
+					className={activeNav === "#project" ? "active" : ""}>
+					{t('navbar.project')}
+				</a>
+				<a
+					href="#contact"
+					onClick={() => setActiveNav("#contact")}
+					className={activeNav === "#contact" ? "active" : ""}>
+					{t('navbar.contact')}
+				</a>
 			</div>
 		</div>
-	);
+	</div>
+);
 };
 
 export default Navbar;

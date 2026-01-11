@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./project.css";
 import PropTypes from "prop-types";
 
@@ -5,39 +6,34 @@ import IMG1 from "./../../assets/image/ticketUp.png";
 import IMG2 from "./../../assets/image/mySchool.png";
 import IMG3 from "./../../assets/image/e-bookShare.png";
 
-const projects = [
+const getProjects = (t) => [
 	{
 		id: 1,
 		image: IMG1,
-		title: "TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement.",
-		description: `TicketUp est une plateforme complète de gestion d'événements et de vente de tickets,
-		composée de trois modules interconnectés : Application mobile, Centre d'administration
-		web (Organisateurs & Admins) et API centrale (Backend sécurisé)`,
+		title: t('project.ticketUp.title'),
+		description: t('project.ticketUp.description'),
 		github: "https://github.com/Jehovanie/TicketUp-Api/tree/develop",
 		live_demo: "",
 	},
 	{
 		id: 2,
 		image: IMG2,
-		title: "MySchool: Application de gestion scolaire complète.",
-		description: `La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter
-		la communication, la gestion, et améliorer la façon de transmettre la connaissance.`,
+		title: t('project.mySchool.title'),
+		description: t('project.mySchool.description'),
 		github: "https://gitlab.com/Jehovanie/myScholl-V-0.0.2",
 		live_demo: "",
 	},
 	{
 		id: 3,
 		image: IMG3,
-		title: "E-bookShare: Un moyen de partage mon e-book préferer à tous le monde.",
-		description: `e-BookShare est une application web et mobile qui facilite le partage, la découverte et
-		l'emprunt de livres numériques, en encourageant la lecture sociale et l'entraide entre
-		passionnés.`,
+		title: t('project.ebookShare.title'),
+		description: t('project.ebookShare.description'),
 		github: "https://github.com/Jehovanie/E-bookShare-Front.git",
 		live_demo: "",
 	},
 ];
 
-const ProjectCard = ({ image, title, description, github, live_demo }) => {
+const ProjectCard = ({ image, title, description, github, live_demo, t }) => {
 	return (
 		<article className="project__item">
 			<div className="project__item-image">
@@ -54,11 +50,11 @@ const ProjectCard = ({ image, title, description, github, live_demo }) => {
 				</div>
 				<div className="project__item-cta">
 					<a href={github} className="btn" target="_blank">
-						Github
+						{t('project.github')}
 					</a>
 					{live_demo ?? (
 						<a href="https://linkedin.com" className="btn btn-primary" target="_blank" rel="noreferrer">
-							Live Demo
+							{t('project.liveDemo')}
 						</a>
 					)}
 				</div>
@@ -73,19 +69,24 @@ ProjectCard.propTypes = {
 	description: PropTypes.string.isRequired,
 	github: PropTypes.string.isRequired,
 	live_demo: PropTypes.string,
+	t: PropTypes.func.isRequired,
 };
 
 const Project = () => {
+	const { t } = useTranslation();
+	const projects = getProjects(t);
+	
 	return (
 		<section id="project" className="experience_content_service">
-			<h5>Mes travaux récents...</h5>
-			<h2>Expérience professionnelle</h2>
+			<h5>{t('project.subtitle')}</h5>
+			<h2>{t('project.title')}</h2>
 
 			<div className="container project__container">
 				{projects.map(item => (
 					<ProjectCard
 						key={item.id}
 						{...item}
+						t={t}
 					/>
 				))}
 			</div>

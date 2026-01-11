@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./experience.css";
 
 import {
@@ -39,10 +40,12 @@ const techStack = [
 ];
 
 const Experience = () => {
+	const { t } = useTranslation();
+	
 	return (
 		<section id="experience" className="experience_content_service">
-			<h5>Les compétences que j'ai ...</h5>
-			<h2>Mes compétences et technologies</h2>
+			<h5>{t('experience.subtitle')}</h5>
+			<h2>{t('experience.title')}</h2>
 
 			<div className="container experience__container">
 				<div className="experience__frontend">

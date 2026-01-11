@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./messenger.css";
 import { BsMessenger, BsWhatsapp } from "react-icons/bs";
 import { MdClose, MdEmail, MdSend } from "react-icons/md";
@@ -6,6 +7,7 @@ import { FaDownload } from "react-icons/fa";
 import CV from "../../assets/pdf/CV-Jehovanie-RAMANDRIJOEL.pdf";
 
 const Messenger = () => {
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
 	const [message, setMessage] = useState("");
 	const [formData, setFormData] = useState({
@@ -36,7 +38,7 @@ const Messenger = () => {
 		
 		// Réinitialiser le formulaire
 		setFormData({ name: "", email: "", message: "" });
-		setMessage("Message envoyé !");
+		setMessage(t('messenger.successMessage'));
 		setTimeout(() => setMessage(""), 3000);
 	};
 
@@ -73,7 +75,7 @@ const Messenger = () => {
 			{isOpen && (
 				<div className="messenger-card">
 					<div className="messenger-header">
-						<h3>Contactez-moi</h3>
+						<h3>{t('messenger.title')}</h3>
 						<button className="close-btn" onClick={toggleMessenger}>
 							<MdClose />
 						</button>
@@ -84,15 +86,15 @@ const Messenger = () => {
 						<div className="quick-actions">
 							<button className="action-btn download" onClick={handleDownloadCV}>
 								<FaDownload />
-								<span>Télécharger CV</span>
+								<span>{t('messenger.downloadCV')}</span>
 							</button>
 							<button className="action-btn whatsapp" onClick={handleWhatsApp}>
 								<BsWhatsapp />
-								<span>WhatsApp</span>
+								<span>{t('messenger.whatsapp')}</span>
 							</button>
 							<button className="action-btn email" onClick={handleEmail}>
 								<MdEmail />
-								<span>Email</span>
+								<span>{t('messenger.email')}</span>
 							</button>
 						</div>
 
@@ -102,7 +104,7 @@ const Messenger = () => {
 								<input
 									type="text"
 									name="name"
-									placeholder="Votre nom"
+									placeholder={t('messenger.namePlaceholder')}
 									value={formData.name}
 									onChange={handleInputChange}
 									required
@@ -112,7 +114,7 @@ const Messenger = () => {
 								<input
 									type="email"
 									name="email"
-									placeholder="Votre email"
+									placeholder={t('messenger.emailPlaceholder')}
 									value={formData.email}
 									onChange={handleInputChange}
 									required
@@ -121,7 +123,7 @@ const Messenger = () => {
 							<div className="form-group">
 								<textarea
 									name="message"
-									placeholder="Votre message..."
+									placeholder={t('messenger.messagePlaceholder')}
 									value={formData.message}
 									onChange={handleInputChange}
 									rows="4"
@@ -130,7 +132,7 @@ const Messenger = () => {
 							</div>
 							<button type="submit" className="send-btn">
 								<MdSend />
-								<span>Envoyer</span>
+								<span>{t('messenger.send')}</span>
 							</button>
 						</form>
 

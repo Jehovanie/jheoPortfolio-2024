@@ -2,9 +2,11 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 import "./contact.css";
 
 const Contact = () => {
+	const { t } = useTranslation();
 	const form = useRef();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -42,8 +44,8 @@ const Contact = () => {
 
 	return (
 		<section id="contact" className="contact_content_service">
-			<h5>Prendre contact ... </h5>
-			<h2>Me contacter</h2>
+			<h5>{t('contact.subtitle')}</h5>
+			<h2>{t('contact.title')}</h2>
 
 			<div className="container contact__container">
 				<div className="contact__options">

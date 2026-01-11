@@ -1,47 +1,45 @@
 import { FaLinkedinIn } from "react-icons/fa6";
 import "./footer.css";
 import { MdOutlineEmail } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+	const { t } = useTranslation();
+	
 	return (
 		<footer className="footer">
 			<div className="container footer-content">
 				<div className="footer-section">
-					<h3 className="footer-title">Portfolio</h3>
-					<p className="footer-text">
-						Développeur full-stack web & mobile avec 3+ ans d’expérience, expert en PHP,
-						JavaScript/TypeScript et les frameworks React, Angular, Node.js. Spécialisé en bases de données,
-						design systems et architectures web performantes. Autonome, rigoureux et engagé dans les
-						environnements agiles.
+				<h3 className="footer-title">{t('footer.title')}</h3>
+				<p className="footer-text">
+					{t('footer.description')}
 					</p>
 				</div>
 
 				<div className="footer-section">
-					<h3 className="footer-title">Liens rapides</h3>
-					<ul className="footer-links">
-						<li>
-							<a href="#">Moi</a>
-						</li>
-						<li>
-							<a href="#about">A propos de moi</a>
-						</li>
-						<li>
-							<a href="#service">Mes savoir faire</a>
-						</li>
-						<li>
-							<a href="#experience">Experience</a>
-						</li>
-						<li>
-							<a href="#projects">Project</a>
-						</li>
-						<li>
-							<a href="#contact">Contact</a>
-						</li>
-					</ul>
-				</div>
-
+				<h3 className="footer-title">{t('footer.links')}</h3>
+				<ul className="footer-links">
+					<li>
+						<a href="#">{t('footer.me')}</a>
+					</li>
+					<li>
+						<a href="#about">{t('footer.about')}</a>
+					</li>
+					<li>
+						<a href="#service">{t('footer.skills')}</a>
+					</li>
+					<li>
+						<a href="#experience">{t('footer.experience')}</a>
+					</li>
+					<li>
+						<a href="#projects">{t('footer.projects')}</a>
+					</li>
+					<li>
+						<a href="#contact">{t('footer.contact')}</a>
+					</li>
+				</ul>			</div>
 				<div className="footer-section">
-					<h3 className="footer-title">Connect</h3>
+				<h3 className="footer-title">{t('footer.connect')}</h3>
 					<div className="footer-icons">
 						<a
 							href="https://linkedin.com/in/jehovanie-ramandrijoel-17063b201"
@@ -63,7 +61,7 @@ const Footer = () => {
 				<span id="year" className="signature_year">
 					2026,
 				</span>
-				<span className="signature_name"> Jehovanie RAMANDRIJOEL</span>
+				<span className="signature_name"> {t('footer.copyright')}</span>
 			</div>
 		</footer>
 	);

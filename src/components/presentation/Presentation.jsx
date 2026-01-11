@@ -2,20 +2,23 @@
 import DEV from "./../../assets/image/j.png";
 import CTA from "./macro/cta/CTA";
 import HeaderSocial from "./macro/social/HeaderSocial";
+import { useTranslation } from "react-i18next";
 
 import "./presentation.css";
 
 const Presentation = () => {
+	const { t } = useTranslation();
+	
 	return (
 		<header id="home">
 			<div className="container header__container">
 				<div className="left__side">
 					<div>
-						<h5 className="text"> Bonjour👋, Moi c'est Jehovanie, </h5>
+						<h5 className="text">{t('presentation.greeting')}</h5>
 						<div className="content__name">
-							<h2 className="text">Developpeur FullStack</h2>
+							<h2 className="text">{t('presentation.title')}</h2>
 							<p>
-								Diplômé en Mathématiques et Informatique | Expertise en PHP, JavaScript & TypeScript
+								{t('presentation.subtitle')}
 							</p>
 						</div>
 						<div className="content_cta_left_side">
@@ -36,7 +39,7 @@ const Presentation = () => {
 				</div>
 
 				<a href="#contact" className="scroll__down ">
-					{">>>"} scrool down {">>>"}{" "}
+					{">>>"} {t('presentation.scrollDown')} {">>>"}{" "}
 				</a>
 			</div>
 		</header>

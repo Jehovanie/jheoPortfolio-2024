@@ -1,0 +1,125 @@
+{
+  "translation": {
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "service": "Services",
+      "experience": "Experience",
+      "project": "Projects",
+      "contact": "Contact"
+    },
+    "presentation": {
+      "greeting": "Hello👋, I'm Jehovanie,",
+      "title": "FullStack Developer",
+      "subtitle": "Graduate in Mathematics and Computer Science | Expertise in PHP, JavaScript & TypeScript",
+      "scrollDown": "scroll down",
+      "downloadCV": "Download CV",
+      "contact": "Let's Talk"
+    },
+    "about": {
+      "subtitle": "Get to know...",
+      "title": "About Me",
+      "description": "Full-stack web and mobile developer, always seeking to learn and expand my skills. Enthusiastic and passionate about the world of development, I am a developer who immerses myself with fervor in the challenges and opportunities offered by the field of computing. My passion for programming goes far beyond simple technical skills, it is a true expression of my creativity and my commitment to innovation...",
+      "experience": "Experience",
+      "experienceYears": "+4 years",
+      "clients": "Clients",
+      "clientsCount": "+10",
+      "projects": "Projects",
+      "projectsCount": "+20",
+      "contact": "Let's Talk",
+      "textSelling" : "If you are looking for a creative and passionate web developer, capable of working in a team to create custom solutions, do not hesitate to contact me. I am always looking for new challenges and I look forward to collaborating with you to realize your most ambitious web projects."
+    },
+    "service": {
+      "subtitle": "What can I do...?",
+      "title": "My Skills",
+      "framing": {
+        "title": "Project Framing",
+        "desc1": "Definition of functional and technical requirements.",
+        "desc2": "Analysis and recommendation of technological tools required for efficient production."
+      },
+      "design": {
+        "title": "Project Design",
+        "desc1": "Database design.",
+        "desc2": "Automation of web data collection via scraping"
+      },
+      "development": {
+        "title": "Development",
+        "desc1": "Design and integration of UI components",
+        "desc2": "Integration of a login system via API in a front/back architecture"
+      },
+      "deployment": {
+        "title": "Deployment and Maintenance",
+        "desc1": "Quality control, maintenance and performance improvement.",
+        "desc2": "Design and implementation of a complete infrastructure for continuous integration and deployment (CI/CD)."
+      }
+    },
+    "experience": {
+      "subtitle": "What skills do I have...?",
+      "title": "My Experience",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development"
+    },
+    "project": {
+      "subtitle": "My recent work...",
+      "title": "Professional Experience",
+      "github": "Github",
+      "liveDemo": "Live Demo",
+      "ticketUp": {
+        "title": "TicketUp: Event Management and Ticket Selling Platform.",
+        "description": "TicketUp is a comprehensive event management and ticket sales platform, consisting of three interconnected modules: Mobile Application, Web Administration Center (Organizers & Admins) and Central API (Secure Backend)"
+      },
+      "mySchool": {
+        "title": "MySchool: Complete School Management Application.",
+        "description": "The platform aims to make the high school education system easy. Facilitate communication, management, and improve the way of transmitting knowledge."
+      },
+      "ebookShare": {
+        "title": "E-bookShare: A way to share my favorite e-book to everyone.",
+        "description": "e-BookShare is a web and mobile application that facilitates the sharing, discovery and borrowing of digital books, encouraging social reading and mutual aid between enthusiasts."
+      }
+    },
+    "contact": {
+      "subtitle": "Get in touch ...",
+      "title": "Contact Me",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "sendMessage": "Send a message ...",
+      "directMessage": "Direct Message",
+      "namePlaceholder": "Your name...",
+      "emailPlaceholder": "Your email...",
+      "messagePlaceholder": "Your message...",
+      "sendButton": "Send Message"
+    },
+    "messenger": {
+      "title": "Contact Me",
+      "downloadCV": "Download CV",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your email",
+      "messagePlaceholder": "Your message...",
+      "send": "Send",
+      "successMessage": "Message sent successfully!"
+    },
+    "footer": {
+      "title": "Portfolio",
+      "description": "Full-stack web & mobile developer with 3+ years of experience, expert in PHP, JavaScript/TypeScript and frameworks React, Angular, Node.js. Specialized in databases, design systems and high-performance web architectures. Autonomous, rigorous and committed in agile environments.",
+      "links": "Quick Links",
+      "me": "Me",
+      "about": "About Me",
+      "skills": "My Skills",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact",
+      "connect": "Connect",
+      "copyright": "Jehovanie RAMANDRIJOEL"
+    },
+    "ending": {
+      "title": "Thank you for your visit",
+      "joinMe": "feel free to reach me on ...",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "discord": "Discord",
+      "linkedin": "LinkedIn"
+    }
+  }
+}
