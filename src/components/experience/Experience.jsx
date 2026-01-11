@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
+import { useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 import "./experience.css";
 
 import {
@@ -41,6 +43,14 @@ const techStack = [
 
 const Experience = () => {
 	const { t } = useTranslation();
+	const contentRef = useRef(null);
+	
+	useScrollAnimationChildren(contentRef, {
+		from: { opacity: 0, scale: 0.5, rotation: -10 },
+		to: { opacity: 1, scale: 1, rotation: 0 },
+		stagger: 0.08,
+		duration: 0.6,
+	});
 	
 	return (
 		<section id="experience" className="experience_content_service">
@@ -49,7 +59,7 @@ const Experience = () => {
 
 			<div className="container experience__container">
 				<div className="experience__frontend">
-					<div className="experience__content">
+					<div className="experience__content" ref={contentRef}>
 						{techStack.map((tech) => (
 							<div key={tech.name} className="content_image_tech">
 								<img src={tech.icon} alt={tech.name} className="image_tech" />

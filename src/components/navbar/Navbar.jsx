@@ -6,8 +6,9 @@ import { RiMenu3Fill } from "react-icons/ri";
 import PropTypes from "prop-types";
 
 import "./navbar.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
 
 const IconMenuMobile = ({ isOpen, toggleMenu }) => {
 	return isOpen ? (
@@ -27,6 +28,8 @@ const Navbar = () => {
 	const [activeNav, setActiveNav] = useState("#");
 	const [isShowListMenu, setIsShowListMenu] = useState(false);
 	const [lang, setLang] = useState(i18n.language || "fr");
+	const navbarRef = useRef(null);
+	const [hasAnimated, setHasAnimated] = useState(false);
 
 	const changeLanguage = (language) => {
 		i18n.changeLanguage(language);
@@ -36,6 +39,40 @@ const Navbar = () => {
 
 	// Liste des sections correspondant aux liens
 	const sections = ["home", "about", "service", "experience", "project", "contact"]; // "" correspond à la section "#"
+
+	// Animation GSAP pour la navbar au scroll
+	useEffect(() => {
+		let lastScrollY = window.scrollY;
+		
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
+			
+			if (currentScrollY > 100 && !hasAnimated) {
+				gsap.to(navbarRef.current, {
+					y: 0,
+					opacity: 1,
+					boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+					backdropFilter: "blur(15px)",
+					duration: 0.3,
+					ease: "power2.out",
+				});
+				setHasAnimated(true);
+			} else if (currentScrollY <= 100 && hasAnimated) {
+				gsap.to(navbarRef.current, {
+					boxShadow: "none",
+					duration: 0.3,
+					backdropFilter: "blur(15px)",
+					ease: "power2.out",
+				});
+				setHasAnimated(false);
+			}
+			
+			lastScrollY = currentScrollY;
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [hasAnimated]);
 
 	useEffect(() => {
 		// Créer l'IntersectionObserver
@@ -80,7 +117,7 @@ const Navbar = () => {
 	}, [activeNav]);
 
 	return (
-		<div className="content_fix_nav">
+		<div className="content_fix_nav" ref={navbarRef}>
 			<div className="container fix_nav">
 				<div>
 					<h2 className="title_navbar">Jehovanie R.</h2>

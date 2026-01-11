@@ -1,16 +1,23 @@
+.content_fix_nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.1);
+}
+
 .fix_nav {
 	/* background: rgba(0, 0, 0, 0.3); */
 	/* padding: 0.5rem 5rem; */
 	z-index: 2;
-	position: fixed;
-	left: 50%;
-	transform: translateX(-50%);
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0.8rem;
-	backdrop-filter: blur(15px);
 	height: 4rem;
+	margin: 0 auto;
 }
 
 .title_navbar {

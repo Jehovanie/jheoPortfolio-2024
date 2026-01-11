@@ -2,6 +2,8 @@ import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
+import { useScrollAnimation, useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 
 import ME from "./../../assets/image/developpeur.png";
 
@@ -9,13 +11,18 @@ import "./about.css";
 
 const About = () => {
 	const { t } = useTranslation();
+	const sectionRef = useRef(null);
+	const containerRef = useRef(null);
+	
+	useScrollAnimation(sectionRef, { from: { opacity: 0, y: 30 }, duration: 0.8 });
+	useScrollAnimationChildren(containerRef, { stagger: 0.15, from: { opacity: 0, y: 40 } });
 	
 	return (
-		<section id="about" className="section">
+		<section id="about" className="section" ref={sectionRef}>
 			<h5>{t('about.subtitle')}</h5>
 			<h2>{t('about.title')}</h2>
 
-			<div className="container about__container">
+			<div className="container about__container" ref={containerRef}>
 				<div className="about__me show_tablette">
 					<div className="about__me-image">
 						<img src={ME} alt="About image" />

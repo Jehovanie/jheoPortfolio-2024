@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
+import { useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 import "./project.css";
 import PropTypes from "prop-types";
 
@@ -75,13 +77,22 @@ ProjectCard.propTypes = {
 const Project = () => {
 	const { t } = useTranslation();
 	const projects = getProjects(t);
+	const sectionRef = useRef(null);
+	const containerRef = useRef(null);
+	
+	useScrollAnimationChildren(containerRef, {
+		from: { opacity: 0, y: 50, scale: 0.9 },
+		to: { opacity: 1, y: 0, scale: 1 },
+		stagger: 0.2,
+		duration: 0.8,
+	});
 	
 	return (
-		<section id="project" className="experience_content_service">
+		<section id="project" className="experience_content_service" ref={sectionRef}>
 			<h5>{t('project.subtitle')}</h5>
 			<h2>{t('project.title')}</h2>
 
-			<div className="container project__container">
+			<div className="container project__container" ref={containerRef}>
 				{projects.map(item => (
 					<ProjectCard
 						key={item.id}

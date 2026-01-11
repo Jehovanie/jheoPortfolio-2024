@@ -3,14 +3,30 @@ import emailjs from "emailjs-com";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation, useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 import "./contact.css";
 
 const Contact = () => {
 	const { t } = useTranslation();
 	const form = useRef();
+	const optionsRef = useRef(null);
+	const formRef = useRef(null);
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
+
+	useScrollAnimationChildren(optionsRef, {
+		from: { opacity: 0, x: -50 },
+		to: { opacity: 1, x: 0 },
+		stagger: 0.2,
+		duration: 0.8,
+	});
+
+	useScrollAnimation(formRef, {
+		from: { opacity: 0, x: 50 },
+		to: { opacity: 1, x: 0 },
+		duration: 0.8,
+	});
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -48,7 +64,7 @@ const Contact = () => {
 			<h2>{t('contact.title')}</h2>
 
 			<div className="container contact__container">
-				<div className="contact__options">
+				<div className="contact__options" ref={optionsRef}>
 					<article className="contact__option">
 						<div className="contact_option_icon_name">
 							<MdOutlineEmail className="contact__option-icon" />
@@ -73,7 +89,7 @@ const Contact = () => {
 				</div>
 
 				<form ref={form} onSubmit={sendEmail}>
-					<div className="content_entete_forme">
+					<div className="content_entete_forme" ref={formRef}>
 						<h3 className="entete_forme_title">Message direct</h3>
 					</div>
 					<input
