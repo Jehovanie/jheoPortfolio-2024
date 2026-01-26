@@ -47,6 +47,7 @@ body {
 .container {
 	width: var(--container-width-xs);
 	margin: 0 auto;
+	max-width: 1080px;
 }
 
 h1,
