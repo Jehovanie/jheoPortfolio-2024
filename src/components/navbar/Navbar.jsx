@@ -42,7 +42,6 @@ const Navbar = () => {
 
 	// Animation GSAP pour la navbar au scroll
 	useEffect(() => {
-		let lastScrollY = window.scrollY;
 		
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
@@ -67,7 +66,6 @@ const Navbar = () => {
 				setHasAnimated(false);
 			}
 			
-			lastScrollY = currentScrollY;
 		};
 
 		window.addEventListener("scroll", handleScroll);

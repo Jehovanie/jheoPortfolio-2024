@@ -120,6 +120,7 @@
       "whatsapp": "WhatsApp",
       "discord": "Discord",
       "linkedin": "LinkedIn"
-    }
+    },
+    "loadMore": "Load More"
   }
 }
