@@ -30,82 +30,9 @@ const getProjects = (t) => [
 		image: IMG3,
 		title: t('project.ebookShare.title'),
 		description: t('project.ebookShare.description'),
-		github: "https://github.com/Jehovanie/E-bookShare-Front.git",
-		live_demo: "",
-	},
-	{
-		id: 1,
-		image: IMG1,
-		title: t('project.ticketUp.title'),
-		description: t('project.ticketUp.description'),
-		github: "https://github.com/Jehovanie/TicketUp-Api/tree/develop",
-		live_demo: "",
-	},
-	{
-		id: 2,
-		image: IMG2,
-		title: t('project.mySchool.title'),
-		description: t('project.mySchool.description'),
-		github: "https://gitlab.com/Jehovanie/myScholl-V-0.0.2",
-		live_demo: "",
-	},
-	{
-		id: 3,
-		image: IMG3,
-		title: t('project.ebookShare.title'),
-		description: t('project.ebookShare.description'),
-		github: "https://github.com/Jehovanie/E-bookShare-Front.git",
-		live_demo: "",
-	},
-	{
-		id: 1,
-		image: IMG1,
-		title: t('project.ticketUp.title'),
-		description: t('project.ticketUp.description'),
-		github: "https://github.com/Jehovanie/TicketUp-Api/tree/develop",
-		live_demo: "",
-	},
-	{
-		id: 2,
-		image: IMG2,
-		title: t('project.mySchool.title'),
-		description: t('project.mySchool.description'),
-		github: "https://gitlab.com/Jehovanie/myScholl-V-0.0.2",
-		live_demo: "",
-	},
-	{
-		id: 3,
-		image: IMG3,
-		title: t('project.ebookShare.title'),
-		description: t('project.ebookShare.description'),
-		github: "https://github.com/Jehovanie/E-bookShare-Front.git",
-		live_demo: "",
-	},
-	{
-		id: 1,
-		image: IMG1,
-		title: t('project.ticketUp.title'),
-		description: t('project.ticketUp.description'),
-		github: "https://github.com/Jehovanie/TicketUp-Api/tree/develop",
-		live_demo: "",
-	},
-	{
-		id: 2,
-		image: IMG2,
-		title: t('project.mySchool.title'),
-		description: t('project.mySchool.description'),
-		github: "https://gitlab.com/Jehovanie/myScholl-V-0.0.2",
-		live_demo: "",
-	},
-	{
-		id: 3,
-		image: IMG3,
-		title: t('project.ebookShare.title'),
-		description: t('project.ebookShare.description'),
-		github: "https://github.com/Jehovanie/E-bookShare-Front.git",
-		live_demo: "",
-	},
-
+		github: "https://github.com/Jehovanie/E-bookShare",
+		live_demo: "https://e-bookshare.onrender.com",
+	}
 ];
 
 const ProjectCard = ({ image, title, description, github, live_demo, t }) => {
@@ -156,7 +83,12 @@ const STEP = 3;
 
 const Project = () => {
 	const { t } = useTranslation();
-	const projects = getProjects(t);
+	const projects = [
+		...getProjects(t),
+		...getProjects(t),
+		...getProjects(t),
+		...getProjects(t)
+	];
 	const sectionRef = useRef(null);
 	const containerRef = useRef(null);
 	const [visibleCount, setVisibleCount] = useState(STEP);
