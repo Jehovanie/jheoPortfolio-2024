@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 import "./experience.css";
 
@@ -44,14 +44,29 @@ const techStack = [
 const Experience = () => {
 	const { t } = useTranslation();
 	const contentRef = useRef(null);
-	
+	const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+	const [activeTooltip, setActiveTooltip] = useState(null);
+
+	const handleMouseEnter = (e, techName) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		setTooltipPos({
+			x: rect.left + rect.width / 2,
+			y: rect.top - 10
+		});
+		setActiveTooltip(techName);
+	};
+
+	const handleMouseLeave = () => {
+		setActiveTooltip(null);
+	};
+
 	useScrollAnimationChildren(contentRef, {
 		from: { opacity: 0, scale: 0.5, rotation: -10 },
 		to: { opacity: 1, scale: 1, rotation: 0 },
 		stagger: 0.08,
 		duration: 0.6,
 	});
-	
+
 	return (
 		<section id="experience" className="experience_content_service">
 			<h5>{t('experience.subtitle')}</h5>
@@ -61,13 +76,29 @@ const Experience = () => {
 				<div className="experience__frontend">
 					<div className="experience__content" ref={contentRef}>
 						{techStack.map((tech) => (
-							<div key={tech.name} className="content_image_tech">
+							<div
+								key={tech.name}
+								className="content_image_tech"
+								onMouseEnter={(e) => handleMouseEnter(e, tech.name)}
+								onMouseLeave={handleMouseLeave}
+							>
 								<img src={tech.icon} alt={tech.name} className="image_tech" />
-								<span className="tooltip">{tech.name}</span>
 							</div>
 						))}
 					</div>
 				</div>
+				{activeTooltip && (
+					<span
+						className="tooltip"
+						style={{
+							left: `${tooltipPos.x}px`,
+							top: `${tooltipPos.y}px`,
+							transform: 'translate(-50%, -100%)'
+						}}
+					>
+						{activeTooltip}
+					</span>
+				)}
 			</div>
 		</section>
 	);

@@ -1,0 +1,187 @@
+/* ===================== TIMELINE ===================== */
+.timeline_section {
+  padding-top: 6rem;
+}
+
+.timeline_wrapper {
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vertical center line */
+.timeline_wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+  to bottom,
+  transparent,
+  var(--color-primary-variant) 10%,
+  var(--color-primary-variant) 90%,
+  transparent
+  );
+}
+
+/* ===== ITEM ===== */
+.timeline_item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2.5rem 2rem;
+}
+
+.timeline_item--left {
+  align-self: flex-start;
+  padding-right: 3rem;
+  padding-left: 0;
+}
+
+.timeline_item--right {
+  align-self: flex-end;
+  padding-left: 3rem;
+  padding-right: 0;
+}
+
+/* ===== DOT ===== */
+.timeline_dot {
+  position: absolute;
+  top: 1.6rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 3px solid var(--color-primary);
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.timeline_item--left .timeline_dot {
+  right: -7px;
+}
+
+.timeline_item--right .timeline_dot {
+  left: -7px;
+}
+
+.timeline_item:hover .timeline_dot {
+  transform: scale(1.4);
+}
+
+/* ===== CARD ===== */
+.timeline_card {
+  background: var(--color-bg-variant);
+  border: 1px solid var(--color-bg-variant);
+  border-radius: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.timeline_card:hover {
+  border-color: var(--color-primary-variant);
+  background: transparent;
+}
+
+/* ===== TYPE BADGE ===== */
+.timeline_type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid;
+  width: fit-content;
+}
+
+/* ===== PERIOD ===== */
+.timeline_period {
+  font-size: 0.78rem;
+  color: var(--color-light);
+  margin-top: 0.2rem;
+}
+
+/* ===== ROLE ===== */
+.timeline_role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-top: 0.1rem;
+}
+
+/* ===== COMPANY ===== */
+.timeline_company {
+  font-size: 0.88rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.timeline_location {
+  color: var(--color-light);
+  font-weight: 400;
+}
+
+/* ===== DESCRIPTION ===== */
+.timeline_description {
+  font-size: 0.875rem;
+  color: var(--color-light);
+  line-height: 1.6;
+  margin-top: 0.3rem;
+}
+
+/* ===== TECH TAGS ===== */
+.timeline_techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.timeline_tech_tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(77, 181, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-variant);
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablet */
+@media screen and (max-width:1024px) {
+  .timeline_item {
+    width: 50%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width:600px) {
+  .timeline_wrapper::before {
+    left: 10px;
+  }
+  
+  .timeline_item,
+  .timeline_item--left,
+  .timeline_item--right {
+    width: 100%;
+    align-self: flex-start;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+  
+  .timeline_item--left .timeline_dot,
+  .timeline_item--right .timeline_dot {
+    left: 3px;
+    right: auto;
+  }
+}
