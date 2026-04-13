@@ -1,5 +1,5 @@
-.experience_content_service{
-	padding-top: 5rem
+.experience_content_service {
+  padding-top: 5rem;
 }
 
 .experience__container {
@@ -31,10 +31,13 @@
 }
 
 .experience__content {
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 8px;
+  gap: 15px;
+  perspective: 800px;
+  perspective-origin: center top;
+  transform-style: preserve-3d;
 }
 
 .experience__details {
@@ -49,13 +52,46 @@
 
 .content_image_tech {
   background: transparent;
-  border: 1px solid  var(--color-bg-variant);
-  transition: var(--transition);
-  height: 85px;
-  width: 85px;
-  padding: 10px;
-  border-radius: 5px;
+  border: 1px solid var(--color-bg-variant);
+  transition: all 0.3s ease;
+  height: 65px;
+  width: 65px;
+  padding: 8px;
+  border-radius: 8px;
   cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.content_image_tech:nth-child(1),
+  .content_image_tech:nth-child(2),
+  .content_image_tech:nth-child(3) {
+  transform: scale(0.75) translateZ(-50px);
+}
+
+.content_image_tech:nth-child(4),
+  .content_image_tech:nth-child(5),
+  .content_image_tech:nth-child(6) {
+  transform: scale(0.85) translateZ(-30px);
+}
+
+.content_image_tech:nth-child(7),
+  .content_image_tech:nth-child(8),
+  .content_image_tech:nth-child(9) {
+  transform: scale(0.95) translateZ(-15px);
+}
+
+.content_image_tech:nth-child(10),
+  .content_image_tech:nth-child(11),
+  .content_image_tech:nth-child(12) {
+  transform: scale(1.05) translateZ(0px);
+}
+
+.content_image_tech:nth-child(13),
+  .content_image_tech:nth-child(14),
+  .content_image_tech:nth-child(15) {
+  transform: scale(1.15) translateZ(20px);
 }
 
 .image_tech {
@@ -66,9 +102,39 @@
 
 .content_image_tech:hover {
   background: var(--color-bg-variant);
-  border: 1px solid  var(--color-bg-variant);
-  position: relative;
-  display: inline-block;
+  border: 1px solid var(--color-primary);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.content_image_tech:nth-child(1):hover,
+  .content_image_tech:nth-child(2):hover,
+  .content_image_tech:nth-child(3):hover {
+  transform: scale(0.8) translateZ(-50px);
+}
+
+.content_image_tech:nth-child(4):hover,
+  .content_image_tech:nth-child(5):hover,
+  .content_image_tech:nth-child(6):hover {
+  transform: scale(0.9) translateZ(-30px);
+}
+
+.content_image_tech:nth-child(7):hover,
+  .content_image_tech:nth-child(8):hover,
+  .content_image_tech:nth-child(9):hover {
+  transform: scale(1) translateZ(-15px);
+}
+
+.content_image_tech:nth-child(10):hover,
+  .content_image_tech:nth-child(11):hover,
+  .content_image_tech:nth-child(12):hover {
+  transform: scale(1.1) translateZ(0px);
+}
+
+.content_image_tech:nth-child(13):hover,
+  .content_image_tech:nth-child(14):hover,
+  .content_image_tech:nth-child(15):hover {
+  transform: scale(1.2) translateZ(20px);
 }
 
 .tooltip {
@@ -76,16 +142,28 @@
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 4px 8px;
-  border-radius: 4px;
-  position: absolute;
-  z-index: 10;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  position: fixed;
+  z-index: 1000;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: rotateX(0deg) !important;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
 
 .content_image_tech:hover .tooltip {
@@ -131,44 +209,44 @@
   }
 }
 
-@media (min-width: 1124px) {
+@media (min-width:1124px) {
   .experience__content {
-      width: 85%;
-      margin: auto;
+    width: 85%;
+    margin: auto;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width:1200px) {
   .experience__content {
-      width: 80%;
-      margin: auto;
+    width: 80%;
+    margin: auto;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width:1200px) {
   .experience__content {
-      width: 70%;
-      margin: auto;
+    width: 70%;
+    margin: auto;
   }
 }
 
-@media (min-width: 1450px) {
+@media (min-width:1450px) {
   .experience__content {
-      width: 65%;
-      margin: auto;
+    width: 65%;
+    margin: auto;
   }
 }
 
-@media (min-width: 1550px) {
+@media (min-width:1550px) {
   .experience__content {
-      width: 55%;
-      margin: auto;
+    width: 55%;
+    margin: auto;
   }
 }
 
-@media (min-width: 1750px) {
+@media (min-width:1750px) {
   .experience__content {
-      width: 50%;
-      margin: auto;
+    width: 50%;
+    margin: auto;
   }
 }

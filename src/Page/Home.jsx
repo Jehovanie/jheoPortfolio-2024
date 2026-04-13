@@ -7,6 +7,7 @@ import Navbar from "../components/navbar/Navbar";
 import Presentation from "../components/presentation/Presentation";
 import Project from "../components/projet/Project";
 import Service from "../components/service/Service";
+import Timeline from "../components/timeline/Timeline";
 
 const Home = () => {
 	return (
@@ -26,6 +27,9 @@ const Home = () => {
 				</div>
 				<div className="content_experience">
 					<Experience />
+				</div>
+				<div className="content_timeline">
+					<Timeline />
 				</div>
 				<div className="content_project">
 					<Project />
