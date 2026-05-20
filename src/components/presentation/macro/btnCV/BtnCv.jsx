@@ -8,7 +8,6 @@ const BtnCv = () => {
 	return (
 		<a href={CV} download className="btn cta_action cta_ending_action">
 			<GoDownload />
-			Télechager mon CV
 			{t("download.cv")}
 		</a>
 	);
