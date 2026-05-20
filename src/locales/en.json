@@ -186,6 +186,7 @@
 					"techs": ["NextJS", "TypeScript", "Tailwind", "Prisma", "Git"]
 				}
 			]
-		}
+		},
+		"download.cv": "Download my CV"
 	}
 }
