@@ -30,9 +30,9 @@ const Ending = () => {
 		<section id="contact" className="ending_container">
 			<div ref={titleRef}>
 				<h1 className="ending_title">{t('ending.title')}</h1>
-				<div className="content_load_cv">
+				{/* <div className="content_load_cv">
 					<BtnCv />
-				</div>
+				</div> */}
 			</div>
 			<div className="ending_text">
 				<p className="title_joining">{t('ending.joinMe')}</p>
