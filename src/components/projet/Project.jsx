@@ -84,9 +84,6 @@ const STEP = 3;
 const Project = () => {
 	const { t } = useTranslation();
 	const projects = [
-		...getProjects(t),
-		...getProjects(t),
-		...getProjects(t),
 		...getProjects(t)
 	];
 	const sectionRef = useRef(null);

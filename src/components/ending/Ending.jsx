@@ -8,6 +8,9 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation, useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 
+import bg from "./../../assets/image/te.jpeg";
+
+
 const Ending = () => {
 	const { t } = useTranslation();
 	const titleRef = useRef(null);
@@ -27,12 +30,20 @@ const Ending = () => {
 	});
 	
 	return (
-		<section id="contact" className="ending_container">
+		<section
+			id="contact"
+			className="ending_container"
+			style={{
+				backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${bg})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				backgroundRepeat: 'no-repeat',
+			}}>
 			<div ref={titleRef}>
 				<h1 className="ending_title">{t('ending.title')}</h1>
-				{/* <div className="content_load_cv">
+				<div className="content_load_cv">
 					<BtnCv />
-				</div> */}
+				</div>
 			</div>
 			<div className="ending_text">
 				<p className="title_joining">{t('ending.joinMe')}</p>
