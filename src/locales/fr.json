@@ -14,7 +14,9 @@
 			"subtitle": "Diplômé en Mathématiques et Informatique | Expertise en PHP, JavaScript & TypeScript",
 			"scrollDown": "scrool down",
 			"downloadCV": "Télécharger CV",
-			"contact": "Let's Talk"
+			"contact": "Let's Talk",
+			"contacter-moi" : "Voudriez-vous discuter avec moi?",
+			"watch-my-work" : "Mes référence de travail"
 		},
 		"about": {
 			"subtitle": "Apprendre à connaître...",
@@ -61,7 +63,7 @@
 		},
 		"project": {
 			"subtitle": "Mes travaux récents...",
-			"title": "Expérience professionnelle",
+			"title": "Références de mes travaux",
 			"github": "Github",
 			"liveDemo": "Live Demo",
 			"ticketUp": {
@@ -102,7 +104,7 @@
 		},
 		"footer": {
 			"title": "Portfolio",
-			"description": "Développeur full-stack web & mobile avec 3+ ans d'expérience, expert en PHP, JavaScript/TypeScript et les frameworks React, Angular, Node.js. Spécialisé en bases de données, design systems et architectures web performantes. Autonome, rigoureux et engagé dans les environnements agiles.",
+			"description": "Développeur full-stack web & mobile avec 4+ ans d'expérience, expert en PHP, JavaScript/TypeScript et les frameworks React, Angular, Node.js. Spécialisé en bases de données, design systems et architectures web performantes. Autonome, rigoureux et engagé dans les environnements agiles.",
 			"links": "Liens rapides",
 			"me": "Moi",
 			"about": "A propos de moi",
@@ -115,7 +117,7 @@
 		},
 		"ending": {
 			"title": "Merci pour votre visite",
-			"joinMe": "on vous souhaite de me joindre sur ...",
+			"joinMe": "je vous souhaite de me joindre sur ...",
 			"email": "Email",
 			"whatsapp": "WhatsApp",
 			"discord": "Discord",

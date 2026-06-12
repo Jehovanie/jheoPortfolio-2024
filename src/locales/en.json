@@ -14,7 +14,9 @@
 			"subtitle": "Graduate in Mathematics and Computer Science | Expertise in PHP, JavaScript & TypeScript",
 			"scrollDown": "scroll down",
 			"downloadCV": "Download CV",
-			"contact": "Let's Talk"
+			"contact": "Let's Talk",
+			"contacter-moi" : "Would you like to talk to me?",
+			"watch-my-work" : "All my reference work"
 		},
 		"about": {
 			"subtitle": "Get to know...",
@@ -61,7 +63,7 @@
 		},
 		"project": {
 			"subtitle": "My recent work...",
-			"title": "Professional Experience",
+			"title": "Work References",
 			"github": "Github",
 			"liveDemo": "Live Demo",
 			"ticketUp": {
@@ -102,7 +104,7 @@
 		},
 		"footer": {
 			"title": "Portfolio",
-			"description": "Full-stack web & mobile developer with 3+ years of experience, expert in PHP, JavaScript/TypeScript and frameworks React, Angular, Node.js. Specialized in databases, design systems and high-performance web architectures. Autonomous, rigorous and committed in agile environments.",
+			"description": "Full-stack web & mobile developer with 4+ years of experience, expert in PHP, JavaScript/TypeScript and frameworks React, Angular, Node.js. Specialized in databases, design systems and high-performance web architectures. Autonomous, rigorous and committed in agile environments.",
 			"links": "Quick Links",
 			"me": "Me",
 			"about": "About Me",

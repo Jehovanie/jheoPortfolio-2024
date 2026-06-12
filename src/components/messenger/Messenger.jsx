@@ -131,8 +131,8 @@ const Messenger = () => {
 								/>
 							</div>
 							<button type="submit" className="send-btn">
-								<MdSend />
 								<span>{t('messenger.send')}</span>
+								<MdSend />
 							</button>
 						</form>
 
