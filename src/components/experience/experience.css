@@ -51,90 +51,70 @@
 }
 
 .content_image_tech {
-  background: transparent;
-  border: 1px solid var(--color-bg-variant);
+  /* Orbe 3D bombé : dégradé radial avec point lumineux en haut à gauche */
+  background: radial-gradient(
+    circle at 32% 26%,
+    #3d3d78 0%,
+    #2c2c6c 38%,
+    #1c1c40 72%,
+    #101026 100%
+  );
+  border: 1px solid rgba(77, 181, 255, 0.15);
   transition: all 0.3s ease;
   height: 65px;
   width: 65px;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 50%;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  /* Ombre portée (bille flottante) + volume interne bombé */
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.45),
+    inset 0 5px 8px rgba(255, 255, 255, 0.14),
+    inset 0 -8px 14px rgba(0, 0, 0, 0.5);
 }
 
-.content_image_tech:nth-child(1),
-  .content_image_tech:nth-child(2),
-  .content_image_tech:nth-child(3) {
-  transform: scale(0.75) translateZ(-50px);
-}
-
-.content_image_tech:nth-child(4),
-  .content_image_tech:nth-child(5),
-  .content_image_tech:nth-child(6) {
-  transform: scale(0.85) translateZ(-30px);
-}
-
-.content_image_tech:nth-child(7),
-  .content_image_tech:nth-child(8),
-  .content_image_tech:nth-child(9) {
-  transform: scale(0.95) translateZ(-15px);
-}
-
-.content_image_tech:nth-child(10),
-  .content_image_tech:nth-child(11),
-  .content_image_tech:nth-child(12) {
-  transform: scale(1.05) translateZ(0px);
-}
-
-.content_image_tech:nth-child(13),
-  .content_image_tech:nth-child(14),
-  .content_image_tech:nth-child(15) {
-  transform: scale(1.15) translateZ(20px);
+/* Reflet brillant (verre) posé sur le haut de la sphère */
+.content_image_tech::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 20%;
+  width: 55%;
+  height: 38%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.12) 55%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
 .image_tech {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  /* Détache le logo de la surface de la bille */
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 .content_image_tech:hover {
-  background: var(--color-bg-variant);
-  border: 1px solid var(--color-primary);
-  filter: brightness(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.content_image_tech:nth-child(1):hover,
-  .content_image_tech:nth-child(2):hover,
-  .content_image_tech:nth-child(3):hover {
-  transform: scale(0.8) translateZ(-50px);
-}
-
-.content_image_tech:nth-child(4):hover,
-  .content_image_tech:nth-child(5):hover,
-  .content_image_tech:nth-child(6):hover {
-  transform: scale(0.9) translateZ(-30px);
-}
-
-.content_image_tech:nth-child(7):hover,
-  .content_image_tech:nth-child(8):hover,
-  .content_image_tech:nth-child(9):hover {
-  transform: scale(1) translateZ(-15px);
-}
-
-.content_image_tech:nth-child(10):hover,
-  .content_image_tech:nth-child(11):hover,
-  .content_image_tech:nth-child(12):hover {
-  transform: scale(1.1) translateZ(0px);
-}
-
-.content_image_tech:nth-child(13):hover,
-  .content_image_tech:nth-child(14):hover,
-  .content_image_tech:nth-child(15):hover {
-  transform: scale(1.2) translateZ(20px);
+  border-color: var(--color-primary);
+  filter: brightness(1.12);
+  /* Survol uniforme : la bille se soulève légèrement */
+  transform: translateY(-5px) scale(1.08);
+  /* Halo bleu + ombre plus profonde au survol */
+  box-shadow:
+    0 14px 24px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(77, 181, 255, 0.5),
+    inset 0 5px 8px rgba(255, 255, 255, 0.18),
+    inset 0 -8px 14px rgba(0, 0, 0, 0.5);
 }
 
 .tooltip {
