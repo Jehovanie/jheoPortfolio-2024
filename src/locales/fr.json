@@ -15,8 +15,8 @@
 			"scrollDown": "scrool down",
 			"downloadCV": "Télécharger CV",
 			"contact": "Let's Talk",
-			"contacter-moi" : "Voudriez-vous discuter avec moi?",
-			"watch-my-work" : "Mes référence de travail"
+			"contacter-moi": "Voudriez-vous discuter avec moi?",
+			"watch-my-work": "Mes référence de travail"
 		},
 		"about": {
 			"subtitle": "Apprendre à connaître...",
@@ -66,17 +66,62 @@
 			"title": "Références de mes travaux",
 			"github": "Github",
 			"liveDemo": "Live Demo",
+			"openDetails": "Voir les détails du projet {{title}}",
+			"close": "Fermer",
+			"previous": "Capture précédente",
+			"next": "Capture suivante",
+			"goToCapture": "Aller à la capture {{index}}",
+			"captureAlt": "{{title}} — capture {{index}} sur {{total}}",
+			"captureCount_one": "{{count}} capture",
+			"captureCount_other": "{{count}} captures",
 			"ticketUp": {
 				"title": "TicketUp: Gestion et Plateforme pour vendre des ticket d'une événement.",
-				"description": "TicketUp est une plateforme complète de gestion d'événements et de vente de tickets, composée de trois modules interconnectés : Application mobile, Centre d'administration web (Organisateurs & Admins) et API centrale (Backend sécurisé)"
+				"description": "TicketUp est une plateforme complète de gestion d'événements et de vente de tickets, composée de trois modules interconnectés : Application mobile, Centre d'administration web (Organisateurs & Admins) et API centrale (Backend sécurisé)",
+				"problem": "Réserver une place pour un concert ou un festival passe encore par le ticket papier vendu dans quelques points de vente physiques : il faut se déplacer, faire la queue, et les faux billets circulent facilement. Côté organisateur, le comptage des entrées se fait à la main — impossible de savoir en temps réel combien de places restent, ni qui est réellement entré.",
+				"solution": "TicketUp digitalise toute la chaîne. L'organisateur crée et publie son événement depuis un back-office web, le public achète son billet en quelques secondes depuis l'application mobile, et le contrôle à l'entrée se fait par scan d'un QR code unique. Une API centrale sécurisée synchronise les trois modules et renvoie à l'organisateur un suivi des ventes en temps réel.",
+				"features": [
+					"Création et publication d'événements depuis l'espace organisateur",
+					"Achat de billets depuis l'application mobile, en quelques étapes",
+					"QR code unique par billet, vérifié au scan à l'entrée",
+					"Tableau de bord temps réel : ventes, places restantes, entrées validées",
+					"Gestion des rôles (organisateur / administrateur) et authentification sécurisée"
+				],
+				"role": "Conception de l'architecture des trois modules, développement de l'API centrale (authentification, billetterie, contrôle d'accès) et du back-office organisateur."
 			},
 			"mySchool": {
 				"title": "MySchool: Application de gestion scolaire complète.",
-				"description": "La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter la communication, la gestion, et améliorer la façon de transmettre la connaissance."
+				"description": "La plateforme à pour objectif de rendre facile le système d'éducation lycéenne.Faciliter la communication, la gestion, et améliorer la façon de transmettre la connaissance.",
+				"problem": "Dans beaucoup d'établissements, les notes, les absences et les emplois du temps vivent encore sur des cahiers et des fichiers Excel dispersés. Les parents découvrent les résultats de leur enfant une fois par trimestre, sur le bulletin papier, quand il est déjà trop tard pour réagir. Les enseignants, eux, perdent des heures à recopier les mêmes moyennes.",
+				"solution": "MySchool réunit l'administration, les enseignants, les élèves et les parents sur une même plateforme. Les notes et les absences saisies une seule fois par l'enseignant alimentent automatiquement les bulletins, et chaque parent suit la scolarité de son enfant en temps réel depuis son espace.",
+				"features": [
+					"Quatre espaces dédiés : administration, enseignant, élève et parent",
+					"Saisie des notes, calcul automatique des moyennes et génération des bulletins",
+					"Suivi des absences et des retards, remonté aux parents",
+					"Gestion des classes, des matières et des emplois du temps",
+					"Messagerie interne entre l'établissement et les familles"
+				],
+				"role": "Développement full-stack : modélisation de la base de données, logique métier (notes, bulletins, absences) et interfaces des quatre espaces."
 			},
 			"ebookShare": {
 				"title": "E-bookShare: Un moyen de partage mon e-book préferer à tous le monde.",
-				"description": "e-BookShare est une application web et mobile qui facilite le partage, la découverte et l'emprunt de livres numériques, en encourageant la lecture sociale et l'entraide entre passionnés."
+				"description": "e-BookShare est une application web et mobile qui facilite le partage, la découverte et l'emprunt de livres numériques, en encourageant la lecture sociale et l'entraide entre passionnés.",
+				"problem": "Nos meilleures lectures dorment dans un dossier sur notre ordinateur. Quand on veut faire découvrir un livre à quelqu'un, on finit par s'envoyer des fichiers par mail ou par clé USB, sans jamais savoir qui l'a lu ni retrouver ce qu'on a prêté. Et acheter chaque titre reste cher quand on lit beaucoup.",
+				"solution": "e-BookShare transforme ces bibliothèques personnelles éparpillées en une bibliothèque commune : chacun met ses livres à disposition, emprunte ceux des autres pour une durée définie, et découvre de nouveaux titres grâce aux avis de la communauté.",
+				"features": [
+					"Bibliothèque personnelle : dépôt et catalogage de ses e-books",
+					"Emprunt et retour entre membres, avec durée limitée",
+					"Recherche et découverte par genre, auteur ou recommandation",
+					"Notes, avis et commentaires pour encourager la lecture sociale",
+					"Version web et mobile pour lire où que l'on soit"
+				],
+				"role": "Conception et développement de l'application web et mobile, de l'API de gestion des emprunts jusqu'aux interfaces de lecture."
+			},
+			"sections": {
+				"overview": "En bref",
+				"problem": "Le problème du quotidien",
+				"solution": "La solution apportée",
+				"features": "Fonctionnalités clés",
+				"role": "Mon rôle sur le projet"
 			}
 		},
 		"contact": {
@@ -136,7 +181,16 @@
 					"location": "Remote",
 					"type": "Emploi",
 					"description": "Traduction de maquettes graphiques en pages web fonctionnelles. Mise en place du responsive design pour assurer l'adaptation sur tous types d'écrans.",
-					"techs": ["HTML", "CSS", "Tailwind", "JavaScript", "TypeScript", "Laravel", "Angular", "Git"]
+					"techs": [
+						"HTML",
+						"CSS",
+						"Tailwind",
+						"JavaScript",
+						"TypeScript",
+						"Laravel",
+						"Angular",
+						"Git"
+					]
 				},
 				{
 					"period": "Janvier 2022 – Septembre 2025",
@@ -185,7 +239,13 @@
 					"location": "Maurice · Télétravail",
 					"type": "Freelance",
 					"description": "Plateforme en ligne facilitant l'accès à l'emploi pour les formateurs et permettant aux organisateurs de formations de publier leurs missions. Interface responsive et optimisation des requêtes avec Prisma.",
-					"techs": ["NextJS", "TypeScript", "Tailwind", "Prisma", "Git"]
+					"techs": [
+						"NextJS",
+						"TypeScript",
+						"Tailwind",
+						"Prisma",
+						"Git"
+					]
 				}
 			]
 		},
