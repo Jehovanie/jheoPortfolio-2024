@@ -15,8 +15,8 @@
 			"scrollDown": "scroll down",
 			"downloadCV": "Download CV",
 			"contact": "Let's Talk",
-			"contacter-moi" : "Would you like to talk to me?",
-			"watch-my-work" : "All my reference work"
+			"contacter-moi": "Would you like to talk to me?",
+			"watch-my-work": "All my reference work"
 		},
 		"about": {
 			"subtitle": "Get to know...",
@@ -66,17 +66,62 @@
 			"title": "Work References",
 			"github": "Github",
 			"liveDemo": "Live Demo",
+			"openDetails": "View details for project {{title}}",
+			"close": "Close",
+			"previous": "Previous screenshot",
+			"next": "Next screenshot",
+			"goToCapture": "Go to screenshot {{index}}",
+			"captureAlt": "{{title}} — screenshot {{index}} of {{total}}",
+			"captureCount_one": "{{count}} screenshot",
+			"captureCount_other": "{{count}} screenshots",
 			"ticketUp": {
 				"title": "TicketUp: Event Management and Ticket Selling Platform.",
-				"description": "TicketUp is a comprehensive event management and ticket sales platform, consisting of three interconnected modules: Mobile Application, Web Administration Center (Organizers & Admins) and Central API (Secure Backend)"
+				"description": "TicketUp is a comprehensive event management and ticket sales platform, consisting of three interconnected modules: Mobile Application, Web Administration Center (Organizers & Admins) and Central API (Secure Backend)",
+				"problem": "Booking a seat for a concert or a festival still means a paper ticket sold at a handful of physical outlets: you have to travel, queue up, and counterfeit tickets circulate easily. On the organiser's side, entries are counted by hand — there is no way to know in real time how many seats are left, or who actually walked in.",
+				"solution": "TicketUp digitises the whole chain. Organisers create and publish their event from a web back-office, the audience buys a ticket in seconds from the mobile app, and door control happens by scanning a unique QR code. A secure central API keeps the three modules in sync and gives the organiser live sales tracking.",
+				"features": [
+					"Event creation and publishing from the organiser workspace",
+					"Ticket purchase from the mobile app in a few steps",
+					"Unique QR code per ticket, verified by scan at the door",
+					"Real-time dashboard: sales, remaining seats, validated entries",
+					"Role management (organiser / admin) and secure authentication"
+				],
+				"role": "Designed the architecture of the three modules and built the central API (authentication, ticketing, access control) as well as the organiser back-office."
 			},
 			"mySchool": {
 				"title": "MySchool: Complete School Management Application.",
-				"description": "The platform aims to make the high school education system easy. Facilitate communication, management, and improve the way of transmitting knowledge."
+				"description": "The platform aims to make the high school education system easy. Facilitate communication, management, and improve the way of transmitting knowledge.",
+				"problem": "In many schools, grades, absences and timetables still live in notebooks and scattered spreadsheets. Parents discover how their child is doing once a term, on a paper report card, when it is already too late to react. Teachers, meanwhile, lose hours copying the same averages over and over.",
+				"solution": "MySchool brings administration, teachers, students and parents onto a single platform. Grades and absences entered once by the teacher automatically feed the report cards, and each parent follows their child's schooling in real time from their own space.",
+				"features": [
+					"Four dedicated spaces: administration, teacher, student and parent",
+					"Grade entry, automatic averages and report card generation",
+					"Absence and lateness tracking, reported to parents",
+					"Management of classes, subjects and timetables",
+					"Internal messaging between the school and families"
+				],
+				"role": "Full-stack development: database modelling, business logic (grades, report cards, absences) and the interfaces of all four spaces."
 			},
 			"ebookShare": {
 				"title": "E-bookShare: A way to share my favorite e-book to everyone.",
-				"description": "e-BookShare is a web and mobile application that facilitates the sharing, discovery and borrowing of digital books, encouraging social reading and mutual aid between enthusiasts."
+				"description": "e-BookShare is a web and mobile application that facilitates the sharing, discovery and borrowing of digital books, encouraging social reading and mutual aid between enthusiasts.",
+				"problem": "Our best reads sit forgotten in a folder on our computer. When we want someone to discover a book, we end up sending files by email or on a USB stick, never knowing who read it or what we lent out. And buying every title gets expensive when you read a lot.",
+				"solution": "e-BookShare turns those scattered personal libraries into a shared one: everyone makes their books available, borrows other members' books for a set period, and discovers new titles through the community's reviews.",
+				"features": [
+					"Personal library: upload and catalogue your own e-books",
+					"Borrowing and returning between members, with a time limit",
+					"Search and discovery by genre, author or recommendation",
+					"Ratings, reviews and comments to encourage social reading",
+					"Web and mobile versions so you can read anywhere"
+				],
+				"role": "Designed and built the web and mobile application, from the lending API through to the reading interfaces."
+			},
+			"sections": {
+				"overview": "At a glance",
+				"problem": "The everyday problem",
+				"solution": "The solution",
+				"features": "Key features",
+				"role": "My role on the project"
 			}
 		},
 		"contact": {
@@ -136,7 +181,16 @@
 					"location": "Remote",
 					"type": "Job",
 					"description": "Translating graphic mockups into functional web pages. Implemented responsive design to ensure adaptation across all screen sizes.",
-					"techs": ["HTML", "CSS", "Tailwind", "JavaScript", "TypeScript", "Laravel", "Angular", "Git"]
+					"techs": [
+						"HTML",
+						"CSS",
+						"Tailwind",
+						"JavaScript",
+						"TypeScript",
+						"Laravel",
+						"Angular",
+						"Git"
+					]
 				},
 				{
 					"period": "January 2022 – September 2025",
@@ -185,7 +239,13 @@
 					"location": "Mauritius · Remote",
 					"type": "Freelance",
 					"description": "Online platform to help trainers find employment and allow training organizers to publish missions. Responsive UI and database query optimization with Prisma.",
-					"techs": ["NextJS", "TypeScript", "Tailwind", "Prisma", "Git"]
+					"techs": [
+						"NextJS",
+						"TypeScript",
+						"Tailwind",
+						"Prisma",
+						"Git"
+					]
 				}
 			]
 		},
