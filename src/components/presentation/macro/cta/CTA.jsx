@@ -8,13 +8,13 @@ const CTA = () => {
 	
 	return (
 		<div className="cta">
-			<a href="#contact" className="btn btn-primary cta_action">
-				<BsChat />
-				{t('presentation.contacter-moi')}
-			</a>
 			<a href="#project" className="btn cta_action">
 				<FaComputer />
 				{t('presentation.watch-my-work')}
+			</a>
+			<a href="#contact" className="btn btn-primary cta_action">
+				<BsChat />
+				{t('presentation.contacter-moi')}
 			</a>
 		</div>
 	);

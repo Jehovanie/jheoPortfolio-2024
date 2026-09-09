@@ -2,6 +2,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import "./footer.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -20,22 +21,22 @@ const Footer = () => {
 				<h3 className="footer-title">{t('footer.links')}</h3>
 				<ul className="footer-links">
 					<li>
-						<a href="#">{t('footer.me')}</a>
+						<Link to="/#home">{t('footer.me')}</Link>
 					</li>
 					<li>
-						<a href="#about">{t('footer.about')}</a>
+						<Link to="/#about">{t('footer.about')}</Link>
 					</li>
 					<li>
-						<a href="#service">{t('footer.skills')}</a>
+						<Link to="/#service">{t('footer.skills')}</Link>
 					</li>
 					<li>
-						<a href="#experience">{t('footer.experience')}</a>
+						<Link to="/#experience">{t('footer.experience')}</Link>
 					</li>
 					<li>
-						<a href="#projects">{t('footer.projects')}</a>
+						<Link to="/#project">{t('footer.projects')}</Link>
 					</li>
 					<li>
-						<a href="#contact">{t('footer.contact')}</a>
+						<Link to="/#contact">{t('footer.contact')}</Link>
 					</li>
 				</ul>			</div>
 				<div className="footer-section">
