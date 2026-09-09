@@ -11,12 +11,12 @@
 		"presentation": {
 			"greeting": "Bonjour👋, Moi c'est Jehovanie,",
 			"title": "Developpeur FullStack",
-			"subtitle": "Diplômé en Mathématiques et Informatique | Expertise en PHP, JavaScript & TypeScript",
+			"subtitle": "Diplômé en Mathématiques et Informatique | Expertise en developpement et analyse des données",
 			"scrollDown": "scrool down",
 			"downloadCV": "Télécharger CV",
 			"contact": "Let's Talk",
-			"contacter-moi": "Voudriez-vous discuter avec moi?",
-			"watch-my-work": "Mes référence de travail"
+			"contacter-moi": "Discutons ?",
+			"watch-my-work": "Mes travaux ..."
 		},
 		"about": {
 			"subtitle": "Apprendre à connaître...",

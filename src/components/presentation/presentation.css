@@ -48,8 +48,9 @@ header {
 	background-color: var(--color-primary);
 	/* border-radius: 20% 20% 0 0; */
 	border-radius: 50%;
-	width: 300px;
-	height: 300px;
+	/* 300px fixes débordaient (et se faisaient rogner) sous ~340px de large. */
+	width: min(300px, 72vw);
+	height: min(300px, 72vw);
 	display: block;
 	margin: auto;
 }
@@ -87,6 +88,9 @@ header {
 	display: flex;
 	gap: 1.2rem;
 	justify-content: left;
+	/* Les deux boutons ne tiennent pas côte à côte dans la colonne de gauche
+	   en tablette : ils passent à la ligne au lieu de déborder sous le portrait. */
+	/* flex-wrap: wrap; */
 }
 
 /* =============== HEADERS SOCIALS ============= */
@@ -128,6 +132,8 @@ header {
 	/* Styles pour écran ≥ 600px */
 	.header__container {
 		display: flex;
+		align-items: center;
+		gap: 2rem;
 		padding: 25px 0;
 		padding-top: 8rem;
 	}
@@ -138,8 +144,9 @@ header {
 
 	.dev {
 		border-radius: 50%;
-		width: 250px;
-		height: 250px;
+		/* Le portrait suit la largeur de l'écran au lieu d'une taille figée. */
+		width: clamp(190px, 24vw, 300px);
+		height: clamp(190px, 24vw, 300px);
 	}
 
 	.content_cta_left_side {
@@ -151,7 +158,10 @@ header {
 		justify-content: start;
 		align-items: start;
 		text-align: start;
-		width: calc(100% - 150px);
+		/* Occupe la place restante : plus de largeur calculée qui, additionnée
+		   aux 250px du portrait, dépassait les 100% du conteneur. */
+		flex: 1 1 auto;
+		min-width: 0;
 	}
 
 	.header__socials {
@@ -160,7 +170,8 @@ header {
 
 	.right__side {
 		margin-top: 0;
-		width: 250px;
+		/* Se dimensionne sur le portrait qu'il contient. */
+		flex: 0 0 auto;
 	}
 }
 
@@ -177,37 +188,7 @@ header {
 /* Ordinateur portable (≥ 992px) */
 @media (min-width: 992px) {
 	/* Styles pour écran ≥ 992px */
-	.left__side {
-		width: calc(100% - 200px);
-	}
-
 	.header__container {
 		padding-top: 10rem;
-	}
-}
-
-/* Écran desktop standard (≥ 1200px) */
-@media (min-width: 1200px) {
-	.left__side {
-		width: calc(100% - 250px);
-	}
-}
-
-/* Écran très large (≥ 1400px) */
-@media (min-width: 1400px) {
-	.left__side {
-		width: calc(100% - 150px);
-	}
-}
-
-@media (min-width: 1600px) {
-	.left__side {
-		width: calc(100% - 350px);
-	}
-}
-
-@media (min-width: 1800px) {
-	.left__side {
-		width: calc(100% - 300px);
 	}
 }

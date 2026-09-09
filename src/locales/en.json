@@ -11,12 +11,12 @@
 		"presentation": {
 			"greeting": "Hello👋, I'm Jehovanie,",
 			"title": "FullStack Developer",
-			"subtitle": "Graduate in Mathematics and Computer Science | Expertise in PHP, JavaScript & TypeScript",
+			"subtitle": "Graduate in Mathematics and Computer Science | Expertise in development and data analysis",
 			"scrollDown": "scroll down",
 			"downloadCV": "Download CV",
 			"contact": "Let's Talk",
-			"contacter-moi": "Would you like to talk to me?",
-			"watch-my-work": "All my reference work"
+			"contacter-moi": "Talk to me?",
+			"watch-my-work": "See my work"
 		},
 		"about": {
 			"subtitle": "Get to know...",

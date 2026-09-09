@@ -46,18 +46,30 @@
 
 .about__cards {
 	display: flex;
-	gap: 1.5rem;
+	/* Gap resserré par défaut : à 360px les 3 cartes tenaient sinon sur 384px
+	   pour un conteneur de 324px. */
+	gap: 0.6rem;
 	justify-content: center;
 	align-items: center;
+	/* Sans ça, ce flex imbriqué impose sa largeur max à son parent flex. */
+	min-width: 0;
+	/* Occupe toute la place offerte au lieu de se réduire à son contenu. */
+	width: 100%;
 }
 
 .about__card {
 	background: var(--color-bg-variant);
 	border: 1px solid transparent;
 	border-radius: 1rem;
-	padding: 1rem;
+	/* Rembourrage latéral réduit : à 3 cartes sur une ligne étroite, 1rem de
+	   chaque côté ne laissait pas la place au mot « Experience ». */
+	padding: 1rem 0.6rem;
 	text-align: center;
-	width:7rem;
+	/* `width: 7rem` figeait la largeur minimale du groupe et provoquait un
+	   débordement horizontal sous 390px : les cartes se partagent la place. */
+	flex: 1 1 0;
+	max-width: 9rem;
+	min-width: 0;
 }
 
 .about__card:hover {
@@ -92,6 +104,10 @@
 	/* Styles pour écran ≥ 600px */
 	.about__container {
 		padding-top: 25px;
+	}
+
+	.about__cards {
+		gap: 1.5rem;
 	}
 
 	.about__me-image {
