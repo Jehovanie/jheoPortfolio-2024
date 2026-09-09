@@ -116,6 +116,39 @@
 				],
 				"role": "Designed and built the web and mobile application, from the lending API through to the reading interfaces."
 			},
+			"viewCaseStudy": "View case study",
+			"detail": {
+				"back": "Back to projects",
+				"breadcrumb": "Breadcrumb",
+				"breadcrumbHome": "Home",
+				"breadcrumbProjects": "Projects",
+				"readingProgress": "Reading progress",
+				"onThisPage": "On this page",
+				"stackTitle": "Tech stack",
+				"linksTitle": "Project links",
+				"facts": {
+					"year": "Year",
+					"stack": "Technologies",
+					"captures": "Screenshots"
+				},
+				"gallery": {
+					"title": "Project preview",
+					"subtitle": "Click a screenshot to view it full size."
+				},
+				"zoom": "Enlarge screenshot {{index}}",
+				"moreProjects": "More projects",
+				"previousProject": "Previous project",
+				"nextProject": "Next project",
+				"cta": {
+					"title": "Got a similar project in mind?",
+					"text": "Tell me about it — I will come back to you with a first approach and an estimate.",
+					"button": "Let's talk"
+				},
+				"notFound": {
+					"title": "Project not found",
+					"text": "This project does not exist or is no longer published. Browse all my work on the home page."
+				}
+			},
 			"sections": {
 				"overview": "At a glance",
 				"problem": "The everyday problem",

@@ -1,3 +1,10 @@
 [build]
   command = "npm install && npm run build"
   publish = "dist"
+
+# SPA : les routes /projets/<slug> doivent servir index.html (sinon 404 au
+# rafraîchissement ou sur un lien partagé).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

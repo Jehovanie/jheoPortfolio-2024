@@ -116,6 +116,39 @@
 				],
 				"role": "Conception et développement de l'application web et mobile, de l'API de gestion des emprunts jusqu'aux interfaces de lecture."
 			},
+			"viewCaseStudy": "Voir l'étude de cas",
+			"detail": {
+				"back": "Retour aux projets",
+				"breadcrumb": "Fil d'Ariane",
+				"breadcrumbHome": "Accueil",
+				"breadcrumbProjects": "Projets",
+				"readingProgress": "Progression de lecture",
+				"onThisPage": "Sur cette page",
+				"stackTitle": "Stack technique",
+				"linksTitle": "Liens du projet",
+				"facts": {
+					"year": "Année",
+					"stack": "Technologies",
+					"captures": "Captures"
+				},
+				"gallery": {
+					"title": "Aperçu du projet",
+					"subtitle": "Cliquez sur une capture pour l'afficher en grand."
+				},
+				"zoom": "Agrandir la capture {{index}}",
+				"moreProjects": "Autres projets",
+				"previousProject": "Projet précédent",
+				"nextProject": "Projet suivant",
+				"cta": {
+					"title": "Un projet similaire en tête ?",
+					"text": "Parlons de votre besoin : je vous réponds avec une première piste de solution et une estimation.",
+					"button": "Discutons-en"
+				},
+				"notFound": {
+					"title": "Projet introuvable",
+					"text": "Ce projet n'existe pas ou n'est plus publié. Retrouvez l'ensemble de mes réalisations sur la page d'accueil."
+				}
+			},
 			"sections": {
 				"overview": "En bref",
 				"problem": "Le problème du quotidien",

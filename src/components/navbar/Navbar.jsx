@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import "./navbar.css";
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 const IconMenuMobile = ({ isOpen, toggleMenu }) => {
@@ -118,42 +119,44 @@ const Navbar = () => {
 		<div className="content_fix_nav" ref={navbarRef}>
 			<div className="container fix_nav">
 				<div>
-					<h2 className="title_navbar">Jehovanie R.</h2>
+					<Link to="/" className="title_navbar_link">
+						<h2 className="title_navbar">Jehovanie R.</h2>
+					</Link>
 				</div>
 				<div className="content_nav_link_web nav_content_link">
-					<a href="#home" onClick={() => setActiveNav("#")} className={activeNav === "#home" ? "active" : ""}>
+					<Link to="/#home" onClick={() => setActiveNav("#")} className={activeNav === "#home" ? "active" : ""}>
 						{t('navbar.home')}
-					</a>
-					<a
-						href="#about"
+					</Link>
+					<Link
+						to="/#about"
 						onClick={() => setActiveNav("#about")}
 						className={activeNav === "#about" ? "active" : ""}>
 						{t('navbar.about')}
-					</a>
-					<a
-						href="#service"
+					</Link>
+					<Link
+						to="/#service"
 						onClick={() => setActiveNav("#service")}
 						className={activeNav === "#service" ? "active" : ""}>
 						{t('navbar.service')}
-					</a>
-					<a
-						href="#experience"
+					</Link>
+					<Link
+						to="/#experience"
 						onClick={() => setActiveNav("#experience")}
 						className={activeNav === "#experience" ? "active" : ""}>
 						{t('navbar.experience')}
-					</a>
-					<a
-						href="#project"
+					</Link>
+					<Link
+						to="/#project"
 						onClick={() => setActiveNav("#project")}
 						className={activeNav === "#project" ? "active" : ""}>
 						{t('navbar.project')}
-					</a>
-					<a
-						href="#contact"
+					</Link>
+					<Link
+						to="/#contact"
 						onClick={() => setActiveNav("#contact")}
 						className={activeNav === "#contact" ? "active" : ""}>
 						{t('navbar.contact')}
-					</a>
+					</Link>
 				</div>
 				<div className="content_drop_lang_and_menu">
 					<div className="dropdown">
@@ -182,39 +185,39 @@ const Navbar = () => {
 				className="nav_content_link content_nav_link_mobile"
 				style={{ display: isShowListMenu ? "block" : "none" }}>
 				<div className="container">
-					<a href="#" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ""}>
+					<Link to="/#home" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ""}>
 					{t('navbar.home')}
-				</a>
-				<a
-					href="#about"
+				</Link>
+				<Link
+					to="/#about"
 					onClick={() => setActiveNav("#about")}
 					className={activeNav === "#about" ? "active" : ""}>
 					{t('navbar.about')}
-				</a>
-				<a
-					href="#service"
+				</Link>
+				<Link
+					to="/#service"
 					onClick={() => setActiveNav("#service")}
 					className={activeNav === "#service" ? "active" : ""}>
 					{t('navbar.service')}
-				</a>
-				<a
-					href="#experience"
+				</Link>
+				<Link
+					to="/#experience"
 					onClick={() => setActiveNav("#experience")}
 					className={activeNav === "#experience" ? "active" : ""}>
 					{t('navbar.experience')}
-				</a>
-				<a
-					href="#project"
+				</Link>
+				<Link
+					to="/#project"
 					onClick={() => setActiveNav("#project")}
 					className={activeNav === "#project" ? "active" : ""}>
 					{t('navbar.project')}
-				</a>
-				<a
-					href="#contact"
+				</Link>
+				<Link
+					to="/#contact"
 					onClick={() => setActiveNav("#contact")}
 					className={activeNav === "#contact" ? "active" : ""}>
 					{t('navbar.contact')}
-				</a>
+				</Link>
 			</div>
 		</div>
 	</div>

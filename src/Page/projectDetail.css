@@ -1,0 +1,898 @@
+/* ══════════════════════════════════════════════════════════════
+   Page de détail d'un projet (/projets/<slug>)
+   Lecture longue : une colonne de texte étroite, une colonne
+   collante pour la navigation, puis la galerie et les voisins.
+   ══════════════════════════════════════════════════════════════ */
+
+.pd {
+	--pd-surface: rgba(255, 255, 255, 0.035);
+	--pd-border: rgba(255, 255, 255, 0.09);
+	--pd-nav-offset: 4rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 3.5rem;
+	padding-top: var(--pd-nav-offset);
+}
+
+/* ── Barre de progression de lecture ── */
+.pd-progress {
+	position: fixed;
+	top: var(--pd-nav-offset);
+	left: 0;
+	right: 0;
+	height: 2px;
+	z-index: 999;
+	background: rgba(255, 255, 255, 0.07);
+}
+
+.pd-progress span {
+	display: block;
+	height: 100%;
+	width: 100%;
+	transform-origin: left center;
+	background: linear-gradient(90deg, var(--color-primary), #a78bfa);
+}
+
+/* ── Fil d'Ariane collant ── */
+.pd-crumb {
+	position: sticky;
+	/* +2px : laisse passer la barre de progression fixée juste au-dessus. */
+	top: calc(var(--pd-nav-offset) + 2px);
+	z-index: 900;
+	background: rgba(31, 31, 56, 0.82);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--pd-border);
+}
+
+.pd-crumb__inner {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	min-height: 3rem;
+}
+
+.pd-crumb__back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	flex-shrink: 0;
+	padding: 0.35rem 0.85rem;
+	border-radius: 2rem;
+	font-size: 0.84rem;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary-variant);
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pd-crumb__back:hover {
+	background: var(--color-primary);
+	color: var(--color-bg);
+}
+
+.pd-crumb__back svg {
+	transition: transform 0.3s ease;
+}
+
+.pd-crumb__back:hover svg {
+	transform: translateX(-3px);
+}
+
+.pd-crumb__trail {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0.8rem;
+	color: var(--color-light);
+	min-width: 0;
+}
+
+.pd-crumb__trail li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	white-space: nowrap;
+}
+
+.pd-crumb__trail li + li::before {
+	content: "/";
+	color: rgba(255, 255, 255, 0.25);
+}
+
+.pd-crumb__trail a {
+	color: var(--color-light);
+}
+
+.pd-crumb__trail a:hover {
+	color: var(--color-white);
+}
+
+.pd-crumb__trail li[aria-current] {
+	color: var(--color-white);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-width: 0;
+}
+
+/* Sur mobile la piste complète est bruyante : seul le retour compte. */
+@media (max-width: 767px) {
+	.pd-crumb__trail {
+		display: none;
+	}
+}
+
+/* ══════════════════ Hero ══════════════════ */
+.pd-hero {
+	position: relative;
+	padding-top: 2.5rem;
+	/* Rogne le halo ici plutôt que sur `.pd` : un `overflow` sur l'ancêtre
+	   commun casserait le `position: sticky` du fil d'Ariane et de l'aside. */
+	overflow: hidden;
+}
+
+.pd-hero__glow {
+	position: absolute;
+	top: -120px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: min(900px, 120%);
+	height: 460px;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(77, 181, 255, 0.18) 0%,
+		rgba(77, 181, 255, 0) 65%
+	);
+}
+
+.pd-hero__inner {
+	position: relative;
+	display: grid;
+	gap: 2.5rem;
+	align-items: center;
+}
+
+.pd-hero__eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0 0 0.9rem;
+	font-size: 0.78rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+.pd-hero__dot {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.pd-hero__title {
+	margin: 0 0 1.1rem;
+	font-size: clamp(1.75rem, 4.2vw, 2.9rem);
+	line-height: 1.22;
+	font-weight: 600;
+	color: var(--color-white);
+	word-break: normal;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+.pd-hero__lead {
+	margin: 0 0 1.5rem;
+	max-width: 60ch;
+	font-size: 1.02rem;
+	line-height: 1.8;
+	color: var(--color-light);
+}
+
+.pd-hero__stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	margin: 0 0 1.8rem;
+	padding: 0;
+	list-style: none;
+}
+
+.pd-hero__stack li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.3rem 0.7rem;
+	border-radius: 2rem;
+	font-size: 0.75rem;
+	color: var(--color-light);
+	background: var(--pd-surface);
+	border: 1px solid var(--pd-border);
+}
+
+.pd-hero__stack li img {
+	width: 15px;
+	height: 15px;
+	object-fit: contain;
+}
+
+.pd-hero__cta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.pd-hero__cta .btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-radius: 2rem;
+	height: auto !important;
+	padding: 0.7rem 1.4rem;
+}
+
+/* Visuel de couverture : cadre incliné qui se redresse au survol. */
+.pd-hero__visual {
+	position: relative;
+	margin: 0;
+	border-radius: 1.25rem;
+	overflow: hidden;
+	border: 1px solid var(--pd-border);
+	box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+	transform: perspective(1200px) rotateY(-6deg) rotateX(2deg);
+	transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pd-hero__visual:hover {
+	transform: perspective(1200px) rotateY(0) rotateX(0);
+}
+
+.pd-hero__visual img {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+}
+
+/* ══════════════════ Chiffres clés ══════════════════ */
+.pd-facts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 1rem;
+}
+
+.pd-fact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	padding: 1rem 1.2rem;
+	border-radius: 1rem;
+	background: var(--pd-surface);
+	border: 1px solid var(--pd-border);
+}
+
+.pd-fact__label {
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--color-light);
+}
+
+.pd-fact__value {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-white);
+	line-height: 1.2;
+}
+
+/* ══════════════════ Corps ══════════════════ */
+.pd-body {
+	display: grid;
+	gap: 2.5rem;
+	/* Pas d'`align-items: start` : l'aside doit s'étirer sur toute la hauteur
+	   de la ligne, sinon son enfant `sticky` n'a aucune course à parcourir. */
+}
+
+.pd-section {
+	/* Compense navbar + fil d'Ariane lors d'un saut d'ancre. */
+	scroll-margin-top: 8.5rem;
+	padding-bottom: 2.2rem;
+}
+
+.pd-section + .pd-section {
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	padding-top: 2.2rem;
+}
+
+.pd-section__title {
+	/* `index.css` centre `section > h2` : ici les titres s'alignent à gauche,
+	   comme le texte et le filet qui les précède. */
+	text-align: left;
+	margin: 0 0 1rem;
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: var(--color-white);
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+/* Filet coloré : repère visuel de début de section. */
+.pd-section__title::before {
+	content: "";
+	display: block;
+	width: 34px;
+	height: 3px;
+	margin-bottom: 0.7rem;
+	border-radius: 2rem;
+	background: var(--color-primary);
+}
+
+.pd-section__text {
+	margin: 0;
+	max-width: 68ch;
+	font-size: 0.97rem;
+	line-height: 1.9;
+	color: var(--color-light);
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+.pd-section__text--lead {
+	font-size: 1.05rem;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+/* ── Fonctionnalités numérotées ── */
+.pd-features {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	max-width: 68ch;
+}
+
+.pd-features li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.9rem;
+	padding: 0.85rem 1rem;
+	border-radius: 0.85rem;
+	background: var(--pd-surface);
+	border: 1px solid var(--pd-border);
+	color: var(--color-light);
+	font-size: 0.93rem;
+	line-height: 1.7;
+	transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pd-features li:hover {
+	border-color: var(--color-primary-variant);
+	transform: translateX(4px);
+}
+
+.pd-features__index {
+	flex-shrink: 0;
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	color: var(--color-primary);
+	padding-top: 0.15rem;
+}
+
+/* ══════════════════ Colonne latérale ══════════════════ */
+.pd-aside__sticky {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.pd-card {
+	padding: 1.1rem 1.2rem;
+	border-radius: 1rem;
+	background: var(--pd-surface);
+	border: 1px solid var(--pd-border);
+}
+
+.pd-card__title {
+	margin: 0 0 0.8rem;
+	font-size: 0.74rem;
+	font-weight: 600;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+	word-break: normal;
+}
+
+/* ── Table des matières avec repère de section active ── */
+.pd-toc ul {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pd-toc a {
+	display: block;
+	padding: 0.4rem 0.85rem;
+	margin-left: -1px;
+	border-left: 2px solid transparent;
+	font-size: 0.85rem;
+	color: var(--color-light);
+	transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.pd-toc a:hover {
+	color: var(--color-white);
+}
+
+.pd-toc a.active {
+	color: var(--color-primary);
+	border-left-color: var(--color-primary);
+}
+
+.pd-aside__stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pd-aside__stack li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.25rem 0.6rem;
+	border-radius: 2rem;
+	font-size: 0.72rem;
+	color: var(--color-light);
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pd-aside__stack li img {
+	width: 13px;
+	height: 13px;
+	object-fit: contain;
+}
+
+.pd-aside__links {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.pd-aside__links a {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.55rem 0.75rem;
+	border-radius: 0.6rem;
+	font-size: 0.87rem;
+	color: var(--color-light);
+	border: 1px solid transparent;
+	transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.pd-aside__links a:hover {
+	color: var(--color-white);
+	background: rgba(255, 255, 255, 0.05);
+	border-color: var(--pd-border);
+}
+
+.pd-aside__links a span {
+	flex: 1;
+	min-width: 0;
+}
+
+.pd-aside__links-out {
+	opacity: 0.45;
+	font-size: 0.8rem;
+}
+
+/* ══════════════════ Galerie ══════════════════ */
+.pd-gallery__header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin-bottom: 1.5rem;
+}
+
+.pd-gallery__subtitle {
+	margin: 0;
+	text-align: left;
+	font-size: 0.88rem;
+	color: var(--color-light);
+}
+
+.pd-gallery__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1rem;
+}
+
+.pd-shot {
+	position: relative;
+	display: block;
+	padding: 0;
+	overflow: hidden;
+	border-radius: 0.9rem;
+	border: 1px solid var(--pd-border);
+	background: #0b0b1a;
+	cursor: zoom-in;
+	transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pd-shot:hover {
+	transform: translateY(-4px);
+	border-color: var(--color-primary-variant);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pd-shot img {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pd-shot:hover img {
+	transform: scale(1.05);
+}
+
+.pd-shot__zoom {
+	position: absolute;
+	right: 0.7rem;
+	bottom: 0.7rem;
+	width: 34px;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	opacity: 0;
+	transform: translateY(6px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pd-shot:hover .pd-shot__zoom,
+.pd-shot:focus-visible .pd-shot__zoom {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ══════════════════ Projets voisins ══════════════════ */
+.pd-siblings {
+	display: grid;
+	gap: 1rem;
+}
+
+.pd-sibling {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	padding: 1.3rem 1.4rem;
+	min-height: 118px;
+	overflow: hidden;
+	border-radius: 1rem;
+	border: 1px solid var(--pd-border);
+	background: var(--pd-surface);
+	color: var(--color-white);
+	transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.pd-sibling:hover {
+	color: var(--color-white);
+	border-color: var(--color-primary-variant);
+	transform: translateY(-4px);
+}
+
+/* Vignette en fond, discrète, pour rappeler le projet visé. */
+.pd-sibling img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.12;
+	transition: opacity 0.35s ease;
+	z-index: 0;
+}
+
+.pd-sibling:hover img {
+	opacity: 0.22;
+}
+
+.pd-sibling__label,
+.pd-sibling__title {
+	position: relative;
+	z-index: 1;
+}
+
+.pd-sibling__label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.73rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+.pd-sibling__title {
+	font-size: 0.98rem;
+	line-height: 1.5;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.pd-sibling--next {
+	text-align: right;
+	align-items: flex-end;
+}
+
+/* ══════════════════ Appel à l'action final ══════════════════ */
+.pd-outro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 2.8rem 1.5rem;
+	text-align: center;
+	border-radius: 1.25rem;
+	border: 1px solid var(--pd-border);
+	background: radial-gradient(
+			ellipse at top,
+			rgba(77, 181, 255, 0.14) 0%,
+			rgba(77, 181, 255, 0) 60%
+		),
+		var(--pd-surface);
+}
+
+.pd-outro h2 {
+	margin: 0;
+	text-align: center;
+	font-size: 1.35rem;
+	color: var(--color-white);
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.pd-outro p {
+	margin: 0;
+	max-width: 52ch;
+	font-size: 0.94rem;
+	color: var(--color-light);
+}
+
+.pd-outro .btn {
+	margin-top: 0.6rem;
+	border-radius: 2rem;
+	height: auto !important;
+	padding: 0.75rem 1.8rem;
+}
+
+/* ══════════════════ Projet introuvable ══════════════════ */
+.pd-missing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 6rem 1.5rem;
+	text-align: center;
+}
+
+.pd-missing h1 {
+	font-size: 1.8rem;
+	word-break: normal;
+}
+
+.pd-missing p {
+	max-width: 46ch;
+	color: var(--color-light);
+}
+
+/* ══════════════════ Lightbox ══════════════════ */
+.pd-lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 1200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3.5rem 1.2rem;
+	background: rgba(6, 6, 16, 0.92);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	animation: pdFadeIn 0.22s ease both;
+	cursor: zoom-out;
+}
+
+.pd-lightbox__figure {
+	margin: 0;
+	max-width: 100%;
+	max-height: 100%;
+	cursor: default;
+	animation: pdZoomIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pd-lightbox__figure img {
+	max-width: 100%;
+	max-height: calc(100vh - 7rem);
+	object-fit: contain;
+	border-radius: 0.6rem;
+	box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+}
+
+.pd-lightbox__close,
+.pd-lightbox__nav {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	cursor: pointer;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pd-lightbox__close:hover,
+.pd-lightbox__nav:hover {
+	background: var(--color-primary);
+	color: var(--color-bg);
+}
+
+.pd-lightbox__close {
+	top: 1.1rem;
+	right: 1.1rem;
+	width: 40px;
+	height: 40px;
+	font-size: 1.15rem;
+}
+
+.pd-lightbox__nav {
+	top: 50%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	font-size: 1.35rem;
+}
+
+.pd-lightbox__nav--prev {
+	left: 1rem;
+}
+
+.pd-lightbox__nav--next {
+	right: 1rem;
+}
+
+.pd-lightbox__counter {
+	position: absolute;
+	bottom: 1.2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.28rem 0.85rem;
+	border-radius: 2rem;
+	font-size: 0.8rem;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+@keyframes pdFadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes pdZoomIn {
+	from { opacity: 0; transform: scale(0.96); }
+	to { opacity: 1; transform: scale(1); }
+}
+
+/* ══════════════════ Accessibilité ══════════════════ */
+.pd a:focus-visible,
+.pd button:focus-visible,
+.pd-lightbox button:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pd *,
+	.pd-lightbox * {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	.pd-hero__visual {
+		transform: none;
+	}
+}
+
+/* ══════════════════ Responsive ══════════════════ */
+@media (max-width: 600px) {
+	.pd {
+		gap: 2.5rem;
+	}
+
+	.pd-hero {
+		padding-top: 1.8rem;
+	}
+
+	.pd-hero__visual {
+		transform: none;
+	}
+
+	.pd-outro {
+		padding: 2.2rem 1.1rem;
+	}
+
+	.pd-lightbox__nav {
+		width: 36px;
+		height: 36px;
+		font-size: 1.1rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.pd-siblings {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 992px) {
+	.pd {
+		gap: 4.5rem;
+	}
+
+	.pd-hero__inner {
+		grid-template-columns: 1.05fr 0.95fr;
+		gap: 3.5rem;
+	}
+
+	.pd-body {
+		grid-template-columns: minmax(0, 1fr) 300px;
+		gap: 3.5rem;
+	}
+
+	.pd-aside__sticky {
+		position: sticky;
+		/* navbar + fil d'Ariane + respiration */
+		top: 8.5rem;
+		max-height: calc(100vh - 10rem);
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-primary-variant) transparent;
+	}
+
+	.pd-aside__sticky::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.pd-aside__sticky::-webkit-scrollbar-thumb {
+		background: var(--color-primary-variant);
+		border-radius: 2rem;
+	}
+
+	.pd-section__title {
+		font-size: 1.28rem;
+	}
+}

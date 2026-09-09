@@ -166,3 +166,12 @@
 		padding: 0rem 1rem;
 	}
 }
+
+/* Le titre ramène à l'accueil depuis n'importe quelle page. */
+.title_navbar_link {
+	color: inherit;
+}
+
+.title_navbar_link:hover .title_navbar {
+	color: var(--color-primary);
+}
