@@ -1,12 +1,19 @@
 {
 	"translation": {
+		"cv": {
+			"short": "CV",
+			"download": "Télécharger mon CV"
+		},
 		"navbar": {
 			"home": "Accueil",
 			"about": "À propos",
 			"service": "Services",
 			"experience": "Expérience",
 			"project": "Projets",
-			"contact": "Contact"
+			"contact": "Contact",
+			"language": "Langue",
+			"openMenu": "Ouvrir le menu",
+			"closeMenu": "Fermer le menu"
 		},
 		"presentation": {
 			"greeting": "Bonjour👋, Moi c'est Jehovanie,",
@@ -29,7 +36,18 @@
 			"projects": "Projets",
 			"projectsCount": "+20",
 			"contact": "Let's Talk",
-			"textSelling": "Si vous recherchez un développeur web créatif et passionné, capable de travailler en équipe pour créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis toujours à la recherche de nouveaux défis et j'ai hâte de collaborer avec vous pour réaliser vos projets web les plus ambitieux."
+			"textSelling": "Si vous recherchez un développeur web créatif et passionné, capable de travailler en équipe pour créer des solutions sur mesure, n'hésitez pas à me contacter. Je suis toujours à la recherche de nouveaux défis et j'ai hâte de collaborer avec vous pour réaliser vos projets web les plus ambitieux.",
+			"orbit": {
+				"aria": "Schéma des compétences : développement web et mobile, avec l'interface, le web, iOS, Android, la base de données, l'API, le cloud et la sécurité reliés au cœur du métier",
+				"uiux": "UI/UX",
+				"web": "Web",
+				"ios": "iOS",
+				"android": "Android",
+				"db": "DB",
+				"api": "API",
+				"cloud": "Cloud",
+				"security": "Sécurité"
+			}
 		},
 		"service": {
 			"subtitle": "Qu'est ce je peux faire...?",
@@ -57,9 +75,14 @@
 		},
 		"experience": {
 			"subtitle": "Quel compétences j'ai... ?",
-			"title": "Mon Expérience",
-			"frontend": "Frontend Development",
-			"backend": "Backend Development"
+			"title": "Stack technologie",
+			"categories": {
+				"languages": "Langages",
+				"frontend": "Front-end & Mobile",
+				"backend": "Back-end & API",
+				"database": "Bases de données",
+				"devops": "DevOps & CI/CD"
+			}
 		},
 		"project": {
 			"subtitle": "Mes travaux récents...",

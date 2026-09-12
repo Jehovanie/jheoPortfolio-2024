@@ -33,20 +33,21 @@ const ProjectCard = ({ project, t }) => {
 				to={projectPath(slug)}
 				className="project__item-link"
 				aria-label={t("project.openDetails", { title })}>
-				<div className="project__item-image">
-					<img src={image} alt={title} loading="lazy" />
+				{/* Visuel plein cadre, non recouvert : c'est l'argument principal
+				    d'une carte de projet, le texte vit en dessous. */}
+				<div className="project__item-media">
+					<img src={image} alt="" aria-hidden="true" loading="lazy" />
+
+					{year && <span className="project__item-year">{year}</span>}
+
+					{captureCount > 1 && (
+						<span className="project__item-count">
+							{t("project.captureCount", { count: captureCount })}
+						</span>
+					)}
 				</div>
 
-				<div className="project__item-veil" />
-
-				{captureCount > 1 && (
-					<span className="project__item-count">
-						{t("project.captureCount", { count: captureCount })}
-					</span>
-				)}
-
 				<div className="project__item-body">
-					{year && <span className="project__item-year">{year}</span>}
 					<h5 className="project_title">{title}</h5>
 					<p className="project_description">{description}</p>
 
@@ -65,9 +66,11 @@ const ProjectCard = ({ project, t }) => {
 						</ul>
 					)}
 
+					{/* `margin-top: auto` en CSS : le CTA reste aligné d'une carte à
+					    l'autre même si les descriptions n'ont pas la même longueur. */}
 					<span className="project__item-cta">
 						{t("project.viewCaseStudy")}
-						<FiArrowUpRight />
+						<FiArrowUpRight aria-hidden="true" />
 					</span>
 				</div>
 			</Link>

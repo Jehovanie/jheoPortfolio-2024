@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import { useScrollAnimation, useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 
-import ME from "./../../assets/image/developpeur.png";
+import SkillsOrbit from "../skillsorbit/SkillsOrbit";
 
 import "./about.css";
 
@@ -24,17 +24,13 @@ const About = () => {
 
 			<div className="container about__container" ref={containerRef}>
 				<div className="about__me show_tablette">
-					<div className="about__me-image">
-						<img src={ME} alt="About image" />
-					</div>
+					<SkillsOrbit />
 				</div>
 
 				<div className="about__content">
 					<div className="content_about_image_laptop">
 						<div className="about__me show_laptop">
-							<div className="about__me-image">
-								<img src={ME} alt="About image" />
-							</div>
+							<SkillsOrbit />
 						</div>
 						<div className="content_text_desc_laptop">
 							<p>
