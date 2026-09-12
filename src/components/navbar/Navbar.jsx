@@ -1,8 +1,6 @@
-import { GrLanguage } from "react-icons/gr";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoCheckmarkSharp } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
 import { RiMenu3Fill } from "react-icons/ri";
+import { GoDownload } from "react-icons/go";
 import PropTypes from "prop-types";
 
 import "./navbar.css";
@@ -11,24 +9,47 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
-const IconMenuMobile = ({ isOpen, toggleMenu }) => {
-	return isOpen ? (
-		<RiMenu3Fill className="menu_icon" onClick={() => toggleMenu(false)} />
-	) : (
-		<RiMenu2Line className="menu_icon" onClick={() => toggleMenu(true)} />
+import CV from "../../assets/pdf/CV-Jehovanie-RAMANDRIJOEL.pdf";
+
+/** Sections observées pour l'état actif ; hors composant, la référence est stable. */
+const SECTIONS = ["home", "about", "service", "experience", "project", "contact"];
+
+/** Langues proposées, dans l'ordre d'affichage du sélecteur. */
+const LANGUAGES = ["fr", "en"];
+
+const MOBILE_MENU_ID = "navbar-mobile-menu";
+
+const IconMenuMobile = ({ isOpen, toggleMenu, label }) => {
+	return (
+		/* Un vrai <button> : accessible au clavier et son état est annoncé. */
+		<button
+			type="button"
+			className="menu_button"
+			onClick={() => toggleMenu(!isOpen)}
+			aria-label={label}
+			aria-expanded={isOpen}
+			aria-controls={MOBILE_MENU_ID}>
+			{isOpen ? (
+				<RiMenu3Fill className="menu_icon" aria-hidden="true" />
+			) : (
+				<RiMenu2Line className="menu_icon" aria-hidden="true" />
+			)}
+		</button>
 	);
 };
 
 IconMenuMobile.propTypes = {
 	isOpen: PropTypes.bool.isRequired,
 	toggleMenu: PropTypes.func.isRequired,
+	label: PropTypes.string.isRequired,
 };
 
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
-	const [activeNav, setActiveNav] = useState("#");
+	const [activeNav, setActiveNav] = useState("#home");
 	const [isShowListMenu, setIsShowListMenu] = useState(false);
-	const [lang, setLang] = useState(i18n.language || "fr");
+	/* `i18n.language` peut valoir "fr-FR" : on ne garde que le code court. */
+	const [lang, setLang] = useState((i18n.language || "fr").split("-")[0]);
 	const navbarRef = useRef(null);
 	const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,9 +58,6 @@ const Navbar = () => {
 		localStorage.setItem("language", language);
 		setLang(language);
 	};
-
-	// Liste des sections correspondant aux liens
-	const sections = ["home", "about", "service", "experience", "project", "contact"]; // "" correspond à la section "#"
 
 	// Animation GSAP pour la navbar au scroll
 	useEffect(() => {
@@ -93,7 +111,7 @@ const Navbar = () => {
 		);
 
 		// Observer chaque section
-		sections.forEach((section) => {
+		SECTIONS.forEach((section) => {
 			const element = document.getElementById(section || "home"); // Si section est "", utiliser "home" ou un autre ID par défaut
 			if (element) {
 				observer.observe(element);
@@ -102,7 +120,7 @@ const Navbar = () => {
 
 		// Nettoyer l'observer lors du démontage du composant
 		return () => {
-			sections.forEach((section) => {
+			SECTIONS.forEach((section) => {
 				const element = document.getElementById(section || "home");
 				if (element) {
 					observer.unobserve(element);
@@ -124,7 +142,7 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="content_nav_link_web nav_content_link">
-					<Link to="/#home" onClick={() => setActiveNav("#")} className={activeNav === "#home" ? "active" : ""}>
+					<Link to="/#home" onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "active" : ""}>
 						{t('navbar.home')}
 					</Link>
 					<Link
@@ -140,16 +158,16 @@ const Navbar = () => {
 						{t('navbar.service')}
 					</Link>
 					<Link
-						to="/#experience"
-						onClick={() => setActiveNav("#experience")}
-						className={activeNav === "#experience" ? "active" : ""}>
-						{t('navbar.experience')}
-					</Link>
-					<Link
 						to="/#project"
 						onClick={() => setActiveNav("#project")}
 						className={activeNav === "#project" ? "active" : ""}>
 						{t('navbar.project')}
+					</Link>
+					<Link
+						to="/#experience"
+						onClick={() => setActiveNav("#experience")}
+						className={activeNav === "#experience" ? "active" : ""}>
+						{t('navbar.experience')}
 					</Link>
 					<Link
 						to="/#contact"
@@ -159,33 +177,44 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="content_drop_lang_and_menu">
-					<div className="dropdown">
-						<button className="dropbtn">
-							<GrLanguage />
-						<span className="language">{lang === "fr" ? "Français" : "English"}</span>
-						<IoIosArrowDown />
-					</button>
-					<div className="dropdown-content">
-						<div className="lang" onClick={() => changeLanguage("fr")}>
-							<IoCheckmarkSharp className={lang === "fr" ? "" : "lang_not_active"} />
-							Français
-						</div>
-						<div className="lang" onClick={() => changeLanguage("en")}>
-							<IoCheckmarkSharp className={lang === "en" ? "" : "lang_not_active"} />
-								English
-							</div>
-						</div>
+					{/* Sélecteur compact : les deux langues sont visibles, un clic suffit
+					    et l'état courant se lit sans ouvrir quoi que ce soit. */}
+					<div className="lang_switch" role="group" aria-label={t("navbar.language")}>
+						{LANGUAGES.map((code) => (
+							<button
+								key={code}
+								type="button"
+								lang={code}
+								className={`lang_switch__option${lang === code ? " active" : ""}`}
+								aria-pressed={lang === code}
+								onClick={() => changeLanguage(code)}>
+								{code.toUpperCase()}
+							</button>
+						))}
 					</div>
+
+					{/* Le CV est l'action la plus recherchée : accessible depuis toutes
+					    les sections, sans ouvrir le menu ni descendre dans la page. */}
+					<a href={CV} download className="navbar__cv" title={t("cv.download")}>
+						<GoDownload aria-hidden="true" />
+						<span>{t("cv.short")}</span>
+					</a>
+
 					<div className="content_menu_icon">
-						<IconMenuMobile isOpen={isShowListMenu} toggleMenu={setIsShowListMenu} />
+						<IconMenuMobile
+							isOpen={isShowListMenu}
+							toggleMenu={setIsShowListMenu}
+							label={isShowListMenu ? t("navbar.closeMenu") : t("navbar.openMenu")}
+						/>
 					</div>
 				</div>
 			</div>
 			<div
+				id={MOBILE_MENU_ID}
 				className="nav_content_link content_nav_link_mobile"
 				style={{ display: isShowListMenu ? "block" : "none" }}>
 				<div className="container">
-					<Link to="/#home" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ""}>
+					<Link to="/#home" onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "active" : ""}>
 					{t('navbar.home')}
 				</Link>
 				<Link
@@ -201,16 +230,16 @@ const Navbar = () => {
 					{t('navbar.service')}
 				</Link>
 				<Link
-					to="/#experience"
-					onClick={() => setActiveNav("#experience")}
-					className={activeNav === "#experience" ? "active" : ""}>
-					{t('navbar.experience')}
-				</Link>
-				<Link
 					to="/#project"
 					onClick={() => setActiveNav("#project")}
 					className={activeNav === "#project" ? "active" : ""}>
 					{t('navbar.project')}
+				</Link>
+				<Link
+					to="/#experience"
+					onClick={() => setActiveNav("#experience")}
+					className={activeNav === "#experience" ? "active" : ""}>
+					{t('navbar.experience')}
 				</Link>
 				<Link
 					to="/#contact"

@@ -25,16 +25,15 @@ const Home = () => {
 				<div className="content_service">
 					<Service />
 				</div>
+				<div className="content_project">
+					<Project />
+				</div>
 				<div className="content_experience">
 					<Experience />
 				</div>
 				<div className="content_timeline">
 					<Timeline />
 				</div>
-				<div className="content_project">
-					<Project />
-				</div>
-
 				<div className="content_ending">
 					<Ending />
 				</div>

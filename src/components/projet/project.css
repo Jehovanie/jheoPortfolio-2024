@@ -2,130 +2,115 @@
 	padding-bottom: 45px;
 }
 
-/* ── Grille ── */
+/* ── Grille ──
+   `auto-fit` : le nombre de colonnes suit la largeur disponible, sans palier
+   codé en dur. Les cartes d'une même rangée sont étirées à la même hauteur. */
 .project__container {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 	gap: 1.5rem;
+	padding-top: 1.5rem;
 }
 
 /* ── Carte ──
-   La carte entière est un lien vers /projets/<slug> : une seule cible de clic,
-   un seul arrêt au clavier. Le contenu reste lisible sans survol (mobile). */
+   Visuel en haut, contenu en dessous sur fond opaque : la capture du projet
+   reste entièrement lisible et le texte n'a plus besoin d'un voile sombre. */
+/* L'animation d'entrée GSAP pose un `transform` inline sur `.project__item` ;
+   il écraserait celui du survol. Le rendu de la carte vit donc sur le lien,
+   que le hook ne touche pas. */
 .project__item {
-	position: relative;
-	border-radius: 1.25rem;
-	overflow: hidden;
-	border: 1px solid rgba(255, 255, 255, 0.07);
-	background: rgba(0, 0, 0, 0.35);
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-	transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-	animation: cardFadeIn 0.45s ease both;
-}
-
-.project__item:hover {
-	transform: translateY(-6px);
-	border-color: var(--color-primary-variant);
-	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+	display: flex;
 }
 
 .project__item-link {
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
-	min-height: 330px;
-	height: 100%;
+	width: 100%;
+	border-radius: 1.25rem;
+	overflow: hidden;
+	background: var(--color-bg-variant);
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 	color: inherit;
 	text-decoration: none;
+	transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .project__item-link:hover {
 	color: inherit;
+	transform: translateY(-6px);
+	border-color: var(--color-primary);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* ── Visuel ── */
-.project__item-image {
-	position: absolute;
-	inset: 0;
+.project__item-media {
+	position: relative;
+	/* Ratio fixe : toutes les vignettes s'alignent, quelle que soit la capture. */
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.25);
 }
 
-.project__item-image img {
+.project__item-media img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+	transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project__item:hover .project__item-image img {
-	transform: scale(1.06);
+.project__item-link:hover .project__item-media img {
+	transform: scale(1.05);
 }
 
-/* Voile permanent : garantit le contraste du texte quel que soit le visuel. */
-.project__item-veil {
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(
-		to top,
-		rgba(10, 10, 26, 0.96) 0%,
-		rgba(10, 10, 26, 0.86) 38%,
-		rgba(10, 10, 26, 0.28) 72%,
-		rgba(10, 10, 26, 0.05) 100%
-	);
-	transition: opacity 0.4s ease;
-}
-
-.project__item:hover .project__item-veil {
-	opacity: 0.92;
-}
-
-/* ── Badge nombre de captures ── */
+/* Pastilles posées sur le visuel : fond flouté pour rester lisibles
+   quelle que soit la capture derrière. */
+.project__item-year,
 .project__item-count {
 	position: absolute;
-	top: 0.9rem;
-	right: 0.9rem;
-	z-index: 3;
-	padding: 0.28rem 0.7rem;
+	padding: 0.2rem 0.65rem;
 	border-radius: 2rem;
-	font-size: 0.72rem;
-	letter-spacing: 0.03em;
+	font-size: 0.7rem;
+	letter-spacing: 0.04em;
 	color: #fff;
-	background: rgba(0, 0, 0, 0.55);
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
+	background: rgba(10, 10, 26, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+
+.project__item-year {
+	left: 0.8rem;
+	bottom: 0.8rem;
+	color: var(--color-primary);
+	border-color: var(--color-primary-variant);
+}
+
+.project__item-count {
+	top: 0.8rem;
+	right: 0.8rem;
 }
 
 /* ── Contenu ── */
 .project__item-body {
-	position: relative;
-	z-index: 2;
-	padding: 1.4rem 1.3rem 1.5rem;
 	display: flex;
 	flex-direction: column;
-	gap: 0.65rem;
-}
-
-.project__item-year {
-	align-self: flex-start;
-	padding: 0.15rem 0.6rem;
-	border-radius: 2rem;
-	font-size: 0.7rem;
-	letter-spacing: 0.08em;
-	color: var(--color-primary);
-	border: 1px solid var(--color-primary-variant);
-	background: rgba(77, 181, 255, 0.08);
+	gap: 0.6rem;
+	/* Occupe la hauteur restante pour que le CTA puisse se caler en bas. */
+	flex: 1;
+	padding: 1.1rem 1.15rem 1.2rem;
 }
 
 .project__item-body .project_title {
 	margin: 0;
-	font-size: 1.05rem;
-	line-height: 1.45;
-	color: #fff;
+	font-size: 1rem;
+	line-height: 1.4;
+	color: var(--color-white);
 	word-break: normal;
 	overflow-wrap: break-word;
-	hyphens: auto;
+	/* Deux lignes réservées : les descriptions démarrent au même niveau. */
+	min-height: 2.8em;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -134,8 +119,8 @@
 
 .project_description {
 	margin: 0;
-	color: rgba(255, 255, 255, 0.68);
-	font-size: 0.86rem;
+	color: var(--color-light);
+	font-size: 0.84rem;
 	line-height: 1.6;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
@@ -158,12 +143,12 @@
 .project__item-stack li {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.3rem;
-	padding: 0.2rem 0.55rem;
+	gap: 0.32rem;
+	padding: 0.22rem 0.58rem;
 	border-radius: 2rem;
 	font-size: 0.7rem;
-	color: rgba(255, 255, 255, 0.75);
-	background: rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.78);
+	background: rgba(255, 255, 255, 0.07);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -182,7 +167,10 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.35rem;
-	margin-top: 0.35rem;
+	/* Colle le CTA en bas : toutes les cartes d'une rangée l'alignent. */
+	margin-top: auto;
+	padding-top: 0.9rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
 	font-size: 0.82rem;
 	font-weight: 500;
 	letter-spacing: 0.02em;
@@ -190,22 +178,11 @@
 }
 
 .project__item-cta svg {
-	transition: transform 0.35s ease;
+	transition: transform 0.3s ease;
 }
 
-.project__item:hover .project__item-cta svg {
+.project__item-link:hover .project__item-cta svg {
 	transform: translate(3px, -3px);
-}
-
-@keyframes cardFadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(24px) scale(0.97);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-	}
 }
 
 /* ── Bouton "voir la suite" ── */
@@ -243,37 +220,26 @@
 .project__item-link:focus-visible {
 	outline: 2px solid var(--color-primary);
 	outline-offset: -4px;
+	border-radius: 1.25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.project__item,
-	.project__item-image img,
+	.project__item-link,
+	.project__item-media img,
 	.project__item-cta svg {
 		transition: none;
-		animation: none;
+	}
+
+	.project__item-link:hover,
+	.project__item-link:hover .project__item-media img {
+		transform: none;
 	}
 }
 
 /* ── Responsive ── */
-@media (min-width: 600px) {
-	.project__container {
-		padding-top: 25px;
-	}
-}
-
-@media (min-width: 768px) {
-	.project__item-link {
-		min-height: 370px;
-	}
-}
-
 @media (min-width: 992px) {
 	.project__container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.project__item-link {
-		min-height: 420px;
+		gap: 1.75rem;
+		padding-top: 2rem;
 	}
 }

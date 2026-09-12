@@ -13,30 +13,6 @@
 	display: none;
 }
 
-.about__me-image {
-	border-radius: 2rem;
-	width: 250px;
-	height: 200px;
-	margin: auto;
-	overflow: hidden;
-	transform: rotate(10deg);
-	background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-	transition: 0.5s;
-}
-
-.about__me-image img {
-	height: 100%;
-	width: 100%;
-	width: auto;
-	/* ou width: 100% si tu veux qu'elle remplisse aussi en largeur */
-	object-fit: cover; /* ou contain selon le rendu désiré */
-	display: block;
-}
-
-.about__me-image:hover {
-	transform: rotate(0);
-}
-
 .content_about_cards {
 	display: flex;
 	align-items: center;
@@ -109,11 +85,6 @@
 	.about__cards {
 		gap: 1.5rem;
 	}
-
-	.about__me-image {
-		width: 280px;
-		height: 250px;
-	}
 }
 
 /* Tablette paysage / petits laptops (≥ 768px) */
@@ -146,9 +117,14 @@
 		margin-bottom: 0;
 	}
 
-	.about__me-image {
-		width: 275px;
-		height: 275px;
+	/* Ciblé sur .show_laptop : un `display` posé sur `.about__me` seul aurait la
+	   même spécificité que `.show_tablette { display: none }` déclaré au-dessus,
+	   et ferait réapparaître la copie tablette du schéma. */
+	.about__me.show_laptop {
+		/* Moitié de ligne, schéma centré dedans. */
+		width: 50%;
+		display: flex;
+		justify-content: center;
 	}
 
 	.content_about_client_laptop {
@@ -161,11 +137,11 @@
 	}
 
 	.content_text_desc_laptop {
-		width: 100%;
+		width: 50%;
 	}
 
 	.content_text_copy_writing_laptop {
-		width: 55%;
+		width: 50%;
 	}
 
 	.about__cards {

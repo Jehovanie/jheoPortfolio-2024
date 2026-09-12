@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import PropTypes from "prop-types";
 import { useScrollAnimationChildren } from "../../hooks/useScrollAnimation";
 import "./experience.css";
 
@@ -23,51 +24,94 @@ import {
 	github
 } from "@/constant/svg";
 
-const techStack = [
-	{ name: "PHP", icon: php },
-	{ name: "Symfony", icon: symfony },
-	{ name: "Laravel", icon: laravel },
-	{ name: "Javascript", icon: javascript },
-	{ name: "Typescript", icon: typescript },
-	{ name: "React", icon: react },
-	{ name: "React Native", icon: reactNative },
-	{ name: "NextJs", icon: nextjs },
-	{ name: "Angular", icon: angular },
-	{ name: "Node", icon: nodejs },
-	{ name: "GraphQL", icon: graphql },
-	{ name: "Docker", icon: docker },
-	{ name: "MySql", icon: mysql },
-	{ name: "PostgreSql", icon: postgresql },
-	{ name: "MongoDB", icon: mongodb },
-	{ name: "GitLab CI/CD", icon: gitlab },
-	{ name: "GitHub Action", icon: github },
+/* Les technos sont regroupées par usage : on lit la stack d'un coup d'œil
+   au lieu de survoler chaque logo pour découvrir son nom. */
+const techGroups = [
+	{
+		id: "languages",
+		items: [
+			{ name: "PHP", icon: php },
+			{ name: "Javascript", icon: javascript },
+			{ name: "Typescript", icon: typescript },
+		],
+	},
+	{
+		id: "frontend",
+		items: [
+			{ name: "React", icon: react },
+			{ name: "React Native", icon: reactNative },
+			{ name: "NextJs", icon: nextjs },
+			{ name: "Angular", icon: angular },
+		],
+	},
+	{
+		id: "backend",
+		items: [
+			{ name: "Symfony", icon: symfony },
+			{ name: "Laravel", icon: laravel },
+			{ name: "Node", icon: nodejs },
+			{ name: "GraphQL", icon: graphql },
+		],
+	},
+	{
+		id: "database",
+		items: [
+			{ name: "MySql", icon: mysql },
+			{ name: "PostgreSql", icon: postgresql },
+			{ name: "MongoDB", icon: mongodb },
+		],
+	},
+	{
+		id: "devops",
+		items: [
+			{ name: "Docker", icon: docker },
+			{ name: "GitLab CI/CD", icon: gitlab },
+			{ name: "GitHub Action", icon: github },
+		],
+	},
 ];
+
+const TechGroup = ({ group }) => {
+	const { t } = useTranslation();
+	const gridRef = useRef(null);
+
+	useScrollAnimationChildren(gridRef, {
+		from: { opacity: 0, y: 20 },
+		to: { opacity: 1, y: 0 },
+		stagger: 0.06,
+		duration: 0.5,
+	});
+
+	return (
+		<div className="experience__group">
+			<h3 className="experience__group-title">{t(`experience.categories.${group.id}`)}</h3>
+			<ul className="experience__grid" ref={gridRef}>
+				{group.items.map((tech) => (
+					<li key={tech.name} className="experience__tech">
+						{/* Le nom est déjà affiché juste en dessous : l'image reste décorative. */}
+						<img src={tech.icon} alt="" aria-hidden="true" />
+						<span>{tech.name}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
+};
+
+TechGroup.propTypes = {
+	group: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		items: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string.isRequired,
+				icon: PropTypes.string.isRequired,
+			})
+		).isRequired,
+	}).isRequired,
+};
 
 const Experience = () => {
 	const { t } = useTranslation();
-	const contentRef = useRef(null);
-	const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
-	const [activeTooltip, setActiveTooltip] = useState(null);
-
-	const handleMouseEnter = (e, techName) => {
-		const rect = e.currentTarget.getBoundingClientRect();
-		setTooltipPos({
-			x: rect.left + rect.width / 2,
-			y: rect.top - 10
-		});
-		setActiveTooltip(techName);
-	};
-
-	const handleMouseLeave = () => {
-		setActiveTooltip(null);
-	};
-
-	useScrollAnimationChildren(contentRef, {
-		from: { opacity: 0, scale: 0.5, rotation: -10 },
-		to: { opacity: 1, scale: 1, rotation: 0 },
-		stagger: 0.08,
-		duration: 0.6,
-	});
 
 	return (
 		<section id="experience" className="experience_content_service">
@@ -75,32 +119,9 @@ const Experience = () => {
 			<h2>{t('experience.title')}</h2>
 
 			<div className="container experience__container">
-				<div className="experience__frontend">
-					<div className="experience__content" ref={contentRef}>
-						{techStack.map((tech) => (
-							<div
-								key={tech.name}
-								className="content_image_tech"
-								onMouseEnter={(e) => handleMouseEnter(e, tech.name)}
-								onMouseLeave={handleMouseLeave}
-							>
-								<img src={tech.icon} alt={tech.name} className="image_tech" />
-							</div>
-						))}
-					</div>
-				</div>
-				{activeTooltip && (
-					<span
-						className="tooltip"
-						style={{
-							left: `${tooltipPos.x}px`,
-							top: `${tooltipPos.y}px`,
-							transform: 'translate(-50%, -100%)'
-						}}
-					>
-						{activeTooltip}
-					</span>
-				)}
+				{techGroups.map((group) => (
+					<TechGroup key={group.id} group={group} />
+				))}
 			</div>
 		</section>
 	);

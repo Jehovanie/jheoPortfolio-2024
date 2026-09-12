@@ -8,7 +8,7 @@ const BtnCv = () => {
 	return (
 		<a href={CV} download className="btn cta_action cta_ending_action">
 			<GoDownload />
-			{t("download.cv")}
+			{t("cv.download")}
 		</a>
 	);
 };

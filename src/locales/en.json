@@ -1,12 +1,19 @@
 {
 	"translation": {
+		"cv": {
+			"short": "CV",
+			"download": "Download my CV"
+		},
 		"navbar": {
 			"home": "Home",
 			"about": "About",
 			"service": "Services",
 			"experience": "Experience",
 			"project": "Projects",
-			"contact": "Contact"
+			"contact": "Contact",
+			"language": "Language",
+			"openMenu": "Open menu",
+			"closeMenu": "Close menu"
 		},
 		"presentation": {
 			"greeting": "Hello👋, I'm Jehovanie,",
@@ -29,7 +36,18 @@
 			"projects": "Projects",
 			"projectsCount": "+20",
 			"contact": "Let's Talk",
-			"textSelling": "If you are looking for a creative and passionate web developer, capable of working in a team to create custom solutions, do not hesitate to contact me. I am always looking for new challenges and I look forward to collaborating with you to realize your most ambitious web projects."
+			"textSelling": "If you are looking for a creative and passionate web developer, capable of working in a team to create custom solutions, do not hesitate to contact me. I am always looking for new challenges and I look forward to collaborating with you to realize your most ambitious web projects.",
+			"orbit": {
+				"aria": "Skills diagram: web and mobile development, with UI, web, iOS, Android, database, API, cloud and security connected to the core",
+				"uiux": "UI/UX",
+				"web": "Web",
+				"ios": "iOS",
+				"android": "Android",
+				"db": "DB",
+				"api": "API",
+				"cloud": "Cloud",
+				"security": "Security"
+			}
 		},
 		"service": {
 			"subtitle": "What can I do...?",
@@ -58,8 +76,13 @@
 		"experience": {
 			"subtitle": "What skills do I have...?",
 			"title": "My Experience",
-			"frontend": "Frontend Development",
-			"backend": "Backend Development"
+			"categories": {
+				"languages": "Languages",
+				"frontend": "Front-end & Mobile",
+				"backend": "Back-end & API",
+				"database": "Databases",
+				"devops": "DevOps & CI/CD"
+			}
 		},
 		"project": {
 			"subtitle": "My recent work...",
