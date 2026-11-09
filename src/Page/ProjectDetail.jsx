@@ -283,8 +283,8 @@ const ProjectDetail = () => {
 		);
 	}
 
-	const { title, description, image, images, year, stack, features, role, github, live_demo } =
-		project;
+	const { title, description, image, images, year, stack, features, role, github } =
+		project; /// live_demo
 
 	return (
 		<div className="pd">
@@ -341,12 +341,12 @@ const ProjectDetail = () => {
 								<FiGithub />
 								{t("project.github")}
 							</a>
-							{live_demo && (
+							{/* {live_demo && (
 								<a href={live_demo} className="btn" target="_blank" rel="noreferrer">
 									<FiExternalLink />
 									{t("project.liveDemo")}
 								</a>
-							)}
+							)} */}
 						</div>
 					</div>
 
@@ -458,13 +458,13 @@ const ProjectDetail = () => {
 									<span>{t("project.github")}</span>
 									<FiExternalLink className="pd-aside__links-out" />
 								</a>
-								{live_demo && (
+								{/* {live_demo && (
 									<a href={live_demo} target="_blank" rel="noreferrer">
 										<FiExternalLink />
 										<span>{t("project.liveDemo")}</span>
 										<FiExternalLink className="pd-aside__links-out" />
 									</a>
-								)}
+								)} */}
 							</div>
 						</div>
 					</div>
